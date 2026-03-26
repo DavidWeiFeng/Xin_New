@@ -1674,3 +1674,62 @@ def launch_game(lnk_name="SeerGame", params="--disable-features=CalculateNativeW
             subprocess.Popen([link.path] + params.split(), cwd=link.working_directory)
     except Exception as e:
         ctypes.windll.user32.MessageBoxW(0, f"启动失败: {e}", "错误", 0x10)
+
+def has_non_white():
+    return (
+        find_color_in_region(299,262,333,311,"ffffff") != -1 and
+        find_color_in_region(399,260,442,314,"ffffff") != -1 and
+        find_color_in_region(503,264,548,307,"ffffff") != -1 and
+        find_color_in_region(606,263,650,307,"ffffff") != -1
+    )
+
+from core.refresh import REFRESH_PET_ACTIONS,SWITCH_PET_ACTIONS
+def switch_handle_identifying():
+    if isIdentifying():
+        # 等待精灵加载完成
+        while not has_non_white():
+            time.sleep(0.2)  
+        random_click(313,291)
+        time.sleep(0.35)
+        if isIdentifying():
+            while not has_non_white():
+                time.sleep(0.2)
+            random_click(313,291)
+        time.sleep(3)
+        if is_color_at_point(899,248,"777777"):
+            return False
+    return True
+
+def perform_move(pet_name,target_info):
+    """执行单次地图跳转任务"""
+    map_name, (target_x, target_y) = target_info
+    while not stop_flag:
+        res, _, _ = FindPic(*SEARCH_REGION, f"{map_name}.bmp", 0.85)
+        if res != -1:
+            click(target_x, target_y)
+            break
+    start_time = time.time()
+    while not stop_flag:
+        res, _, _ = FindPic(*SEARCH_REGION, f"{map_name}.bmp", 0.85)
+        # res == -1 表示当前地图图样消失，切换成功
+        if res == -1:
+            return True 
+        # 超时处理逻辑
+        if time.time() - start_time > 10:
+            # 重试点击并重置计时
+            if not switch_handle_identifying():
+                REFRESH_PET_ACTIONS[pet_name]()
+            click(target_x, target_y)
+            start_time = time.time()
+        time.sleep(0.5)
+    return False
+
+
+def switch_map(pet_name):
+    # 依次执行 PET_ACTIONS 中的前两个动作
+    for i in range(2):
+        if stop_flag: break
+        perform_move(pet_name, SWITCH_PET_ACTIONS[pet_name][i])
+    time.sleep(0.5)
+    switch_handle_identifying()
+    

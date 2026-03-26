@@ -475,6 +475,13 @@ class shinyCatcher:
                     self.count += 1
                     continue
                 
+                elif self.config.switch:
+                    logging.info(f"第{self.count}次,捕捉稀有精灵{self.rare_count}只")
+                    OgreManager().clear_current_slots()
+                    self.count += 1
+                    switch_map(self.config.pet_name)
+                    continue
+
                 random_slot = OgreManager().get_random_valid_slot(
                     exclude_id=self.get_exclude_id(),  # 排除上一次选择的 slot
                     priority_name=self.config.pet_name
@@ -499,16 +506,17 @@ class shinyCatcher:
                     continue
 
     def need_refresh(self):
-        if refresh_module.PET_NAME is None:
-            refresh_module.PET_NAME = self.config.pet_name
+        pass
+        # if refresh_module.PET_NAME is None:
+        #     refresh_module.PET_NAME = self.config.pet_name
 
-        if self.config.pet_name not in refresh_module.PET_ACTIONS:
-            return False
+        # if self.config.pet_name not in refresh_module.PET_ACTIONS:
+        #     return False
 
-        if time.time()-self.refresh_start_time>2400 and app_config().is_checked():
-            refresh_module.refresh_game()
-            self.refresh_start_time=time.time()
-            return True
+        # if time.time()-self.refresh_start_time>2400 and app_config().is_checked():
+        #     refresh_module.refresh_game()
+        #     self.refresh_start_time=time.time()
+        #     return True
         
     def stop(self):
         self.stop_flag = True
