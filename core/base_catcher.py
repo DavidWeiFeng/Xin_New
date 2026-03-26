@@ -502,22 +502,25 @@ class shinyCatcher:
                     if SHINY_CONFIG.get(self.config.pet_name, {}).get("reset_pos",None):
                         click(*SHINY_CONFIG[self.config.pet_name]["reset_pos"])
             else:
+                if res!=-1:
+                    send_qq_mail("淦你的游戏又掉线了","赶快重新上号")
+                    logging.info("掉线，重新连接")
+                    self.need_refresh(force=True)
                 if self.need_refresh():
                     continue
 
-    def need_refresh(self):
-        pass
-        # if refresh_module.PET_NAME is None:
-        #     refresh_module.PET_NAME = self.config.pet_name
+    def need_refresh(self,force=False):
+        if self.config.pet_name not in REFRESH_PET_ACTIONS:
+            return False
+        if time.time()-self.refresh_start_time>2400 and app_config().is_checked() or force:  
+            OgreManager().clear_current_slots()          
+            refresh_module.refresh_game()
+            refresh_module.auto_setting()
+            time.sleep(1.2)
+            REFRESH_PET_ACTIONS[self.config.pet_name]()
+            self.refresh_start_time=time.time()
+            return True
 
-        # if self.config.pet_name not in refresh_module.PET_ACTIONS:
-        #     return False
-
-        # if time.time()-self.refresh_start_time>2400 and app_config().is_checked():
-        #     refresh_module.refresh_game()
-        #     self.refresh_start_time=time.time()
-        #     return True
-        
     def stop(self):
         self.stop_flag = True
         set_global_stop_flag(True)

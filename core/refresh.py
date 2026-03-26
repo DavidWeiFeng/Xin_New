@@ -1,6 +1,7 @@
+import threading
 import time
-from core.utils import CONFIRM_BUTTON, click, FindPic,SEARCH_REGION,stop_flag,is_color_at_point
-PET_NAME=None
+from core.utils import CONFIRM_BUTTON, click, FindPic,SEARCH_REGION,stop_flag,is_color_at_point,activate_single_window,fast_move
+refresh_lock = threading.Lock()
 SWITCH_PET_ACTIONS = {
     "皮皮": [
         ("克洛斯星一层", (11,450)),
@@ -50,62 +51,107 @@ def click_map(name):
 
 
 
-
-
-# def refresh_game():
-#     send_cmd("unlock")
-#     while not stop_flag :
-#         kill_process(PROCESS_NAME)
-#         exe_path, work_dir = get_target_from_shortcut(shortcut_path)
-#         start_exe(exe_path, work_dir, ARGS)
-#         time.sleep(6)  # 等待游戏启动
-#         hwnds= find_windows_by_title(["骄阳号"])  # 传入列表
-#         set_current_hwnd(hwnds[0]) 
-#         res,x,y=FindPic(46,165,99,184,"开始游戏.bmp",0.8)  
-#         print(f"查找开始游戏结果: {res}, 坐标: ({x}, {y})")
-#         if res!=-1:
-#             click(x,y)
-#         time.sleep(4) 
-#         res,x,y=FindPic(*SEARCH_REGION,"赛尔.bmp",0.8)  
-#         if res!=-1:
-#             click(x,y)
-#             break
-#     InitGame()
-#     send_cmd("refresh")
-#     send_cmd("lock")
-
-
-
-def InitGame():
+def auto_setting():
     while not stop_flag:
-        map_name, (target_x, target_y) = PET_ACTIONS[PET_NAME][0]
-        res,x,y=FindPic(*SEARCH_REGION,map_name+".bmp",0.8)
+        if is_color_at_point(813,556,"ff4c00"): #精灵背包
+            time.sleep(1.5)
+            break
+    if is_color_at_point(269,202,"02fdfd",0.1): #八倍经验
+        time.sleep(0.3)
+        click(480,375)
+        time.sleep(0.3)
+    res,x,y=FindPic(*SEARCH_REGION,"电量.bmp",0.80)
+    if res!=-1:
+        click(CONFIRM_BUTTON[0],CONFIRM_BUTTON[1])
+        time.sleep(0.4)
+    res,x,y=FindPic(901,523,921,543,"声音.bmp",0.85)
+    if res!=-1:
+        # logging.info("你为什么不把游戏静音，懒狗")
+        click(x,y)
+        time.sleep(0.4)
+    res,x,y=FindPic(927,522,943,542,"铁皮.bmp",0.85)
+    if res!=-1:
+        # logging.info("你为什么不屏蔽铁皮，懒狗")
+        click(x,y)
+        time.sleep(0.4)
+    if is_color_at_point(894,339,"6a9dbf"):
+        time.sleep(0.4)
+    else:
+        click(478,545) #地图
+        while not stop_flag:
+            if is_color_at_point(152,400,"ff9900"):
+                time.sleep(0.4)
+                click(182,446) #传送仓
+                break
+        while not stop_flag:
+            if is_color_at_point(894,339,"6a9dbf"):
+                time.sleep(1) #进入了
+                break
+    for _ in range(3):
+        click(908,462) #nono
+        time.sleep(0.1)
+    time.sleep(1)
+    while not stop_flag:
+        res,x,y=FindPic(645,238,861,512,"召唤.bmp",0.8)
         if res!=-1:
+            time.sleep(0.5)
+            click(x,y) #召唤
             time.sleep(1)
-            res,x,y=FindPic(352,251,613,341,"电量.bmp",0.85)
-            if res!=-1:
-                click(CONFIRM_BUTTON[0],CONFIRM_BUTTON[1])
-            time.sleep(0.5)
-            click(904,522)
-            time.sleep(0.3)
-            click(926,523)
-            click(target_x, target_y)
             break
-
+        else:
+            click(908,462) #nono
+            time.sleep(1)
+    with refresh_lock:
+        # activate_single_window()
+        time.sleep(0.3)
+        fast_move(502,368)
+    time.sleep(0.5)
     while not stop_flag:
-        map_name, (target_x, target_y) = PET_ACTIONS[PET_NAME][1]
-        res,x,y=FindPic(*SEARCH_REGION,map_name+".bmp",0.85)
+        rex,x,y=FindPic(*SEARCH_REGION,"飞行模式.bmp",0.90)
+        if rex!=-1:
+            with refresh_lock:
+                time.sleep(0.5)
+                click(x,y) #飞行模式
+        else:
+            fast_move(0,0)
+            time.sleep(0.4)
+            fast_move(502,368)
+        break
+    time.sleep(0.4)
+    click(436,359) #飞行形态
+
+
+
+
+def refresh_game():
+    time.sleep(0.4)
+    with refresh_lock:
+        activate_single_window()
+        time.sleep(0.4)
+        click(24,12,-1 ) #点击游戏
+        time.sleep(0.4)
+        click(35,34,-1)
+        time.sleep(0.4)
+    while not stop_flag:
+        res,x,y=FindPic(*SEARCH_REGION,"我已知晓.bmp",0.85)
         if res!=-1:
             time.sleep(0.5)
-            click(target_x, target_y)
-            break
-
+            click(x,y)   #我已知晓
+            fast_move(0,0)
+            time.sleep(0.5)
+            res1,x1,y1=FindPic(*SEARCH_REGION,"我已知晓.bmp",0.85)
+            if res1==-1:
+                time.sleep(0.5)
+                break
     while not stop_flag:
-        map_name, (target_x, target_y) = PET_ACTIONS[PET_NAME][0]
-        res,x,y=FindPic(*SEARCH_REGION,map_name+".bmp",0.85)
-        if res!=-1:
+        if is_color_at_point(595,427,"409eff") or is_color_at_point(596,439,"d02e3b"): #蓝色登录
+            time.sleep(1)
+            click(576,423)   #开始
+            time.sleep(0.5)
             break
-
-
-
-
+    while not stop_flag:
+        res,x,y=FindPic(*SEARCH_REGION,"服务器.bmp",0.8)
+        if res!=-1:
+            time.sleep(0.5)
+            click(171,265)
+            break

@@ -109,8 +109,9 @@ class MyWindow(QWidget,Ui_Form):
         self.learn_Pokemon=None
         self.pause_signal.connect(self.handle_pause)#将信号连接到主线程的处理函数
         self.windows={}
+        self.refreshCheckBox.toggled.connect(app_config().set_checked)
+        app_config().set_checked(self.refreshCheckBox.isChecked())
         threading.Thread(target=self.listen_global_hotkey, daemon=True).start()
-        # self.refreshCheckBox.toggled.connect(app_config().set_checked)
         # app_config().set_checked(self.refreshCheckBox.isChecked())
         # 多窗口线程列表
         self.threads = []
