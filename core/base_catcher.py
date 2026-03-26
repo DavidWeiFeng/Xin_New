@@ -467,14 +467,13 @@ class shinyCatcher:
                 if self.check_protocol_rare():
                     continue
 
-                # 3. 如果没有异色且没抓到稀有，点击普通精灵以刷新地图 (优先点击目标精灵)
-                # if self.config.lock_scene:
-                #     logging.info(f"第{self.count}次，遇见{self.catch}次异色精灵")
-                #     click(785, 557)
-                #     OgreManager().clear_current_slots()
-                #     time.sleep(1.0)
-                #     self.count += 1
-                #     continue
+                # 3. 如果是原地挂机模式
+                if self.config.afk_mode:
+                    logging.info(f"第{self.count}次，遇见{self.catch}次异色精灵")
+                    OgreManager().clear_current_slots()
+                    time.sleep(1.0)
+                    self.count += 1
+                    continue
                 
                 random_slot = OgreManager().get_random_valid_slot(
                     exclude_id=self.get_exclude_id(),  # 排除上一次选择的 slot
