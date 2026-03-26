@@ -373,7 +373,7 @@ class SeerProxy:
                 self._handle_sequence_operations(packet_obj, packet, frame_len, w)
 
             # 分发命令
-            handle_command(packet_obj.cmd_id, packet_obj, direction)
+            handle_command(packet_obj.cmd_id, packet_obj, direction, hwnd=hwnd)
     
     def _handle_sequence_operations(self, packet_obj, packet, frame_len: int, w):
         """处理序列号相关操作（同步、注入、重写）"""

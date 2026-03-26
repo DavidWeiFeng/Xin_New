@@ -4,7 +4,7 @@ from proxy.utils.game_data import GameData
 from proxy.entities.pet_glow_filter import PetGlowFilter
 from core.ogre_manager import OgreManager  # Import the manager
 
-def handle_ogre_list(packet: Packet):
+def handle_ogre_list(packet: Packet, hwnd: int = -1):
     """
     处理 CMD 2004 (Map Ogre List) - Updated for OgreManager Integration
     Protocol:
@@ -15,7 +15,7 @@ def handle_ogre_list(packet: Packet):
         - ShinyInfo (98 bytes)
     """
     # 如果正在战斗中，忽略地图刷新包，防止误判
-    if OgreManager().is_fighting:
+    if OgreManager(hwnd).is_fighting:
         # print("   [Ogre Ignored] Battle in progress.")
         return
 
@@ -52,10 +52,10 @@ def handle_ogre_list(packet: Packet):
                 found_any = True
         
         # Log BEFORE updating manager to ensure chronological console output
-        print(f"   [Server->Client] Map Ogres Refreshed: {len(slots_data)} slots active.")
+        print(f"   [Server->Client] Map Ogres Refreshed: {len(slots_data)} slots active. HWND: {hwnd}")
         
         # Update the global thread-safe manager (Wakes up the bot)
-        OgreManager().update_slots(slots_data)
+        OgreManager(hwnd).update_slots(slots_data)
 
     except Exception as e:
         print(f"   [Error] Failed to unpack Ogre List: {e}")

@@ -9,13 +9,13 @@ from proxy.handlers.cmd_2605_item_list import handle_item_list
 from proxy.handlers.cmd_1001_login import handle_login
 from proxy.config import Direction
 
-def handle_command(cmd_id: int, packet: Packet, direction: Direction):
+def handle_command(cmd_id: int, packet: Packet, direction: Direction, hwnd: int = -1):
     """
     根据 cmd_id 分发处理逻辑
     """
     # 过滤高频日志，不打印 CMD 1002 和 2101 的详细信息
     if cmd_id not in [1002,2101,2003,1004,2021,2002,2301]:
-        print(f"[Cmd调试]Direction: {direction.value}  CMD: {cmd_id}")
+        print(f"[Cmd调试]Direction: {direction.value}  CMD: {cmd_id} HWND: {hwnd}")
 
     # --- Command Routing ---
     
@@ -24,11 +24,11 @@ def handle_command(cmd_id: int, packet: Packet, direction: Direction):
         return
 
     if cmd_id == 2004:
-        handle_ogre_list(packet)
+        handle_ogre_list(packet, hwnd=hwnd)
         return
 
     if cmd_id == 2001:
-        handle_enter_map(packet, direction)
+        handle_enter_map(packet, direction, hwnd=hwnd)
         return
 
     if cmd_id == 2503:

@@ -10,6 +10,7 @@ class Packet:
     user_id: int
     sequence: int
     body: bytes
+    hwnd: int = -1
 
     def pack(self) -> bytes:
         """将 Packet 对象打包成二进制数据流"""
@@ -18,7 +19,7 @@ class Packet:
         header = struct.pack(">IBIII", self.length, self.version, self.cmd_id, self.user_id, self.sequence)
         
         # 加密 body
-        encrypted_body = Protocol.xor_cipher(self.body)
+        encrypted_body = Protocol.xor_cipher(self.body, self.hwnd)
         return header + encrypted_body
 
     @classmethod
@@ -29,17 +30,18 @@ class Packet:
 class Protocol:
     HEADER_SIZE = 17
     VERSION = 0x37
-    XOR_KEY = b"CWF" # 默认密钥
+    DEFAULT_XOR_KEY = b"CWF" # 默认密钥
+    _XOR_KEYS = {} # hwnd -> key
 
     @staticmethod
-    def update_xor_key(new_key: bytes):
-        Protocol.XOR_KEY = new_key
+    def update_xor_key(new_key: bytes, hwnd: int = -1):
+        Protocol._XOR_KEYS[hwnd] = new_key
 
     @staticmethod
-    def xor_cipher(data: bytes) -> bytes:
-        if not Protocol.XOR_KEY:
+    def xor_cipher(data: bytes, hwnd: int = -1) -> bytes:
+        key = Protocol._XOR_KEYS.get(hwnd, Protocol.DEFAULT_XOR_KEY)
+        if not key:
             return data
-        key = Protocol.XOR_KEY
         key_len = len(key)
         return bytes(data[i] ^ key[i % key_len] for i in range(len(data)))
 

@@ -9,18 +9,22 @@ from enum import Enum
 
 
 class OgreManager:
-    _instance = None
+    _instances = {}
     _lock = threading.Lock()
 
-    def __new__(cls):
-        if cls._instance is None:
-            with cls._lock:
-                if cls._instance is None:
-                    cls._instance = super(OgreManager, cls).__new__(cls)
-                    cls._instance._initialized = False
-        return cls._instance
+    def __new__(cls, hwnd=None):
+        if hwnd is None:
+            from core.utils import get_current_hwnd
+            hwnd = get_current_hwnd()
+        
+        with cls._lock:
+            if hwnd not in cls._instances:
+                instance = super(OgreManager, cls).__new__(cls)
+                instance._initialized = False
+                cls._instances[hwnd] = instance
+            return cls._instances[hwnd]
 
-    def __init__(self):
+    def __init__(self, hwnd=None):
         if self._initialized:
             return
         self._initialized = True
