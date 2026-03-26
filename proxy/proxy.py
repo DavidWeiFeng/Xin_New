@@ -243,7 +243,8 @@ class SeerProxy:
         for ip in self.remote_ips:
             filter_parts.append(f"ip.SrcAddr == {ip}")
             filter_parts.append(f"ip.DstAddr == {ip}")
-        self.filter = f"(tcp or udp) and ({' or '.join(filter_parts)})"
+        self.filter = f"(tcp or udp) and (ip.Length <= 1500 or ipv6.Length <= 1500) and ({' or '.join(filter_parts)})"
+
         
         print(f"[Proxy] Starting WinDivert transparent proxy...")
         print(f"[Proxy] Filter: {self.filter}")
