@@ -124,15 +124,11 @@ class MyWindow(QWidget,Ui_Form):
             logging.error(f"Failed to start : {e}")
 
     def setupNier(self):
-        # pass
-        # if self.onlyHighNierCheckBox.isChecked():
-        #     Config.ONLY_HIGH_NIER=True
-        # else:
-        #     Config.ONLY_HIGH_NIER=False
-        if self.killShinyCheckBox.isChecked():
-            Config.KILL_SHINY=True
+        pass
+        if self.onlyHighNierCheckBox.isChecked():
+            Config.ONLY_HIGH_NIER=True
         else:
-            Config.KILL_SHINY=False
+            Config.ONLY_HIGH_NIER=False
 
     def move_window_only(self,hwnd, x, y):
         win32gui.SetWindowPos(
@@ -321,12 +317,14 @@ class MyWindow(QWidget,Ui_Form):
         if self.startCatch.text() == "开始运行":
             only_normal_high_IV = self.onlyHighCheckBox.isChecked()  # 获取 checkbox 状态
             only_rare_high_IV = self.onlyHighCheckBox2.isChecked()  # 获取 checkbox 状态
+            all_catch=self.AllCheckBox.isChecked()
             if only_rare_high_IV:
                 self.shinyAndRareCheckBox.setChecked(True)
             rareAndShiny=self.shinyAndRareCheckBox.isChecked()
             cactus=self.cactusCheckBox.isChecked()
-            afk=False
-            lock=self.lockButton.isChecked()
+            afk=self.afkButton.isChecked()
+            switch=self.switchMapButton.isChecked()
+            mix=self.greenPlayerButton.isChecked()
             type_name = "异色"    # 给 log 输出使用
             pet_name=self.shinyComboBox.currentText()           # 给 CatcherThread 使用
             ball_type=self.ballComboBox.currentText()
@@ -336,8 +334,6 @@ class MyWindow(QWidget,Ui_Form):
             logging.info(f"检测到 {len(hwnds)} 个游戏窗口")
             logging.info(f"开始捕捉{type_name}精灵{pet_name},使用{ball_type}")
             logging.info(f"请先开启功能再进入地图！！")
-            if lock:
-                logging.info(f"锁图模式需要购买锁图工具，否则无法使用！")
              # 为每个窗口创建一个线程
             self.threads = []
             try:
@@ -353,7 +349,9 @@ class MyWindow(QWidget,Ui_Form):
                         rare_and_shiny=rareAndShiny,
                         use_cactus_sleep=cactus,
                         afk_mode=afk,
-                        lock_scene=lock
+                        all_catch=all_catch,
+                        switch=switch,
+                        mix=mix,
                     )
                     for i, hwnd in enumerate(hwnds):
                         

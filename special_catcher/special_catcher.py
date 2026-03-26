@@ -55,7 +55,7 @@ class SpecialCatcher(shinyCatcher):
             )
             
             if random_slot:
-                slot_id, rx, ry = random_slot
+                slot_id, rx, ry, pet_name = random_slot
                 self.previous_slot_id = slot_id
                 logging.info(f"第{self.count}次，遇见{self.catch}次异色精灵")
                 OgreManager().clear_current_slots()
@@ -63,7 +63,7 @@ class SpecialCatcher(shinyCatcher):
                 with OgreManager().fighting_context():
                     for _ in range(3):
                         protocol_click(rx, ry)
-                    self.handle_normal_fight()
+                    self.handle_normal_fight(pet_name)
                 self.count += 1
 
     def _standard_protocol_flow(self):

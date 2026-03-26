@@ -165,8 +165,9 @@ class OgreManager:
             
             # 3. 在候选列表中应用优先级逻辑
             for slot_idx, info, coords in candidate_items:
-                slot_data = (slot_idx, coords[0], coords[1])
-                if priority_name and info.get('name') == priority_name:
+                pet_name = info.get('name', 'Unknown')
+                slot_data = (slot_idx, coords[0], coords[1], pet_name)
+                if priority_name and pet_name == priority_name:
                     priority_slots.append(slot_data)
                 else:
                     other_slots.append(slot_data)
@@ -174,7 +175,7 @@ class OgreManager:
         target_slots = priority_slots if priority_slots else other_slots
         
         if target_slots:
-            time.sleep(0.5)  #略微延时，等待客户端渲染 
+            time.sleep(0.4)  #略微延时，等待
             return random.choice(target_slots)
         return None
 

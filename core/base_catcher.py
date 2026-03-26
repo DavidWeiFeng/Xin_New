@@ -16,6 +16,9 @@ class CatcherConfig:
     use_cactus_sleep: bool = False
     afk_mode: bool = False
     lock_scene: bool = False
+    all_catch: bool = False
+    switch: bool = False
+    mix: bool = False
 
 class CaptureEngine:
     def __init__(self, catcher):
@@ -400,7 +403,7 @@ class shinyCatcher:
         self.previous_slot_id = slot_index  # 更新点击的槽位ID
         return self._perform_capture_logic(rare_pet_names, is_rare_check=True)
 
-    def handle_normal_fight(self):
+    def handle_normal_fight(self, pet_name=""):
         """处理普通精灵的战斗（为了刷新地图，同时检查暗雷异色及普通高个体）"""
 
         if self._wait_for_fight_start():
@@ -409,12 +412,21 @@ class shinyCatcher:
              # 1. 检查是否有红字（暗雷异色标志）
             if has_red_word():
                 # logging.info(f"检测到红字！{self.config.pet_name} 可能是暗雷异色")
-                return self._perform_capture_logic(self.config.pet_name, is_rare_check=False)
+                return self._perform_capture_logic(pet_name, is_rare_check=False)
             
             if isNier():
                 return True
+            
+            if self.config.all_catch:
+                if pet_name!=self.config.pet_name:
+                    pass
+                elif self.config.use_cactus_sleep:
+                    self.capture_engine.catch_with_cactus_sleep()
+                else:
+                    self.capture_engine.catch_pokemon()
+                return True
             # 2. 如果配置了抓捕普通高个体
-            if self.config.only_normal_high_iv:
+            elif self.config.only_normal_high_iv:
                 logging.info("检查普通精灵个体值...")
                 if self.is_high_IV():
                     logging.info(f"发现高个体 {self.config.pet_name}！准备捕捉")
@@ -426,18 +438,7 @@ class shinyCatcher:
                     return True
                 else:
                     logging.info("个体值不达标，准备逃跑")
-            if self.config.only_rare_high_iv:
-                logging.info("检查稀有精灵个体值...")
-                if self.is_rare_high_IV():
-                    logging.info(f"发现高个体稀有精灵 {self.rare_pet}！准备捕捉")
-                    if self.config.use_cactus_sleep:
-                        self.capture_engine.catch_with_cactus_sleep()
-                    else:
-                        self.capture_engine.catch_pokemon()
-                    send_qq_mail(f"高个体稀有精灵 {self.rare_pet} 捕捉成功！", "快来查看吧")
-                    return True
-                else:
-                    logging.info("个体值不达标，准备逃跑")
+            
             # 3. 默认逻辑：逃跑刷新
             run_away()
             time.sleep(0.3)
@@ -481,7 +482,7 @@ class shinyCatcher:
                 )
                 
                 if random_slot:
-                    slot_id, rx, ry = random_slot
+                    slot_id, rx, ry, pet_name = random_slot
                     self.previous_slot_id = slot_id
                     logging.info(f"第{self.count}次，遇见{self.catch}次异色精灵")
                     OgreManager().clear_current_slots()
@@ -489,7 +490,7 @@ class shinyCatcher:
                     # with OgreManager().fighting_context():
                     for _ in range(3):
                         protocol_click(rx, ry)
-                    self.handle_normal_fight()
+                    self.handle_normal_fight(pet_name)
                     self.count += 1
                     time.sleep(0.2)  # 等待地图刷新
                     if SHINY_CONFIG.get(self.config.pet_name, {}).get("reset_pos",None):
