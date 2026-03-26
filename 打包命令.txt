@@ -1,0 +1,18 @@
+pyinstaller test_gui.py --onefile ^
+--add-data "assets;assets" ^
+--add-data "common_old.onnx;ddddocr" ^
+--exclude-module PyQt5 ^
+--noconsole
+
+
+nuitka --standalone  --windows-uac-admin --onefile --windows-console-mode=disable --enable-plugin=pyside6 --include-module=requests --include-data-dir=assets=assets --remove-output --include-data-files=config/common_old.onnx=ddddocr/common_old.onnx --include-data-files="C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\pydivert\windivert_dll\*=pydivert/windivert_dll/" --include-data-files="D:\UGit\Jiaoyang_Version_Beta\proxy\data\*=proxy/data/" --windows-icon-from-ico=Ui/1.ico test_gui.py
+启动参数
+--disable-features=CalculateNativeWinOcclusion
+
+3528767272@qq.com	cccs5596
+2222520@qq.com	ssd445879
+3582492978@qq.com   qwer77876
+
+
+
+

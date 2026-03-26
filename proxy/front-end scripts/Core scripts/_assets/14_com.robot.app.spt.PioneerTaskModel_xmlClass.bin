@@ -1,0 +1,97 @@
+<spts>
+
+	<spt id="301" title="蘑菇怪" pet="47" online="1" lel="1" seatID="12" enterID="12" fightCondition="破除防护罩" description="生活在克洛斯星，被艾里逊的液氮冻伤而发狂，使用火焰喷射器可以使它安静下来。制服它可以获得草系精灵小蘑菇。">
+	</spt>
+
+	<spt id="302" title="钢牙鲨" pet="34" online="1" lel="1" seatID="22" enterID="21" fightCondition="" description="海洋星海底的危险怪兽，据说它躲藏的洞穴中有制作黑武士装的黑晶矿石。记住，到海底一定要穿上耐压的潜水套装。">
+	</spt>
+
+	<spt id="303" title="里奥斯" pet="42" online="1" lel="2" seatID="17" enterID="17" fightCondition="扑灭火焰屏障" description="海盗艾里逊在火山被它困住，战胜它有机会获得火系精灵“胡里亚”。在火山，你会用到喷水装的。">
+	</spt>
+
+	<spt id="304" title="阿克希亚" pet="50" online="1" lel="4" seatID="40" enterID="40" fightCondition="" description="塞西利亚星的守护者，正义的精灵圣兽，它是不可战胜的，千年来一直等待着宿命的对手。">
+	</spt>
+
+	<spt id="305" title="提亚斯" pet="69" online="1" lel="3" seatID="27" enterID="27" fightCondition="" description="云霄星出现了一只极具攻击性的变异精灵，拥有很多蛋的它虽然想要努力呵护自己的孩子却力不从心，看来需要大家帮帮忙啊。">
+	</spt>
+
+	<spt id="306" title="雷伊" pet="70" online="1" lel="3" seatID="32" enterID="32" fightCondition="雷雨天" description="赫尔卡星天空中划过一道闪电，映出了一个酷似精灵的黑影，它全身被电流包围，从它的神态中可以看出它正等待来自各方的挑战。">
+	</spt>
+
+	<spt id="307" title="纳多雷"pet="88" online="1" lel="3" seatID="106" enterID="106" fightCondition="" description="在双子阿尔法星上，特派队遇见了一只巨大的精灵，经过多次挑战后，它仍然丝毫无损，赛尔们是否有办法战胜这只精灵呢？">
+	</spt>
+
+	<spt id="308" title="雷纳多"pet="113" online="1" lel="3" seatID="49" enterID="49" fightCondition="" description="彪悍的雷纳多盘踞在双子贝塔星上，和双子阿尔法星的纳多雷遥相对应，守护着星球上所有精灵的。">
+	</spt>
+
+	<spt id="309" title="尤纳斯" pet="132" online="1" lel="4" seatID="314" enterID="314" fightCondition="" description="黑暗之门的制造者，拥有能够抵御一切的暗影屏障和所有能量来源的黑暗之核。">
+	</spt>
+
+	<spt id="310" title="魔狮迪露" pet="187" online="1" lel="4" seatID="53" enterID="53" fightCondition="" description="魔狮迪露具有神秘的力量，能使自己的体力突破界限，但同时也会受到未知的惩罚。">
+	</spt>
+
+	<spt id="311" title="哈莫雷特" pet="216" online="1" lel="5" seatID="60" enterID="60" fightCondition="" description="拥有无比巨大的身躯，集水火草三种原能为一身，龙系的神秘力量使它所向无敌。失忆的它，似乎还有很多谜团……">
+	</spt>
+
+	<spt id="312" title="奈尼芬多" pet="264" online="1" lel="4" seatID="325" enterID="325" fightCondition="" description="奈尼芬多是爱迪星的守护者，凄美的歌声连月亮都为之倾倒，据说只有音乐的力量才能够唤醒它。">
+	</spt>
+
+	<spt id="316" title="厄尔塞拉" pet="421" online="1" lel="5" seatID="61" enterID="61" fightCondition="" description="浑身散发着各色光芒，任何邪恶在她的光芒下消散无形">
+	</spt>
+	<spt id="50" title="卡特斯" pet="169" online="1" lel="2" seatID="110" enterID="110" fightCondition="" description="作为暗黑武斗场的试炼精灵，守护着试炼之门，它的气度和风度非同一般，杀气重重很难对付！">
+	</spt>
+
+	<!-- <spt id="51" title="魔牙鲨" pet="171" online="1" lel="3" seatID="503" enterID="503" fightCondition="" description="暗黑第一门的魔牙鲨，被赋予了传说中的暗黑斗气，隐藏在暗影中攻击时它的能力可以被放大增强。">
+	</spt>
+
+	<spt id="53" title="贝鲁基德" pet="174" online="1" lel="3" seatID="504" enterID="504" fightCondition="" description="暗黑第二门的贝鲁基德，暗黑火焰环绕周身，凶悍的外表下藏着善战勇敢的心。">
+	</spt>
+
+	<spt id="55" title="巴弗洛" pet="177" online="1" lel="3" seatID="505" enterID="505" fightCondition="" description="勇猛凶横的巴弗洛把守着暗黑武斗场Ⅲ-Ⅰ门，霹雳闪电般的羽翼攻击、震荡心胸的音乐攻击，让人防不胜防。">
+	</spt>
+
+	<spt id="56" title="奇拉塔顿" pet="183" online="1" lel="3" seatID="505" enterID="505" fightCondition="" description="勇敢的奇拉塔顿驻守在暗黑武斗场Ⅲ-Ⅱ门的那一边，身为大地之子的它驾驭着反物质能量，纵横无敌。">
+	</spt>
+
+	<spt id="59" title="西萨拉斯" pet="195" online="1" lel="3" seatID="506" enterID="506" fightCondition="" description="拥有强大反物质电力的暗黑Ⅳ-Ⅰ门守护者，雷霆之刃震撼寰宇天地，电流之剑穿透空间阻隔，威慑四方。">
+	</spt>
+
+	<spt id="60" title="克林卡修" pet="192" online="1" lel="4" seatID="506" enterID="506" fightCondition="" description="暗黑Ⅳ-Ⅱ门守护者冰雪灵兽克林卡修，冰雪之爪具有猛烈的攻击力，果敢不张扬的个性，让它成为忍者般的精灵。">
+	</spt>
+
+	<spt id="76" title="卡库" pet="222" online="1" lel="4" seatID="507" enterID="507" fightCondition="" description="暗黑Ⅴ-Ⅰ门是武学之门，守门精灵不张扬、不蛮横、步步为营，每出一招都会致命。">
+	</spt>
+
+	<spt id="77" title="赫德卡" pet="224" online="1" lel="4" seatID="507" enterID=507" fightCondition="" description="驻守暗黑V-II门的铁血赫德卡，有着铜墙铁壁的防守能力，有着超级强力的电光炮，它的防御之门你能够开启吗？">
+	</spt>
+
+	<spt id="78" title="伊兰罗尼" pet="227" online="1" lel="5" seatID="507" enterID="507" fightCondition="" description="守护暗黑Ⅴ-Ⅲ门的伊兰罗尼是优雅得体的淑女，擅长在裙摆飘飘、光芒闪耀间使出杀手。">
+	</spt>
+
+	<spt id="117" title="斯加尔卡" pet="356" online="1" lel="5" seatID="508" enterID="508" fightCondition="" description="暗黑VI-I门的守护者，擅长使用暗黑电能的家伙，比起折磨对手的身体，斯加尔卡更喜欢震慑对手的心灵。">
+	</spt>
+
+	<spt id="118" title="艾尔伊洛" pet="297" online="1" lel="5" seatID="508" enterID="508" fightCondition="" description="暗黑VI-II门的守护者，历经了炼狱洗礼的艾尔伊洛开始崇尚爽快的攻击方式，喜欢凭借精湛的技巧近距地伤害对手。">
+	</spt>
+
+	<spt id="119" title="布林克克" pet="359" online="1" lel="5" seatID="508" enterID="508" fightCondition="" description="暗黑VI-III门的守护者，拥有海妖之力的庇护，体内充满着混沌的能量企图吞噬整个海洋。">
+	</spt>
+
+	<spt id="502" title="魔花使者" pet="438" online="1" lel="5" seatID="509" enterID="509" fightCondition="" description="暗黑VII-I门的守护者，比恩特的进化形态，浑身散发着反物质世界中的黑暗气息，散发出来的毒粉是它的致命武器。">
+	</spt>
+
+	<spt id="503" title="莫尔加斯" pet="441" online="1" lel="5" seatID="509" enterID="509" fightCondition="" description="暗黑VII-II门的守护者，莫鲁格尔的进化形态，受到了反物质世界的影响，浑身被黑暗所包围，拥有极强的防御能力，所有攻击在它面前都显得非常渺小。">
+	</spt>
+
+	<spt id="504" title="萨诺拉斯" pet="435" online="1" lel="5" seatID="509" enterID="509" fightCondition="" description="暗黑VII-III门的守护者，萨诺的进化形态，经过岩浆洗礼的皮肤拥有独特的降温功能，即使在极其炎热的环境下依然不受影响。">
+	</spt>
+
+	<spt id="606" title="帕多尼" pet="656" online="1" lel="5" seatID="510" enterID="510" fightCondition="" description="暗黑Ⅷ-Ⅰ门的守护者，浑身充斥着暗黑能量，暗黑能量会随着它的歌神散发出来。">
+	</spt>
+
+	<spt id="607" title="加洛德" pet="659" online="1" lel="5" seatID="510" enterID="510" fightCondition="" description="暗黑Ⅷ-Ⅱ门的守护，暗黑能量的注入，使它的脾气变得暴躁，擅长与对手近身搏斗，浑身的尖刺、催生出的植物都是它进攻的利器。">
+	</spt>
+
+	<spt id="608" title="萨多拉尼" pet="661" online="1" lel="5" seatID="510" enterID="510" fightCondition="" description="暗黑Ⅷ-Ⅲ门的守护，将暗黑能量融入自身，肢体变得非常结实有力，虽然体积很小，但是却拥有了堪比巨龙的神力。">
+	</spt> -->
+</spts>

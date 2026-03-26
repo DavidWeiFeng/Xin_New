@@ -1,0 +1,574 @@
+<NewSe>
+
+	<!-- 1001 - 2000: 玩家精灵特效 -->
+	<NewSeIdx Idx="1006" Stat="1" Eid="28" Args="1 5" CanReset="1" Desc="叶绿" Intro="草属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2006" Stat="1" Eid="28" Args="1 6" CanReset="1" Desc="叶绿" Intro="草属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3006" Stat="1" Eid="28" Args="1 7" CanReset="1" Desc="叶绿" Intro="草属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4006" Stat="1" Eid="28" Args="1 8" CanReset="1" Desc="叶绿" Intro="草属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5006" Stat="1" Eid="28" Args="1 9" CanReset="1" Desc="叶绿" Intro="草属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6006" Stat="1" Eid="28" Args="1 10" CanReset="1" Desc="叶绿" Intro="草属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1007" Stat="1" Eid="28" Args="2 5" CanReset="1" Desc="流水" Intro="水属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2007" Stat="1" Eid="28" Args="2 6" CanReset="1" Desc="流水" Intro="水属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3007" Stat="1" Eid="28" Args="2 7" CanReset="1" Desc="流水" Intro="水属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4007" Stat="1" Eid="28" Args="2 8" CanReset="1" Desc="流水" Intro="水属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5007" Stat="1" Eid="28" Args="2 9" CanReset="1" Desc="流水" Intro="水属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6007" Stat="1" Eid="28" Args="2 10" CanReset="1" Desc="流水" Intro="水属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1008" Stat="1" Eid="28" Args="3 5" CanReset="1" Desc="炎火" Intro="火属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2008" Stat="1" Eid="28" Args="3 6" CanReset="1" Desc="炎火" Intro="火属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3008" Stat="1" Eid="28" Args="3 7" CanReset="1" Desc="炎火" Intro="火属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4008" Stat="1" Eid="28" Args="3 8" CanReset="1" Desc="炎火" Intro="火属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5008" Stat="1" Eid="28" Args="3 9" CanReset="1" Desc="炎火" Intro="火属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6008" Stat="1" Eid="28" Args="3 10" CanReset="1" Desc="炎火" Intro="火属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1009" Stat="1" Eid="28" Args="4 5" CanReset="1" Desc="飞空" Intro="飞行属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2009" Stat="1" Eid="28" Args="4 6" CanReset="1" Desc="飞空" Intro="飞行属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3009" Stat="1" Eid="28" Args="4 7" CanReset="1" Desc="飞空" Intro="飞行属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4009" Stat="1" Eid="28" Args="4 8" CanReset="1" Desc="飞空" Intro="飞行属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5009" Stat="1" Eid="28" Args="4 9" CanReset="1" Desc="飞空" Intro="飞行属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6009" Stat="1" Eid="28" Args="4 10" CanReset="1" Desc="飞空" Intro="飞行属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1010" Stat="1" Eid="28" Args="5 5" CanReset="1" Desc="蓄电" Intro="电属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2010" Stat="1" Eid="28" Args="5 6" CanReset="1" Desc="蓄电" Intro="电属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3010" Stat="1" Eid="28" Args="5 7" CanReset="1" Desc="蓄电" Intro="电属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4010" Stat="1" Eid="28" Args="5 8" CanReset="1" Desc="蓄电" Intro="电属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5010" Stat="1" Eid="28" Args="5 9" CanReset="1" Desc="蓄电" Intro="电属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6010" Stat="1" Eid="28" Args="5 10" CanReset="1" Desc="蓄电" Intro="电属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1011" Stat="1" Eid="28" Args="6 5" CanReset="1" Desc="机能" Intro="机械属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2011" Stat="1" Eid="28" Args="6 6" CanReset="1" Desc="机能" Intro="机械属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3011" Stat="1" Eid="28" Args="6 7" CanReset="1" Desc="机能" Intro="机械属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4011" Stat="1" Eid="28" Args="6 8" CanReset="1" Desc="机能" Intro="机械属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5011" Stat="1" Eid="28" Args="6 9" CanReset="1" Desc="机能" Intro="机械属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6011" Stat="1" Eid="28" Args="6 10" CanReset="1" Desc="机能" Intro="机械属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1012" Stat="1" Eid="28" Args="7 5" CanReset="1" Desc="碎裂" Intro="地面属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2012" Stat="1" Eid="28" Args="7 6" CanReset="1" Desc="碎裂" Intro="地面属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3012" Stat="1" Eid="28" Args="7 7" CanReset="1" Desc="碎裂" Intro="地面属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4012" Stat="1" Eid="28" Args="7 8" CanReset="1" Desc="碎裂" Intro="地面属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5012" Stat="1" Eid="28" Args="7 9" CanReset="1" Desc="碎裂" Intro="地面属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6012" Stat="1" Eid="28" Args="7 10" CanReset="1" Desc="碎裂" Intro="地面属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1013" Stat="1" Eid="28" Args="8 5" CanReset="1" Desc="平衡" Intro="普通属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2013" Stat="1" Eid="28" Args="8 6" CanReset="1" Desc="平衡" Intro="普通属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3013" Stat="1" Eid="28" Args="8 7" CanReset="1" Desc="平衡" Intro="普通属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4013" Stat="1" Eid="28" Args="8 8" CanReset="1" Desc="平衡" Intro="普通属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5013" Stat="1" Eid="28" Args="8 9" CanReset="1" Desc="平衡" Intro="普通属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6013" Stat="1" Eid="28" Args="8 10" CanReset="1" Desc="平衡" Intro="普通属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1014" Stat="1" Eid="28" Args="9 5" CanReset="1" Desc="冰霜" Intro="冰属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2014" Stat="1" Eid="28" Args="9 6" CanReset="1" Desc="冰霜" Intro="冰属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3014" Stat="1" Eid="28" Args="9 7" CanReset="1" Desc="冰霜" Intro="冰属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4014" Stat="1" Eid="28" Args="9 8" CanReset="1" Desc="冰霜" Intro="冰属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5014" Stat="1" Eid="28" Args="9 9" CanReset="1" Desc="冰霜" Intro="冰属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6014" Stat="1" Eid="28" Args="9 10" CanReset="1" Desc="冰霜" Intro="冰属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1015" Stat="1" Eid="28" Args="10 5" CanReset="1" Desc="魔幻" Intro="超能属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2015" Stat="1" Eid="28" Args="10 6" CanReset="1" Desc="魔幻" Intro="超能属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3015" Stat="1" Eid="28" Args="10 7" CanReset="1" Desc="魔幻" Intro="超能属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4015" Stat="1" Eid="28" Args="10 8" CanReset="1" Desc="魔幻" Intro="超能属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5015" Stat="1" Eid="28" Args="10 9" CanReset="1" Desc="魔幻" Intro="超能属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6015" Stat="1" Eid="28" Args="10 10" CanReset="1" Desc="魔幻" Intro="超能属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1016" Stat="1" Eid="28" Args="11 5" CanReset="1" Desc="战意" Intro="战斗属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2016" Stat="1" Eid="28" Args="11 6" CanReset="1" Desc="战意" Intro="战斗属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3016" Stat="1" Eid="28" Args="11 7" CanReset="1" Desc="战意" Intro="战斗属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4016" Stat="1" Eid="28" Args="11 8" CanReset="1" Desc="战意" Intro="战斗属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5016" Stat="1" Eid="28" Args="11 9" CanReset="1" Desc="战意" Intro="战斗属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6016" Stat="1" Eid="28" Args="11 10" CanReset="1" Desc="战意" Intro="战斗属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1017" Stat="1" Eid="28" Args="12 5" CanReset="1" Desc="光环" Intro="光属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2017" Stat="1" Eid="28" Args="12 6" CanReset="1" Desc="光环" Intro="光属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3017" Stat="1" Eid="28" Args="12 7" CanReset="1" Desc="光环" Intro="光属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4017" Stat="1" Eid="28" Args="12 8" CanReset="1" Desc="光环" Intro="光属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5017" Stat="1" Eid="28" Args="12 9" CanReset="1" Desc="光环" Intro="光属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6017" Stat="1" Eid="28" Args="12 10" CanReset="1" Desc="光环" Intro="光属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1018" Stat="1" Eid="28" Args="13 5" CanReset="1" Desc="黑夜" Intro="暗影属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2018" Stat="1" Eid="28" Args="13 6" CanReset="1" Desc="黑夜" Intro="暗影属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3018" Stat="1" Eid="28" Args="13 7" CanReset="1" Desc="黑夜" Intro="暗影属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4018" Stat="1" Eid="28" Args="13 8" CanReset="1" Desc="黑夜" Intro="暗影属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5018" Stat="1" Eid="28" Args="13 9" CanReset="1" Desc="黑夜" Intro="暗影属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6018" Stat="1" Eid="28" Args="13 10" CanReset="1" Desc="黑夜" Intro="暗影属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1019" Stat="1" Eid="28" Args="14 5" CanReset="1" Desc="奇异" Intro="神秘属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2019" Stat="1" Eid="28" Args="14 6" CanReset="1" Desc="奇异" Intro="神秘属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3019" Stat="1" Eid="28" Args="14 7" CanReset="1" Desc="奇异" Intro="神秘属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4019" Stat="1" Eid="28" Args="14 8" CanReset="1" Desc="奇异" Intro="神秘属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5019" Stat="1" Eid="28" Args="14 9" CanReset="1" Desc="奇异" Intro="神秘属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6019" Stat="1" Eid="28" Args="14 10" CanReset="1" Desc="奇异" Intro="神秘属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1020" Stat="1" Eid="28" Args="15 5" CanReset="1" Desc="威严" Intro="龙属性技能威力增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2020" Stat="1" Eid="28" Args="15 6" CanReset="1" Desc="威严" Intro="龙属性技能威力增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3020" Stat="1" Eid="28" Args="15 7" CanReset="1" Desc="威严" Intro="龙属性技能威力增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4020" Stat="1" Eid="28" Args="15 8" CanReset="1" Desc="威严" Intro="龙属性技能威力增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5020" Stat="1" Eid="28" Args="15 9" CanReset="1" Desc="威严" Intro="龙属性技能威力增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6020" Stat="1" Eid="28" Args="15 10" CanReset="1" Desc="威严" Intro="龙属性技能威力增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1021" Stat="1" Eid="28" Args="16 5" Desc="圣灵" Intro="圣灵属性技能威力增加5%" StarLevel="0" />
+
+	<!-- 命中率/致命率/防御类（5个特性） -->
+	<NewSeIdx Idx="1022" Stat="1" Eid="29" Args="5 0" CanReset="1" Desc="精准" Intro="所有技能命中率增加5%" StarLevel="0" />
+	<NewSeIdx Idx="2022" Stat="1" Eid="29" Args="6 0" CanReset="1" Desc="精准" Intro="所有技能命中率增加6%" StarLevel="1" />
+	<NewSeIdx Idx="3022" Stat="1" Eid="29" Args="7 0" CanReset="1" Desc="精准" Intro="所有技能命中率增加8%" StarLevel="2" />
+	<NewSeIdx Idx="4022" Stat="1" Eid="29" Args="8 0" CanReset="1" Desc="精准" Intro="所有技能命中率增加10%" StarLevel="3" />
+	<NewSeIdx Idx="5022" Stat="1" Eid="29" Args="9 0" CanReset="1" Desc="精准" Intro="所有技能命中率增加12%" StarLevel="4" />
+	<NewSeIdx Idx="6022" Stat="1" Eid="29" Args="10 0" CanReset="1" Desc="精准" Intro="所有技能命中率增加14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1023" Stat="1" Eid="30" Args="1 0" CanReset="1" Desc="会心" Intro="所有技能的致命一击率增加" StarLevel="0" />
+	<NewSeIdx Idx="2023" Stat="1" Eid="30" Args="75 0" CanReset="1" Desc="会心" Intro="所有技能的致命一击率增加" StarLevel="1" />
+	<NewSeIdx Idx="3023" Stat="1" Eid="30" Args="88 0" CanReset="1" Desc="会心" Intro="所有技能的致命一击率增加" StarLevel="2" />
+	<NewSeIdx Idx="4023" Stat="1" Eid="30" Args="100 0" CanReset="1" Desc="会心" Intro="所有技能的致命一击率增加" StarLevel="3" />
+	<NewSeIdx Idx="5023" Stat="1" Eid="30" Args="120 0" CanReset="1" Desc="会心" Intro="所有技能的致命一击率增加" StarLevel="4" />
+	<NewSeIdx Idx="6023" Stat="1" Eid="30" Args="140 0" CanReset="1" Desc="会心" Intro="所有技能的致命一击率增加" StarLevel="5" />
+
+	<NewSeIdx Idx="1024" Stat="1" Eid="3" Args="5 0" CanReset="1" Desc="坚硬" Intro="受到任何伤害减少5%" StarLevel="0" />
+	<NewSeIdx Idx="2024" Stat="1" Eid="3" Args="6 0" CanReset="1" Desc="坚硬" Intro="受到任何伤害减少6%" StarLevel="1" />
+	<NewSeIdx Idx="3024" Stat="1" Eid="3" Args="7 0" CanReset="1" Desc="坚硬" Intro="受到任何伤害减少8%" StarLevel="2" />
+	<NewSeIdx Idx="4024" Stat="1" Eid="3" Args="8 0" CanReset="1" Desc="坚硬" Intro="受到任何伤害减少10%" StarLevel="3" />
+	<NewSeIdx Idx="5024" Stat="1" Eid="3" Args="9 0" CanReset="1" Desc="坚硬" Intro="受到任何伤害减少12%" StarLevel="4" />
+	<NewSeIdx Idx="6024" Stat="1" Eid="3" Args="10 0" CanReset="1" Desc="坚硬" Intro="受到任何伤害减少14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1025" Stat="1" Eid="7" Args="5 0" CanReset="1" Desc="回避" Intro="被技能命中的几率减少5%" StarLevel="0" />
+	<NewSeIdx Idx="2025" Stat="1" Eid="7" Args="6 0" CanReset="1" Desc="回避" Intro="被技能命中的几率减少6%" StarLevel="1" />
+	<NewSeIdx Idx="3025" Stat="1" Eid="7" Args="7 0" CanReset="1" Desc="回避" Intro="被技能命中的几率减少8%" StarLevel="2" />
+	<NewSeIdx Idx="4025" Stat="1" Eid="7" Args="8 0" CanReset="1" Desc="回避" Intro="被技能命中的几率减少10%" StarLevel="3" />
+	<NewSeIdx Idx="5025" Stat="1" Eid="7" Args="9 0" CanReset="1" Desc="回避" Intro="被技能命中的几率减少12%" StarLevel="4" />
+	<NewSeIdx Idx="6025" Stat="1" Eid="7" Args="10 0" CanReset="1" Desc="回避" Intro="被技能命中的几率减少14%" StarLevel="5" />
+
+	<NewSeIdx Idx="1063" Stat="1" Eid="64" Args="1 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="0" />
+	<NewSeIdx Idx="2063" Stat="1" Eid="64" Args="2 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="1" />
+	<NewSeIdx Idx="3063" Stat="1" Eid="64" Args="3 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="2" />
+	<NewSeIdx Idx="4063" Stat="1" Eid="64" Args="4 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="3" />
+	<NewSeIdx Idx="5063" Stat="1" Eid="64" Args="5 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="4" />
+	<NewSeIdx Idx="6063" Stat="1" Eid="64" Args="6 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="5" />
+
+	<!-- 特殊效果类（6个特性） -->
+	<NewSeIdx Idx="1026" Stat="1" Eid="31" Args="3 1" CanReset="1" Desc="顽强" Intro="受到致死攻击时有3%几率余下1点体力" StarLevel="0" />
+	<NewSeIdx Idx="2026" Stat="1" Eid="31" Args="4 1" CanReset="1" Desc="顽强" Intro="受到致死攻击时有4%几率余下1点体力" StarLevel="1" />
+	<NewSeIdx Idx="3026" Stat="1" Eid="31" Args="5 1" CanReset="1" Desc="顽强" Intro="受到致死攻击时有5%几率余下1点体力" StarLevel="2" />
+	<NewSeIdx Idx="4026" Stat="1" Eid="31" Args="6 1" CanReset="1" Desc="顽强" Intro="受到致死攻击时有6%几率余下1点体力" StarLevel="3" />
+	<NewSeIdx Idx="5026" Stat="1" Eid="31" Args="7 2" CanReset="1" Desc="顽强" Intro="受到致死攻击时有7%几率余下2点体力" StarLevel="4" />
+	<NewSeIdx Idx="6026" Stat="1" Eid="31" Args="8 2" CanReset="1" Desc="顽强" Intro="受到致死攻击时有8%几率余下2点体力" StarLevel="5" />
+
+	<NewSeIdx Idx="1027" Stat="1" Eid="32" Args="30 0" CanReset="1" Desc="瞬杀" Intro="进攻类技能有3%几率秒杀对方" StarLevel="0" />
+	<NewSeIdx Idx="2027" Stat="1" Eid="32" Args="35 0" CanReset="1" Desc="瞬杀" Intro="进攻类技能有3.5%几率秒杀对方" StarLevel="1" />
+	<NewSeIdx Idx="3027" Stat="1" Eid="32" Args="40 0" CanReset="1" Desc="瞬杀" Intro="进攻类技能有4.0%几率秒杀对方" StarLevel="2" />
+	<NewSeIdx Idx="4027" Stat="1" Eid="32" Args="50 0" CanReset="1" Desc="瞬杀" Intro="进攻类技能有5.0%几率秒杀对方" StarLevel="3" />
+	<NewSeIdx Idx="5027" Stat="1" Eid="32" Args="60 0" CanReset="1" Desc="瞬杀" Intro="进攻类技能有6.0%几率秒杀对方" StarLevel="4" />
+	<NewSeIdx Idx="6027" Stat="1" Eid="32" Args="70 0" CanReset="1" Desc="瞬杀" Intro="进攻类技能有7.0%几率秒杀对方" StarLevel="5" />
+
+	<NewSeIdx Idx="1028" Stat="1" Eid="33" Args="8 3" CanReset="1" Desc="回神" Intro="体力降低到1/8时有3%几率体力回满" StarLevel="0" />
+	<NewSeIdx Idx="2028" Stat="1" Eid="33" Args="8 4" CanReset="1" Desc="回神" Intro="体力降低到1/8时有4%几率体力回满" StarLevel="1" />
+	<NewSeIdx Idx="3028" Stat="1" Eid="33" Args="8 5" CanReset="1" Desc="回神" Intro="体力降低到1/8时有5%几率体力回满" StarLevel="2" />
+	<NewSeIdx Idx="4028" Stat="1" Eid="33" Args="8 6" CanReset="1" Desc="回神" Intro="体力降低到1/8时有6%几率体力回满" StarLevel="3" />
+	<NewSeIdx Idx="5028" Stat="1" Eid="33" Args="8 7" CanReset="1" Desc="回神" Intro="体力降低到1/8时有7%几率体力回满" StarLevel="4" />
+	<NewSeIdx Idx="6028" Stat="1" Eid="33" Args="8 8" CanReset="1" Desc="回神" Intro="体力降低到1/8时有8%几率体力回满" StarLevel="5" />
+
+	<NewSeIdx Idx="1060" Stat="1" Eid="61" Args="3 0" CanReset="1" Desc="虚无" Intro="3%几率完全抵挡一次伤害" StarLevel="0" />
+	<NewSeIdx Idx="2060" Stat="1" Eid="61" Args="4 0" CanReset="1" Desc="虚无" Intro="4%几率完全抵挡一次伤害" StarLevel="1" />
+	<NewSeIdx Idx="3060" Stat="1" Eid="61" Args="5 0" CanReset="1" Desc="虚无" Intro="5%几率完全抵挡一次伤害" StarLevel="2" />
+	<NewSeIdx Idx="4060" Stat="1" Eid="61" Args="6 0" CanReset="1" Desc="虚无" Intro="6%几率完全抵挡一次伤害" StarLevel="3" />
+	<NewSeIdx Idx="5060" Stat="1" Eid="61" Args="7 0" CanReset="1" Desc="虚无" Intro="7%几率完全抵挡一次伤害" StarLevel="4" />
+	<NewSeIdx Idx="6060" Stat="1" Eid="61" Args="8 0" CanReset="1" Desc="虚无" Intro="8%几率完全抵挡一次伤害" StarLevel="5" />
+
+	<NewSeIdx Idx="1059" Stat="1" Eid="60" Args="5 35" CanReset="1" Desc="吸收" Intro="受到攻击时5%几率使受到的伤害降低35点" StarLevel="0" />
+	<NewSeIdx Idx="2059" Stat="1" Eid="60" Args="6 40" CanReset="1" Desc="吸收" Intro="受到攻击时6%几率使受到的伤害降低40点" StarLevel="1" />
+	<NewSeIdx Idx="3059" Stat="1" Eid="60" Args="8 50" CanReset="1" Desc="吸收" Intro="受到攻击时8%几率使受到的伤害降低50点" StarLevel="2" />
+	<NewSeIdx Idx="4059" Stat="1" Eid="60" Args="10 60" CanReset="1" Desc="吸收" Intro="受到攻击时10%几率使受到的伤害降低60点" StarLevel="3" />
+	<NewSeIdx Idx="5059" Stat="1" Eid="60" Args="12 70" CanReset="1" Desc="吸收" Intro="受到攻击时12%几率使受到的伤害降低60点" StarLevel="4" />
+	<NewSeIdx Idx="6059" Stat="1" Eid="60" Args="14 80" CanReset="1" Desc="吸收" Intro="受到攻击时14%几率使受到的伤害降低60点" StarLevel="5" />
+
+	<NewSeIdx Idx="1064" Stat="1" Eid="503" Args="0 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升5%的攻击伤害并增加一个攻击目标" StarLevel="0" />
+	<NewSeIdx Idx="2064" Stat="1" Eid="504" Args="6 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升6%的攻击伤害并增加一个攻击目标" StarLevel="1" />
+	<NewSeIdx Idx="3064" Stat="1" Eid="504" Args="7 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升8%的攻击伤害并增加一个攻击目标" StarLevel="2" />
+	<NewSeIdx Idx="4064" Stat="1" Eid="504" Args="8 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升10%的攻击伤害并增加一个攻击目标" StarLevel="3" />
+	<NewSeIdx Idx="5064" Stat="1" Eid="504" Args="9 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升11%的攻击伤害并增加一个攻击目标" StarLevel="4" />
+	<NewSeIdx Idx="6064" Stat="1" Eid="504" Args="10 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升12%的攻击伤害并增加一个攻击目标" StarLevel="5" />
+
+	<!-- 攻击伤害增强类（2个特性） -->
+	<NewSeIdx Idx="1061" Stat="1" Eid="62" Args="5 35" CanReset="1" Desc="强攻" Intro="物理攻击有5%几率使伤害提高35点" StarLevel="0" />
+	<NewSeIdx Idx="2061" Stat="1" Eid="62" Args="6 40" CanReset="1" Desc="强攻" Intro="物理攻击有6%几率使伤害提高40点" StarLevel="1" />
+	<NewSeIdx Idx="3061" Stat="1" Eid="62" Args="8 50" CanReset="1" Desc="强攻" Intro="物理攻击有8%几率使伤害提高50点" StarLevel="2" />
+	<NewSeIdx Idx="4061" Stat="1" Eid="62" Args="10 60" CanReset="1" Desc="强攻" Intro="物理攻击有10%几率使伤害提高60点" StarLevel="3" />
+	<NewSeIdx Idx="5061" Stat="1" Eid="62" Args="12 70" CanReset="1" Desc="强攻" Intro="物理攻击有12%几率使伤害提高70点" StarLevel="4" />
+	<NewSeIdx Idx="6061" Stat="1" Eid="62" Args="14 80" CanReset="1" Desc="强攻" Intro="物理攻击有14%几率使伤害提高80点" StarLevel="5" />
+
+	<NewSeIdx Idx="1062" Stat="1" Eid="63" Args="5 35" CanReset="1" Desc="强念" Intro="特殊攻击有5%几率使伤害提高35点" StarLevel="0" />
+	<NewSeIdx Idx="2062" Stat="1" Eid="63" Args="6 40" CanReset="1" Desc="强念" Intro="特殊攻击有6%几率使伤害提高40点" StarLevel="1" />
+	<NewSeIdx Idx="3062" Stat="1" Eid="63" Args="8 50" CanReset="1" Desc="强念" Intro="特殊攻击有8%几率使伤害提高50点" StarLevel="2" />
+	<NewSeIdx Idx="4062" Stat="1" Eid="63" Args="10 60" CanReset="1" Desc="强念" Intro="特殊攻击有10%几率使伤害提高60点" StarLevel="3" />
+	<NewSeIdx Idx="5062" Stat="1" Eid="63" Args="12 70" CanReset="1" Desc="强念" Intro="特殊攻击有12%几率使伤害提高70点" StarLevel="4" />
+	<NewSeIdx Idx="6062" Stat="1" Eid="63" Args="14 80" CanReset="1" Desc="强念" Intro="特殊攻击有14%几率使伤害提高80点" StarLevel="5" />
+
+	<!-- 攻击伤害固定增强类（2个特性） -->
+	<NewSeIdx Idx="1065" Stat="1" Eid="65" Args="1 3" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加3%" StarLevel="0" />
+	<NewSeIdx Idx="2065" Stat="1" Eid="65" Args="1 4" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加4%" StarLevel="1" />
+	<NewSeIdx Idx="3065" Stat="1" Eid="65" Args="1 5" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加5%" StarLevel="2" />
+	<NewSeIdx Idx="4065" Stat="1" Eid="65" Args="1 6" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加6%" StarLevel="3" />
+	<NewSeIdx Idx="5065" Stat="1" Eid="65" Args="1 7" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加7%" StarLevel="4" />
+	<NewSeIdx Idx="6065" Stat="1" Eid="65" Args="1 8" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加8%" StarLevel="5" />
+
+	<NewSeIdx Idx="1066" Stat="1" Eid="65" Args="2 3" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加3%" StarLevel="0" />
+	<NewSeIdx Idx="2066" Stat="1" Eid="65" Args="2 4" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加4%" StarLevel="1" />
+	<NewSeIdx Idx="3066" Stat="1" Eid="65" Args="2 5" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加5%" StarLevel="2" />
+	<NewSeIdx Idx="4066" Stat="1" Eid="65" Args="2 6" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加6%" StarLevel="3" />
+	<NewSeIdx Idx="5066" Stat="1" Eid="65" Args="2 7" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加7%" StarLevel="4" />
+	<NewSeIdx Idx="6066" Stat="1" Eid="65" Args="2 8" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加8%" StarLevel="5" />
+
+	<!-- 状态附加类（7个特性） -->
+	<NewSeIdx Idx="1029" Stat="1" Eid="6" Args="0 3" CanReset="1" Desc="带电" Intro="受到普通攻击时有3%使对方麻痹" StarLevel="0" />
+	<NewSeIdx Idx="2029" Stat="1" Eid="6" Args="0 4" CanReset="1" Desc="带电" Intro="受到普通攻击时有4%使对方麻痹" StarLevel="1" />
+	<NewSeIdx Idx="3029" Stat="1" Eid="6" Args="0 5" CanReset="1" Desc="带电" Intro="受到普通攻击时有5%使对方麻痹" StarLevel="2" />
+	<NewSeIdx Idx="4029" Stat="1" Eid="6" Args="0 6" CanReset="1" Desc="带电" Intro="受到普通攻击时有6%使对方麻痹" StarLevel="3" />
+	<NewSeIdx Idx="5029" Stat="1" Eid="6" Args="0 7" CanReset="1" Desc="带电" Intro="受到普通攻击时有7%使对方麻痹" StarLevel="4" />
+	<NewSeIdx Idx="6029" Stat="1" Eid="6" Args="0 8" CanReset="1" Desc="带电" Intro="受到普通攻击时有8%使对方麻痹" StarLevel="5" />
+
+	<NewSeIdx Idx="1030" Stat="1" Eid="6" Args="1 3" Desc="中毒" Intro="受到普通攻击时有3%使对方中毒" StarLevel="0" />
+
+	<NewSeIdx Idx="1031" Stat="1" Eid="6" Args="2 3" CanReset="1" Desc="高热" Intro="受到普通攻击时有3%使对方烧伤" StarLevel="0" />
+	<NewSeIdx Idx="2031" Stat="1" Eid="6" Args="2 4" CanReset="1" Desc="高热" Intro="受到普通攻击时有4%使对方烧伤" StarLevel="1" />
+	<NewSeIdx Idx="3031" Stat="1" Eid="6" Args="2 5" CanReset="1" Desc="高热" Intro="受到普通攻击时有5%使对方烧伤" StarLevel="2" />
+	<NewSeIdx Idx="4031" Stat="1" Eid="6" Args="2 6" CanReset="1" Desc="高热" Intro="受到普通攻击时有6%使对方烧伤" StarLevel="3" />
+	<NewSeIdx Idx="5031" Stat="1" Eid="6" Args="2 7" CanReset="1" Desc="高热" Intro="受到普通攻击时有7%使对方烧伤" StarLevel="4" />
+	<NewSeIdx Idx="6031" Stat="1" Eid="6" Args="2 8" CanReset="1" Desc="高热" Intro="受到普通攻击时有8%使对方烧伤" StarLevel="5" />
+
+	<NewSeIdx Idx="1032" Stat="1" Eid="6" Args="5 3" CanReset="1" Desc="冰冷" Intro="受到普通攻击时有3%使对方冻伤" StarLevel="0" />
+	<NewSeIdx Idx="2032" Stat="1" Eid="6" Args="5 4" CanReset="1" Desc="冰冷" Intro="受到普通攻击时有4%使对方冻伤" StarLevel="1" />
+	<NewSeIdx Idx="3032" Stat="1" Eid="6" Args="5 5" CanReset="1" Desc="冰冷" Intro="受到普通攻击时有5%使对方冻伤" StarLevel="2" />
+	<NewSeIdx Idx="4032" Stat="1" Eid="6" Args="5 6" CanReset="1" Desc="冰冷" Intro="受到普通攻击时有6%使对方冻伤" StarLevel="3" />
+	<NewSeIdx Idx="5032" Stat="1" Eid="6" Args="5 7" CanReset="1" Desc="冰冷" Intro="受到普通攻击时有7%使对方冻伤" StarLevel="4" />
+	<NewSeIdx Idx="6032" Stat="1" Eid="6" Args="5 8" CanReset="1" Desc="冰冷" Intro="受到普通攻击时有8%使对方冻伤" StarLevel="5" />
+
+	<NewSeIdx Idx="1033" Stat="1" Eid="6" Args="6 3" CanReset="1" Desc="阴森" Intro="受到普通攻击时有3%使对方害怕" StarLevel="0" />
+	<NewSeIdx Idx="2033" Stat="1" Eid="6" Args="6 4" CanReset="1" Desc="阴森" Intro="受到普通攻击时有4%使对方害怕" StarLevel="1" />
+	<NewSeIdx Idx="3033" Stat="1" Eid="6" Args="6 5" CanReset="1" Desc="阴森" Intro="受到普通攻击时有5%使对方害怕" StarLevel="2" />
+	<NewSeIdx Idx="4033" Stat="1" Eid="6" Args="6 6" CanReset="1" Desc="阴森" Intro="受到普通攻击时有6%使对方害怕" StarLevel="3" />
+	<NewSeIdx Idx="5033" Stat="1" Eid="6" Args="6 7" CanReset="1" Desc="阴森" Intro="受到普通攻击时有7%使对方害怕" StarLevel="4" />
+	<NewSeIdx Idx="6033" Stat="1" Eid="6" Args="6 8" CanReset="1" Desc="阴森" Intro="受到普通攻击时有8%使对方害怕" StarLevel="5" />
+
+	<NewSeIdx Idx="1034" Stat="1" Eid="6" Args="8 3" Desc="睡眠" Intro="受到普通攻击时有3%使对方睡眠" StarLevel="0" />
+
+	<!-- 特殊攻击状态附加类（4个特性） -->
+	<NewSeIdx Idx="1067" Stat="1" Eid="67" Args="3 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有3%几率使对方烧伤" StarLevel="0" />
+	<NewSeIdx Idx="2067" Stat="1" Eid="67" Args="4 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有4%几率使对方烧伤" StarLevel="1" />
+	<NewSeIdx Idx="3067" Stat="1" Eid="67" Args="5 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有5%几率使对方烧伤" StarLevel="2" />
+	<NewSeIdx Idx="4067" Stat="1" Eid="67" Args="6 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有6%几率使对方烧伤" StarLevel="3" />
+	<NewSeIdx Idx="5067" Stat="1" Eid="67" Args="7 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有7%几率使对方烧伤" StarLevel="4" />
+	<NewSeIdx Idx="6067" Stat="1" Eid="67" Args="8 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有8%几率使对方烧伤" StarLevel="5" />
+
+	<NewSeIdx Idx="1068" Stat="1" Eid="67" Args="3 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有3%几率使对方冻伤" StarLevel="0" />
+	<NewSeIdx Idx="2068" Stat="1" Eid="67" Args="4 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有4%几率使对方冻伤" StarLevel="1" />
+	<NewSeIdx Idx="3068" Stat="1" Eid="67" Args="5 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有5%几率使对方冻伤" StarLevel="2" />
+	<NewSeIdx Idx="4068" Stat="1" Eid="67" Args="6 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有6%几率使对方冻伤" StarLevel="3" />
+	<NewSeIdx Idx="5068" Stat="1" Eid="67" Args="7 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有7%几率使对方冻伤" StarLevel="4" />
+	<NewSeIdx Idx="6068" Stat="1" Eid="67" Args="8 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有8%几率使对方冻伤" StarLevel="5" />
+
+	<NewSeIdx Idx="1069" Stat="1" Eid="66" Args="3 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有3%几率使对方害怕" StarLevel="0" />
+	<NewSeIdx Idx="2069" Stat="1" Eid="66" Args="4 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有4%几率使对方害怕" StarLevel="1" />
+	<NewSeIdx Idx="3069" Stat="1" Eid="66" Args="5 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有5%几率使对方害怕" StarLevel="2" />
+	<NewSeIdx Idx="4069" Stat="1" Eid="66" Args="6 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有6%几率使对方害怕" StarLevel="3" />
+	<NewSeIdx Idx="5069" Stat="1" Eid="66" Args="7 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有7%几率使对方害怕" StarLevel="4" />
+	<NewSeIdx Idx="6069" Stat="1" Eid="66" Args="8 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有8%几率使对方害怕" StarLevel="5" />
+
+	<NewSeIdx Idx="1070" Stat="1" Eid="66" Args="3 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有3%几率使对方麻痹" StarLevel="0" />
+	<NewSeIdx Idx="2070" Stat="1" Eid="66" Args="4 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有4%几率使对方麻痹" StarLevel="1" />
+	<NewSeIdx Idx="3070" Stat="1" Eid="66" Args="5 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有5%几率使对方麻痹" StarLevel="2" />
+	<NewSeIdx Idx="4070" Stat="1" Eid="66" Args="6 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有6%几率使对方麻痹" StarLevel="3" />
+	<NewSeIdx Idx="5070" Stat="1" Eid="66" Args="7 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有7%几率使对方麻痹" StarLevel="4" />
+	<NewSeIdx Idx="6070" Stat="1" Eid="66" Args="8 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有8%几率使对方麻痹" StarLevel="5" />
+
+	<!-- 对方属性降低类（5个特性） -->
+	<NewSeIdx Idx="1035" Stat="1" Eid="34" Args="0 5" CanReset="1" Desc="反抗" Intro="受到特殊攻击时有5%几率使对方攻击降低1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2035" Stat="1" Eid="34" Args="0 6" CanReset="1" Desc="反抗" Intro="受到特殊攻击时有6%几率使对方攻击降低1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3035" Stat="1" Eid="34" Args="0 8" CanReset="1" Desc="反抗" Intro="受到特殊攻击时有8%几率使对方攻击降低1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4035" Stat="1" Eid="34" Args="0 10" CanReset="1" Desc="反抗" Intro="受到特殊攻击时有10%几率使对方攻击降低1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5035" Stat="1" Eid="34" Args="0 12" CanReset="1" Desc="反抗" Intro="受到特殊攻击时有12%几率使对方攻击降低1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6035" Stat="1" Eid="34" Args="0 14" CanReset="1" Desc="反抗" Intro="受到特殊攻击时有14%几率使对方攻击降低1个等级" StarLevel="5" />
+
+	<NewSeIdx Idx="1036" Stat="1" Eid="34" Args="1 5" CanReset="1" Desc="反驳" Intro="受到特殊攻击时有5%几率使对方防御降低1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2036" Stat="1" Eid="34" Args="1 6" CanReset="1" Desc="反驳" Intro="受到特殊攻击时有6%几率使对方防御降低1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3036" Stat="1" Eid="34" Args="1 8" CanReset="1" Desc="反驳" Intro="受到特殊攻击时有8%几率使对方防御降低1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4036" Stat="1" Eid="34" Args="1 10" CanReset="1" Desc="反驳" Intro="受到特殊攻击时有10%几率使对方防御降低1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5036" Stat="1" Eid="34" Args="1 12" CanReset="1" Desc="反驳" Intro="受到特殊攻击时有12%几率使对方防御降低1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6036" Stat="1" Eid="34" Args="1 14" CanReset="1" Desc="反驳" Intro="受到特殊攻击时有14%几率使对方防御降低1个等级" StarLevel="5" />
+
+	<NewSeIdx Idx="1037" Stat="1" Eid="34" Args="2 5" CanReset="1" Desc="忽略" Intro="受到特殊攻击时有5%几率使对方特攻降低1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2037" Stat="1" Eid="34" Args="2 6" CanReset="1" Desc="忽略" Intro="受到特殊攻击时有6%几率使对方特攻降低1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3037" Stat="1" Eid="34" Args="2 8" CanReset="1" Desc="忽略" Intro="受到特殊攻击时有8%几率使对方特攻降低1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4037" Stat="1" Eid="34" Args="2 10" CanReset="1" Desc="忽略" Intro="受到特殊攻击时有10%几率使对方特攻降低1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5037" Stat="1" Eid="34" Args="2 12" CanReset="1" Desc="忽略" Intro="受到特殊攻击时有12%几率使对方特攻降低1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6037" Stat="1" Eid="34" Args="2 14" CanReset="1" Desc="忽略" Intro="受到特殊攻击时有14%几率使对方特攻降低1个等级" StarLevel="5" />
+
+	<NewSeIdx Idx="1038" Stat="1" Eid="34" Args="3 5" CanReset="1" Desc="草率" Intro="受到特殊攻击时有5%几率使对方特防降低1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2038" Stat="1" Eid="34" Args="3 6" CanReset="1" Desc="草率" Intro="受到特殊攻击时有6%几率使对方特防降低1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3038" Stat="1" Eid="34" Args="3 8" CanReset="1" Desc="草率" Intro="受到特殊攻击时有8%几率使对方特防降低1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4038" Stat="1" Eid="34" Args="3 10" CanReset="1" Desc="草率" Intro="受到特殊攻击时有10%几率使对方特防降低1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5038" Stat="1" Eid="34" Args="3 12" CanReset="1" Desc="草率" Intro="受到特殊攻击时有12%几率使对方特防降低1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6038" Stat="1" Eid="34" Args="3 14" CanReset="1" Desc="草率" Intro="受到特殊攻击时有14%几率使对方特防降低1个等级" StarLevel="5" />
+
+	<NewSeIdx Idx="1040" Stat="1" Eid="34" Args="4 5" CanReset="1" Desc="慌张" Intro="受到特殊攻击时有5%几率使对方速度降低1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2040" Stat="1" Eid="34" Args="4 6" CanReset="1" Desc="慌张" Intro="受到特殊攻击时有6%几率使对方速度降低1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3040" Stat="1" Eid="34" Args="4 8" CanReset="1" Desc="慌张" Intro="受到特殊攻击时有8%几率使对方速度降低1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4040" Stat="1" Eid="34" Args="4 10" CanReset="1" Desc="慌张" Intro="受到特殊攻击时有10%几率使对方速度降低1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5040" Stat="1" Eid="34" Args="4 12" CanReset="1" Desc="慌张" Intro="受到特殊攻击时有12%几率使对方速度降低1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6040" Stat="1" Eid="34" Args="4 14" CanReset="1" Desc="慌张" Intro="受到特殊攻击时有14%几率使对方速度降低1个等级" StarLevel="5" />
+
+	<!-- 自身属性提升类（5个特性） -->
+	<NewSeIdx Idx="1041" Stat="1" Eid="35" Args="0 5" CanReset="1" Desc="反击" Intro="受到任何攻击时有5%几率使自身攻击提升1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2041" Stat="1" Eid="35" Args="0 6" CanReset="1" Desc="反击" Intro="受到任何攻击时有6%几率使自身攻击提升1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3041" Stat="1" Eid="35" Args="0 8" CanReset="1" Desc="反击" Intro="受到任何攻击时有8%几率使自身攻击提升1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4041" Stat="1" Eid="35" Args="0 10" CanReset="1" Desc="反击" Intro="受到任何攻击时有10%几率使自身攻击提升1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5041" Stat="1" Eid="35" Args="0 12" CanReset="1" Desc="反击" Intro="受到任何攻击时有12%几率使自身攻击提升1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6041" Stat="1" Eid="35" Args="0 14" CanReset="1" Desc="反击" Intro="受到任何攻击时有14%几率使自身攻击提升1个等级" StarLevel="5" />
+
+	<NewSeIdx Idx="1042" Stat="1" Eid="35" Args="1 5" CanReset="1" Desc="抵抗" Intro="受到任何攻击时有5%几率使自身防御提升1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2042" Stat="1" Eid="35" Args="1 6" CanReset="1" Desc="抵抗" Intro="受到任何攻击时有6%几率使自身防御提升1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3042" Stat="1" Eid="35" Args="1 8" CanReset="1" Desc="抵抗" Intro="受到任何攻击时有8%几率使自身防御提升1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4042" Stat="1" Eid="35" Args="1 10" CanReset="1" Desc="抵抗" Intro="受到任何攻击时有10%几率使自身防御提升1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5042" Stat="1" Eid="35" Args="1 12" CanReset="1" Desc="抵抗" Intro="受到任何攻击时有12%几率使自身防御提升1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6042" Stat="1" Eid="35" Args="1 14" CanReset="1" Desc="抵抗" Intro="受到任何攻击时有14%几率使自身防御提升1个等级" StarLevel="5" />
+
+	<!-- 反攻（基础Idx=1043） -->
+	<NewSeIdx Idx="1043" Stat="1" Eid="35" Args="2 5" CanReset="1" Desc="反攻" Intro="受到任何攻击时有5%几率使自身特攻提升1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2043" Stat="1" Eid="35" Args="2 6" CanReset="1" Desc="反攻" Intro="受到任何攻击时有6%几率使自身特攻提升1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3043" Stat="1" Eid="35" Args="2 8" CanReset="1" Desc="反攻" Intro="受到任何攻击时有8%几率使自身特攻提升1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4043" Stat="1" Eid="35" Args="2 10" CanReset="1" Desc="反攻" Intro="受到任何攻击时有10%几率使自身特攻提升1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5043" Stat="1" Eid="35" Args="2 12" CanReset="1" Desc="反攻" Intro="受到任何攻击时有12%几率使自身特攻提升1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6043" Stat="1" Eid="35" Args="2 14" CanReset="1" Desc="反攻" Intro="受到任何攻击时有14%几率使自身特攻提升1个等级" StarLevel="5" />
+
+	<!-- 坚韧（基础Idx=1044） -->
+	<NewSeIdx Idx="1044" Stat="1" Eid="35" Args="3 5" CanReset="1" Desc="坚韧" Intro="受到任何攻击时有5%几率使自身特防提升1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2044" Stat="1" Eid="35" Args="3 6" CanReset="1" Desc="坚韧" Intro="受到任何攻击时有6%几率使自身特防提升1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3044" Stat="1" Eid="35" Args="3 8" CanReset="1" Desc="坚韧" Intro="受到任何攻击时有8%几率使自身特防提升1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4044" Stat="1" Eid="35" Args="3 10" CanReset="1" Desc="坚韧" Intro="受到任何攻击时有10%几率使自身特防提升1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5044" Stat="1" Eid="35" Args="3 12" CanReset="1" Desc="坚韧" Intro="受到任何攻击时有12%几率使自身特防提升1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6044" Stat="1" Eid="35" Args="3 14" CanReset="1" Desc="坚韧" Intro="受到任何攻击时有14%几率使自身特防提升1个等级" StarLevel="5" />
+
+	<!-- 借风（基础Idx=1045） -->
+	<NewSeIdx Idx="1045" Stat="1" Eid="35" Args="4 5" CanReset="1" Desc="借风" Intro="受到任何攻击时有5%几率使自身速度提升1个等级" StarLevel="0" />
+	<NewSeIdx Idx="2045" Stat="1" Eid="35" Args="4 6" CanReset="1" Desc="借风" Intro="受到任何攻击时有6%几率使自身速度提升1个等级" StarLevel="1" />
+	<NewSeIdx Idx="3045" Stat="1" Eid="35" Args="4 8" CanReset="1" Desc="借风" Intro="受到任何攻击时有8%几率使自身速度提升1个等级" StarLevel="2" />
+	<NewSeIdx Idx="4045" Stat="1" Eid="35" Args="4 10" CanReset="1" Desc="借风" Intro="受到任何攻击时有10%几率使自身速度提升1个等级" StarLevel="3" />
+	<NewSeIdx Idx="5045" Stat="1" Eid="35" Args="4 12" CanReset="1" Desc="借风" Intro="受到任何攻击时有12%几率使自身速度提升1个等级" StarLevel="4" />
+	<NewSeIdx Idx="6045" Stat="1" Eid="35" Args="4 14" CanReset="1" Desc="借风" Intro="受到任何攻击时有14%几率使自身速度提升1个等级" StarLevel="5" />
+
+	<!-- 吸收（基础Idx=1059，修正Intro描述错误） -->
+	<NewSeIdx Idx="1059" Stat="1" Eid="60" Args="5 35" CanReset="1" Desc="吸收" Intro="受到攻击时5%几率使受到的伤害降低35点" StarLevel="0" />
+	<NewSeIdx Idx="2059" Stat="1" Eid="60" Args="6 40" CanReset="1" Desc="吸收" Intro="受到攻击时6%几率使受到的伤害降低40点" StarLevel="1" />
+	<NewSeIdx Idx="3059" Stat="1" Eid="60" Args="8 50" CanReset="1" Desc="吸收" Intro="受到攻击时8%几率使受到的伤害降低50点" StarLevel="2" />
+	<NewSeIdx Idx="4059" Stat="1" Eid="60" Args="10 60" CanReset="1" Desc="吸收" Intro="受到攻击时10%几率使受到的伤害降低60点" StarLevel="3" />
+	<NewSeIdx Idx="5059" Stat="1" Eid="60" Args="12 70" CanReset="1" Desc="吸收" Intro="受到攻击时12%几率使受到的伤害降低70点" StarLevel="4" />
+	<NewSeIdx Idx="6059" Stat="1" Eid="60" Args="14 80" CanReset="1" Desc="吸收" Intro="受到攻击时14%几率使受到的伤害降低80点" StarLevel="5" />
+
+	<!-- 虚无（基础Idx=1060） -->
+	<NewSeIdx Idx="1060" Stat="1" Eid="61" Args="3 0" CanReset="1" Desc="虚无" Intro="3%几率完全抵挡一次伤害" StarLevel="0" />
+	<NewSeIdx Idx="2060" Stat="1" Eid="61" Args="4 0" CanReset="1" Desc="虚无" Intro="4%几率完全抵挡一次伤害" StarLevel="1" />
+	<NewSeIdx Idx="3060" Stat="1" Eid="61" Args="5 0" CanReset="1" Desc="虚无" Intro="5%几率完全抵挡一次伤害" StarLevel="2" />
+	<NewSeIdx Idx="4060" Stat="1" Eid="61" Args="6 0" CanReset="1" Desc="虚无" Intro="6%几率完全抵挡一次伤害" StarLevel="3" />
+	<NewSeIdx Idx="5060" Stat="1" Eid="61" Args="7 0" CanReset="1" Desc="虚无" Intro="7%几率完全抵挡一次伤害" StarLevel="4" />
+	<NewSeIdx Idx="6060" Stat="1" Eid="61" Args="8 0" CanReset="1" Desc="虚无" Intro="8%几率完全抵挡一次伤害" StarLevel="5" />
+
+	<!-- 强攻（基础Idx=1061） -->
+	<NewSeIdx Idx="1061" Stat="1" Eid="62" Args="5 35" CanReset="1" Desc="强攻" Intro="物理攻击有5%几率使伤害提高35点" StarLevel="0" />
+	<NewSeIdx Idx="2061" Stat="1" Eid="62" Args="6 40" CanReset="1" Desc="强攻" Intro="物理攻击有6%几率使伤害提高40点" StarLevel="1" />
+	<NewSeIdx Idx="3061" Stat="1" Eid="62" Args="8 50" CanReset="1" Desc="强攻" Intro="物理攻击有8%几率使伤害提高50点" StarLevel="2" />
+	<NewSeIdx Idx="4061" Stat="1" Eid="62" Args="10 60" CanReset="1" Desc="强攻" Intro="物理攻击有10%几率使伤害提高60点" StarLevel="3" />
+	<NewSeIdx Idx="5061" Stat="1" Eid="62" Args="12 70" CanReset="1" Desc="强攻" Intro="物理攻击有12%几率使伤害提高70点" StarLevel="4" />
+	<NewSeIdx Idx="6061" Stat="1" Eid="62" Args="14 80" CanReset="1" Desc="强攻" Intro="物理攻击有14%几率使伤害提高80点" StarLevel="5" />
+
+	<!-- 强念（基础Idx=1062） -->
+	<NewSeIdx Idx="1062" Stat="1" Eid="63" Args="5 35" CanReset="1" Desc="强念" Intro="特殊攻击有5%几率使伤害提高35点" StarLevel="0" />
+	<NewSeIdx Idx="2062" Stat="1" Eid="63" Args="6 40" CanReset="1" Desc="强念" Intro="特殊攻击有6%几率使伤害提高40点" StarLevel="1" />
+	<NewSeIdx Idx="3062" Stat="1" Eid="63" Args="8 50" CanReset="1" Desc="强念" Intro="特殊攻击有8%几率使伤害提高50点" StarLevel="2" />
+	<NewSeIdx Idx="4062" Stat="1" Eid="63" Args="10 60" CanReset="1" Desc="强念" Intro="特殊攻击有10%几率使伤害提高60点" StarLevel="3" />
+	<NewSeIdx Idx="5062" Stat="1" Eid="63" Args="12 70" CanReset="1" Desc="强念" Intro="特殊攻击有12%几率使伤害提高70点" StarLevel="4" />
+	<NewSeIdx Idx="6062" Stat="1" Eid="63" Args="14 80" CanReset="1" Desc="强念" Intro="特殊攻击有14%几率使伤害提高80点" StarLevel="5" />
+
+	<!-- 免爆（基础Idx=1063） -->
+	<NewSeIdx Idx="1063" Stat="1" Eid="64" Args="1 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="0" />
+	<NewSeIdx Idx="2063" Stat="1" Eid="64" Args="2 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="1" />
+	<NewSeIdx Idx="3063" Stat="1" Eid="64" Args="3 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="2" />
+	<NewSeIdx Idx="4063" Stat="1" Eid="64" Args="4 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="3" />
+	<NewSeIdx Idx="5063" Stat="1" Eid="64" Args="5 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="4" />
+	<NewSeIdx Idx="6063" Stat="1" Eid="64" Args="6 0" CanReset="1" Desc="免爆" Intro="受到致命一击的概率降低" StarLevel="5" />
+
+	<!-- 乱舞（基础Idx=1064） -->
+	<NewSeIdx Idx="1064" Stat="1" Eid="503" Args="0 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升5%的攻击伤害并增加一个攻击目标" StarLevel="0" />
+	<NewSeIdx Idx="2064" Stat="1" Eid="504" Args="6 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升6%的攻击伤害并增加一个攻击目标" StarLevel="1" />
+	<NewSeIdx Idx="3064" Stat="1" Eid="504" Args="7 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升8%的攻击伤害并增加一个攻击目标" StarLevel="2" />
+	<NewSeIdx Idx="4064" Stat="1" Eid="504" Args="8 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升10%的攻击伤害并增加一个攻击目标" StarLevel="3" />
+	<NewSeIdx Idx="5064" Stat="1" Eid="504" Args="9 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升11%的攻击伤害并增加一个攻击目标" StarLevel="4" />
+	<NewSeIdx Idx="6064" Stat="1" Eid="504" Args="10 0" CanReset="1" Desc="乱舞" Intro="群体攻击提升12%的攻击伤害并增加一个攻击目标" StarLevel="5" />
+
+	<!-- 强袭（基础Idx=1065） -->
+	<NewSeIdx Idx="1065" Stat="1" Eid="65" Args="1 3" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加3%" StarLevel="0" />
+	<NewSeIdx Idx="2065" Stat="1" Eid="65" Args="1 4" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加4%" StarLevel="1" />
+	<NewSeIdx Idx="3065" Stat="1" Eid="65" Args="1 5" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加5%" StarLevel="2" />
+	<NewSeIdx Idx="4065" Stat="1" Eid="65" Args="1 6" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加6%" StarLevel="3" />
+	<NewSeIdx Idx="5065" Stat="1" Eid="65" Args="1 7" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加7%" StarLevel="4" />
+	<NewSeIdx Idx="6065" Stat="1" Eid="65" Args="1 8" CanReset="1" Desc="强袭" Intro="物理攻击伤害增加8%" StarLevel="5" />
+
+	<!-- 精神（基础Idx=1066） -->
+	<NewSeIdx Idx="1066" Stat="1" Eid="65" Args="2 3" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加3%" StarLevel="0" />
+	<NewSeIdx Idx="2066" Stat="1" Eid="65" Args="2 4" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加4%" StarLevel="1" />
+	<NewSeIdx Idx="3066" Stat="1" Eid="65" Args="2 5" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加5%" StarLevel="2" />
+	<NewSeIdx Idx="4066" Stat="1" Eid="65" Args="2 6" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加6%" StarLevel="3" />
+	<NewSeIdx Idx="5066" Stat="1" Eid="65" Args="2 7" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加7%" StarLevel="4" />
+	<NewSeIdx Idx="6066" Stat="1" Eid="65" Args="2 8" CanReset="1" Desc="精神" Intro="特殊攻击伤害增加8%" StarLevel="5" />
+
+	<!-- 火热（基础Idx=1067） -->
+	<NewSeIdx Idx="1067" Stat="1" Eid="67" Args="3 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有3%几率使对方烧伤" StarLevel="0" />
+	<NewSeIdx Idx="2067" Stat="1" Eid="67" Args="4 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有4%几率使对方烧伤" StarLevel="1" />
+	<NewSeIdx Idx="3067" Stat="1" Eid="67" Args="5 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有5%几率使对方烧伤" StarLevel="2" />
+	<NewSeIdx Idx="4067" Stat="1" Eid="67" Args="6 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有6%几率使对方烧伤" StarLevel="3" />
+	<NewSeIdx Idx="5067" Stat="1" Eid="67" Args="7 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有7%几率使对方烧伤" StarLevel="4" />
+	<NewSeIdx Idx="6067" Stat="1" Eid="67" Args="8 2" CanReset="1" Desc="火热" Intro="自身的特殊攻击有8%几率使对方烧伤" StarLevel="5" />
+
+	<!-- 极寒（基础Idx=1068） -->
+	<NewSeIdx Idx="1068" Stat="1" Eid="67" Args="3 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有3%几率使对方冻伤" StarLevel="0" />
+	<NewSeIdx Idx="2068" Stat="1" Eid="67" Args="4 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有4%几率使对方冻伤" StarLevel="1" />
+	<NewSeIdx Idx="3068" Stat="1" Eid="67" Args="5 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有5%几率使对方冻伤" StarLevel="2" />
+	<NewSeIdx Idx="4068" Stat="1" Eid="67" Args="6 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有6%几率使对方冻伤" StarLevel="3" />
+	<NewSeIdx Idx="5068" Stat="1" Eid="67" Args="7 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有7%几率使对方冻伤" StarLevel="4" />
+	<NewSeIdx Idx="6068" Stat="1" Eid="67" Args="8 5" CanReset="1" Desc="极寒" Intro="自身的特殊攻击有8%几率使对方冻伤" StarLevel="5" />
+
+	<!-- 颤栗（基础Idx=1069） -->
+	<NewSeIdx Idx="1069" Stat="1" Eid="66" Args="3 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有3%几率使对方害怕" StarLevel="0" />
+	<NewSeIdx Idx="2069" Stat="1" Eid="66" Args="4 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有4%几率使对方害怕" StarLevel="1" />
+	<NewSeIdx Idx="3069" Stat="1" Eid="66" Args="5 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有5%几率使对方害怕" StarLevel="2" />
+	<NewSeIdx Idx="4069" Stat="1" Eid="66" Args="6 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有6%几率使对方害怕" StarLevel="3" />
+	<NewSeIdx Idx="5069" Stat="1" Eid="66" Args="7 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有7%几率使对方害怕" StarLevel="4" />
+	<NewSeIdx Idx="6069" Stat="1" Eid="66" Args="8 6" CanReset="1" Desc="颤栗" Intro="自身的物理攻击有8%几率使对方害怕" StarLevel="5" />
+
+
+	<NewSeIdx Idx="1070" Stat="1" Eid="66" Args="3 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有3%几率使对方麻痹" StarLevel="0" />
+	<NewSeIdx Idx="2070" Stat="1" Eid="66" Args="4 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有4%几率使对方麻痹" StarLevel="1" />
+	<NewSeIdx Idx="3070" Stat="1" Eid="66" Args="5 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有5%几率使对方麻痹" StarLevel="2" />
+	<NewSeIdx Idx="4070" Stat="1" Eid="66" Args="6 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有6%几率使对方麻痹" StarLevel="3" />
+	<NewSeIdx Idx="5070" Stat="1" Eid="66" Args="7 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有7%几率使对方麻痹" StarLevel="4" />
+	<NewSeIdx Idx="6070" Stat="1" Eid="66" Args="8 0" CanReset="1" Desc="静电" Intro="自身的物理攻击有8%几率使对方麻痹" StarLevel="5" />
+	<!-- 反弹（基础Idx=2187） -->
+	<NewSeIdx Idx="2187" Stat="1" Eid="699" Args="20 60" Desc="反弹" Intro="20%弹60点固定伤害" StarLevel="0" />
+	<NewSeIdx Idx="3187" Stat="1" Eid="699" Args="25 70" Desc="反弹" Intro="25%弹70点固定伤害" StarLevel="1" />
+	<NewSeIdx Idx="4187" Stat="1" Eid="699" Args="30 80" Desc="反弹" Intro="30%弹80点固定伤害" StarLevel="2" />
+	<NewSeIdx Idx="5187" Stat="1" Eid="699" Args="35 90" Desc="反弹" Intro="35%弹90点固定伤害" StarLevel="3" />
+	<NewSeIdx Idx="6187" Stat="1" Eid="699" Args="40 100" Desc="反弹" Intro="40%弹100点固定伤害" StarLevel="4" />
+	<NewSeIdx Idx="7187" Stat="1" Eid="699" Args="45 110" Desc="反弹" Intro="45%弹110点固定伤害" StarLevel="5" />
+
+	<!-- 吸血（基础Idx=2188） -->
+	<NewSeIdx Idx="2188" Stat="1" Eid="700" Args="6 0" Desc="吸血" Intro="回复造成伤害的6%" StarLevel="0" />
+	<NewSeIdx Idx="3188" Stat="1" Eid="700" Args="7 0" Desc="吸血" Intro="回复造成伤害的7%" StarLevel="1" />
+	<NewSeIdx Idx="4188" Stat="1" Eid="700" Args="8 0" Desc="吸血" Intro="回复造成伤害的8%" StarLevel="2" />
+	<NewSeIdx Idx="5188" Stat="1" Eid="700" Args="9 0" Desc="吸血" Intro="回复造成伤害的9%" StarLevel="3" />
+	<NewSeIdx Idx="6188" Stat="1" Eid="700" Args="10 0" Desc="吸血" Intro="回复造成伤害的10%" StarLevel="4" />
+	<NewSeIdx Idx="7188" Stat="1" Eid="700" Args="11 0" Desc="吸血" Intro="回复造成伤害的11%" StarLevel="5" />
+
+	<NewSeIdx Idx="1001" Stat="2" Times="20" Eid="26" Args="1 20" ItemId="300030" Des="增加精灵防御20（赛尔间对战无效）" />
+	<NewSeIdx Idx="1002" Stat="2" Times="20" Eid="26" Args="2 20" ItemId="300031" Des="增加精灵特防20（赛尔间对战无效）" />
+	<NewSeIdx Idx="1003" Stat="2" Times="20" Eid="26" Args="3 20" ItemId="300032" Des="增加精灵攻击20（赛尔间对战无效）" />
+	<NewSeIdx Idx="1004" Stat="2" Times="20" Eid="26" Args="4 20" ItemId="300033" Des="增加精灵特攻20（赛尔间对战无效）" />
+	<NewSeIdx Idx="1005" Stat="2" Times="10" Eid="26" Args="5 10" ItemId="300034" Des="增加精灵速度10（赛尔间对战无效）" />
+
+	<NewSeIdx Idx="1046" Stat="2" Times="20" Eid="26" Args="2 30" ItemId="300045" Des="增加精灵防御30（赛尔间对战无效）" />
+	<NewSeIdx Idx="1047" Stat="2" Times="20" Eid="26" Args="4 30" ItemId="300046" Des="增加精灵特防30（赛尔间对战无效）" />
+	<NewSeIdx Idx="1048" Stat="2" Times="20" Eid="26" Args="1 30" ItemId="300047" Des="增加精灵攻击30（赛尔间对战无效）" />
+	<NewSeIdx Idx="1049" Stat="2" Times="20" Eid="26" Args="3 30" ItemId="300048" Des="增加精灵特攻30（赛尔间对战无效）" />
+	<NewSeIdx Idx="1050" Stat="2" Times="10" Eid="26" Args="5 15" ItemId="300049" Des="增加精灵速度15（赛尔间对战无效）" />
+	<NewSeIdx Idx="1051" Stat="2" Times="10" Eid="30" Args="1 " ItemId="300050" Des="增加精灵技能致命一击率1/16（赛尔间对战无效）" />
+
+	<NewSeIdx Idx="1052" Stat="2" Times="20" Eid="26" Args="2 45" ItemId="300055" Des="增加精灵防御45（赛尔间对战无效）" />
+	<NewSeIdx Idx="1053" Stat="2" Times="20" Eid="26" Args="4 45" ItemId="300056" Des="增加精灵特防45（赛尔间对战无效）" />
+	<NewSeIdx Idx="1054" Stat="2" Times="20" Eid="26" Args="1 45" ItemId="300057" Des="增加精灵攻击45（赛尔间对战无效）" />
+	<NewSeIdx Idx="1055" Stat="2" Times="20" Eid="26" Args="3 45" ItemId="300058" Des="增加精灵特攻45（赛尔间对战无效）" />
+	<NewSeIdx Idx="1056" Stat="2" Times="10" Eid="26" Args="5 25" ItemId="300059" Des="增加精灵速度25（赛尔间对战无效）" />
+	<NewSeIdx Idx="1071" Stat="2" Times="10" Eid="26" Args="1 30" ItemId="300121" Des="增加精灵攻击30（赛尔间对战无效）" />
+
+	<NewSeIdx Idx="1057" Stat="2" Times="1" Eid="47" Args="25" ItemId="300060" Des="敌我双方伤害降低1/4（赛尔间对战无效）" />
+	<NewSeIdx Idx="1058" Stat="2" Times="1" Eid="26" Args="1 25 3 25 5 25" ItemId="300061" Des="中秋月饼加精灵属性（赛尔间对战无效）" />
+
+	<NewSeIdx Idx="1096" Stat="2" Times="10" Eid="28" Args="3 10" ItemId="300601" Des="火系技能威力提升10%(使用10回合)" />
+	<NewSeIdx Idx="1097" Stat="2" Times="10" Eid="28" Args="2 10" ItemId="300606" Des="水系技能威力提升10%(使用10回合)" />
+	<NewSeIdx Idx="1098" Stat="2" Times="10" Eid="28" Args="1 10" ItemId="300607" Des="草系技能威力提升10%(使用10回合)" />
+	<NewSeIdx Idx="1099" Stat="2" Times="10" Eid="28" Args="6 10" ItemId="300608" Des="机械系技能威力提升10%(使用10回合)" />
+	<NewSeIdx Idx="1100" Stat="2" Times="10" Eid="28" Args="5 10" ItemId="300683" Des="电系技能威力提升10%(使用10回合)" />
+	<NewSeIdx Idx="1101" Stat="2" Times="10" Eid="28" Args="4 10" ItemId="300684" Des="飞行系技能威力提升10%(使用10回合)" />
+	<NewSeIdx Idx="1102" Stat="2" Times="10" Eid="28" Args="7 10" ItemId="300685" Des="地面系技能威力提升10%(使用10回合)" />
+	<NewSeIdx Idx="1103" Stat="2" Times="1" Eid="32" Args="1006" ItemId="300741" Des="在下次对战时，攻击类技能有1%的几率瞬杀对手" />
+
+	<NewSeIdx Idx="1072" Stat="4" Eid="401" Args="3 0" Desc="重伤" Intro="3%几率攻击技能的伤害翻倍" />
+	<NewSeIdx Idx="1073" Stat="4" Eid="402" Args="1 500" Desc="绝命" Intro="1%几率附加500点固定伤害" />
+	<NewSeIdx Idx="1074" Stat="4" Eid="403" Args="3 3 50" Desc="切割" Intro="3%几率令对手3回合内每回合减少50点体力" />
+	<NewSeIdx Idx="1075" Stat="4" Eid="404" Args="3 0" Desc="守护" Intro="3%几率受到攻击伤害减半" />
+	<NewSeIdx Idx="1076" Stat="4" Eid="405" Args="3 0" Desc="偷袭" Intro="3%几率令本次攻击先制+1" />
+	<NewSeIdx Idx="1077" Stat="4" Eid="406" Args="3 0" Desc="抵挡" Intro="3%几率完全阻挡一次攻击" />
+	<NewSeIdx Idx="1078" Stat="4" Eid="407" Args="2 5" Desc="灼热" Intro="对手处于烧伤状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1079" Stat="4" Eid="407" Args="5 5" Desc="霜袭" Intro="对手处于冻伤状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1080" Stat="4" Eid="407" Args="1 5" Desc="毒攻" Intro="对手处于中毒状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1081" Stat="4" Eid="407" Args="0 5" Desc="残忍" Intro="对手处于麻痹状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1082" Stat="4" Eid="407" Args="6 5" Desc="恐惧" Intro="对手处于害怕状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1083" Stat="4" Eid="407" Args="8 5" Desc="困顿" Intro="对手处于睡眠状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1084" Stat="4" Eid="407" Args="7 5" Desc="操控" Intro="对手处于疲惫状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1085" Stat="4" Eid="407" Args="9 5" Desc="落石" Intro="对手处于石化状态时，5%几率威力翻倍" />
+	<NewSeIdx Idx="1086" Stat="4" Eid="408" Args="0 0" Desc="净化" Intro="给对手造成伤害时，附带消除能力强化效果(PVP无效)" />
+	<NewSeIdx Idx="1087" Stat="4" Eid="409" Args="5 2" Desc="灼烧" Intro="致命一击时，5%几率令对手进入烧伤状态" />
+	<NewSeIdx Idx="1088" Stat="4" Eid="409" Args="5 5" Desc="霜冻" Intro="致命一击时，5%几率令对手进入冻伤状态" />
+	<NewSeIdx Idx="1089" Stat="4" Eid="409" Args="5 1" Desc="毒伤" Intro="致命一击时，5%几率令对手进入中毒状态" />
+	<NewSeIdx Idx="1090" Stat="4" Eid="409" Args="5 0" Desc="麻痹" Intro="致命一击时，5%几率令对手进入麻痹状态" />
+	<NewSeIdx Idx="1091" Stat="4" Eid="409" Args="5 6" Desc="胆怯" Intro="致命一击时，5%几率令对手进入害怕状态" />
+	<NewSeIdx Idx="1092" Stat="4" Eid="409" Args="5 8" Desc="睡意" Intro="致命一击时，5%几率令对手进入睡眠状态" />
+	<NewSeIdx Idx="1093" Stat="4" Eid="409" Args="5 7" Desc="疲惫" Intro="致命一击时，5%几率令对手进入疲惫状态" />
+	<NewSeIdx Idx="1094" Stat="4" Eid="409" Args="5 9" Desc="石化" Intro="致命一击时，5%几率令对手进入石化状态" />
+	<NewSeIdx Idx="1095" Stat="4" Eid="410" Args="20 0" Desc="强化" Intro="伤害提升20%（PVP无效）" />
+
+	<NewSeIdx Idx="1212" Stat="5" Eid="134" Args="1 5" Desc="灵光" Intro="草系技能威力提升5%" />
+	<NewSeIdx Idx="1637" Stat="5" Eid="137" Args="5 5 5 5 5 5" Desc="创世六神兵合体特效" />
+
+	<NewSeIdx Idx="1635" Stat="5" Eid="239" Desc="所有技能威力加5" Args="5 0" AdditionType="2" AdditionNum="5" />
+	<NewSeIdx Idx="1636" Stat="5" Eid="239" Desc="所有技能威力加10" Args="10 0" AdditionType="2" AdditionNum="10" />
+
+	<NewSeIdx Idx="1640" Stat="5" Eid="238" Desc="神兽战团 金斯特 第二套种族值" Args="132 113 92 90 92 106" AdditionType="1" AdditionNum="5" />
+	<NewSeIdx Idx="1641" Stat="5" Eid="238" Desc="神兽战团 金斯特 第三套种族值" Args="135 115 94 95 94 107" AdditionType="1" AdditionNum="5" />
+
+	<NewSeIdx Idx="1638" Stat="5" Eid="238" Desc="神兽战团 特兰西 第二套种族值" Args="127 118 90 90 90 110" AdditionType="1" />
+	<NewSeIdx Idx="1639" Stat="5" Eid="238" Desc="神兽战团 特兰西 第三套种族值" Args="130 120 92 95 91 112" AdditionType="1" />
+
+	<NewSeIdx Idx="1642" Stat="5" Eid="238" Desc="神兽战团 拉塞尔 第二套种族值" Args="135 110 95 95 95 95" AdditionType="1" />
+	<NewSeIdx Idx="1643" Stat="5" Eid="238" Desc="神兽战团 拉塞尔 第三套种族值" Args="140 110 100 95 100 95" AdditionType="1" />
+
+	<NewSeIdx Idx="1655" Stat="5" Eid="247" Desc=" 天枢星守护者拉奥斯专属特性 攻击+10，特防+10" Args="0 10 0 0 10 0" AdditionType="3" />
+	<NewSeIdx Idx="1656" Stat="5" Eid="247" Desc=" 天府星守护者阿苏亚专属特性 攻击+10，防御+10" Args="0 10 10 0 0 0" AdditionType="3" />
+
+	<NewSeIdx Idx="1657" Stat="5" Eid="247" Desc=" 天枢星守护者拉奥斯专属特性 进化 体力+10 攻击+10 防御+10 特防+10" Args="10 10 10 0 10 0" AdditionType="3" />
+	<NewSeIdx Idx="1658" Stat="5" Eid="247" Desc=" 天府星守护者阿苏亚专属特性 进化 攻击+10 速度+10 防御+10 特防+10" Args="0 10 10 0 10 10" AdditionType="3" />
+
+	<NewSeIdx Idx="1669" Stat="5" Eid="247" Desc="北斗纳斯里专属特性 防御+10 特防+10" Args="0 0 10 0 10 0" />
+	<NewSeIdx Idx="1670" Stat="5" Eid="247" Desc="南斗加西亚专属特性 攻击+10，速度+10" Args="0 10 0 0 0 10" />
+	<NewSeIdx Idx="1671" Stat="5" Eid="247" Desc="北斗纳斯里专属特性 进化 体力+10 攻击+10 防御+10 特防+10" Args="10 10 10 0 10 0" />
+	<NewSeIdx Idx="1672" Stat="5" Eid="247" Desc="南斗加西亚专属特性 进化 体力+10 攻击+10 防御+10 速度+10 " Args="10 10 10 0 0 10" />
+
+	<NewSeIdx Idx="1767" Stat="5" Eid="277" Args="1 1 2" Desc="登场首回合所有攻击先制+1同时增加20%暴击率" />
+	<NewSeIdx Idx="1768" Stat="5" Eid="285" Args="100 50" Desc="满体力时100%免疫异常状态，满体力时50%概率免疫能力下降状态" />
+	<NewSeIdx Idx="1772" Stat="5" Eid="286" Args="20" Desc="三兄弟特性由每回合回血15点变为20点" />
+	<NewSeIdx Idx="1776" Stat="5" Eid="270" Args="2 2" Desc="首次登场2回合内，免疫异常状态以及能力下降状态" />
+	<NewSeIdx Idx="1777" Stat="5" Eid="288" Args="3 50" Desc="首次登场3回合内所有直接攻击附加50点固定伤害" />
+
+	<NewSeIdx Idx="1805" Stat="5" Eid="265" Args="1000 6 2" Desc="每次攻击6%使对手烧伤" />
+	<NewSeIdx Idx="1806" Stat="5" Eid="109" Args="20 20" Desc="每次攻击20%概率附加20点固定伤害" />
+	<NewSeIdx Idx="1807" Stat="5" Eid="299" Args="6 2" Desc="若对手处于害怕状态则烧伤" />
+
+	<NewSeIdx Idx="1474" Stat="7" Eid="171" Args="0 0 0 0 0 0" Desc="战队技能初始值" />
+	<NewSeIdx Idx="1765" Stat="5" Eid="247" Args="15 10 10 10 10 10" Desc="体力+15、攻击+10、防御+10、特防+10、速度+10、特攻+10" />
+
+
+
+	<NewSeIdx Idx="1104" Stat="2" Times="10" Eid="26" Args="1 80" ItemId="300779" Des="增加精灵攻击80点（赛尔之间对战无效）" />
+	<NewSeIdx Idx="1105" Stat="2" Times="10" Eid="26" Args="2 80" ItemId="300780" Des="增加精灵防御80点（赛尔之间对战无效）" />
+	<NewSeIdx Idx="1106" Stat="2" Times="10" Eid="26" Args="3 80" ItemId="300781" Des="增加精灵特攻80点（赛尔之间对战无效）" />
+	<NewSeIdx Idx="1107" Stat="2" Times="10" Eid="26" Args="4 80" ItemId="300782" Des="增加精灵特防80点（赛尔之间对战无效）" />
+	<NewSeIdx Idx="1108" Stat="2" Times="10" Eid="26" Args="5 45" ItemId="300783" Des="增加精灵速度45点（赛尔之间对战无效）" />
+	<NewSeIdx Idx="1109" Stat="2" Times="5" Eid="30" Args="2" ItemId="300784" Des="增加精灵技能致命一击率1/8（赛尔间对战无效）" />
+	<NewSeIdx Idx="1110" Stat="2" Times="1" Eid="203" Args="0 25" ItemId="300785" Des="对战时敌方精灵造成的伤害降低1/4（赛尔间对战无效）" />
+
+</NewSe>

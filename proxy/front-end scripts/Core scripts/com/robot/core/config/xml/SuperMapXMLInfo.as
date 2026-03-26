@@ -1,0 +1,55 @@
+package com.robot.core.config.xml
+{
+   import flash.geom.*;
+   
+   public class SuperMapXMLInfo
+   {
+      
+      private static var xmllist:XMLList;
+      
+      private static var xmlClass:Class = SuperMapXMLInfo_xmlClass;
+      
+      private static var xml:XML = XML(new xmlClass());
+      
+      setup();
+      
+      public function SuperMapXMLInfo()
+      {
+         super();
+      }
+      
+      private static function setup() : void
+      {
+         xmllist = xml.elements("maps");
+      }
+      
+      public static function getWorldMapPos(id:uint) : Point
+      {
+         var xml:XML = null;
+         var point:Point = null;
+         var x:Number = NaN;
+         var y:Number = NaN;
+         xml = xmllist.(@id == id)[0];
+         if(xml == null)
+         {
+            return null;
+         }
+         x = Number(xml.@x);
+         y = Number(xml.@y);
+         point = new Point(x,y);
+         return point;
+      }
+      
+      public static function getCurrentGalaxy(id:uint) : uint
+      {
+         var xml:XML = null;
+         xml = xmllist.(@id == id)[0];
+         if(xml == null)
+         {
+            return 0;
+         }
+         return xml.@galaxy;
+      }
+   }
+}
+

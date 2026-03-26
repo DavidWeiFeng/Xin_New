@@ -1,0 +1,184 @@
+package org.taomee.manager
+{
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.events.*;
+   import flash.geom.*;
+   import org.taomee.utils.*;
+   
+   public class PopUpManager
+   {
+      
+      public static const TOP_LEFT:int = 0;
+      
+      public static const TOP_RIGHT:int = 1;
+      
+      public static const BOTTOM_LEFT:int = 2;
+      
+      public static const BOTTOM_RIGHT:int = 3;
+      
+      public static var container:DisplayObjectContainer = TaomeeManager.stage;
+      
+      public function PopUpManager()
+      {
+         super();
+      }
+      
+      public static function showForDisplayObject(obj:DisplayObject, forObj:DisplayObject, align:int = 0, isForObjRange:Boolean = true, offset:Point = null) : void
+      {
+         var p:Point = null;
+         if(Boolean(offset))
+         {
+            p = forObj.localToGlobal(offset);
+         }
+         else
+         {
+            p = forObj.localToGlobal(new Point());
+         }
+         switch(align)
+         {
+            case TOP_LEFT:
+               obj.x = p.x - obj.width;
+               obj.y = p.y - obj.height;
+               break;
+            case TOP_RIGHT:
+               if(isForObjRange)
+               {
+                  obj.x = p.x + forObj.width;
+               }
+               else
+               {
+                  obj.x = p.x;
+               }
+               obj.y = p.y - obj.height;
+               break;
+            case BOTTOM_LEFT:
+               obj.x = p.x - obj.width;
+               if(isForObjRange)
+               {
+                  obj.y = p.y + forObj.height;
+               }
+               else
+               {
+                  obj.y = p.y;
+               }
+               break;
+            case BOTTOM_RIGHT:
+               if(isForObjRange)
+               {
+                  obj.x = p.x + forObj.width;
+               }
+               else
+               {
+                  obj.x = p.x;
+               }
+               if(isForObjRange)
+               {
+                  obj.y = p.y + forObj.height;
+               }
+               else
+               {
+                  obj.y = p.y;
+               }
+         }
+         container.addChild(obj);
+         container.stage.addEventListener(MouseEvent.MOUSE_DOWN,function(_arg_1:MouseEvent):void
+         {
+            if(!obj.hitTestPoint(_arg_1.stageX,_arg_1.stageY) && !forObj.hitTestPoint(_arg_1.stageX,_arg_1.stageY))
+            {
+               container.stage.removeEventListener(MouseEvent.MOUSE_DOWN,arguments.callee);
+               DisplayUtil.removeForParent(obj);
+            }
+         });
+      }
+      
+      public static function showForMouse(obj:DisplayObject, align:int = 0, offx:int = 0, offy:int = 0) : void
+      {
+         var p:Point = new Point(TaomeeManager.stage.mouseX + offx,TaomeeManager.stage.mouseY + offy);
+         switch(align)
+         {
+            case TOP_LEFT:
+               if(p.x > obj.width)
+               {
+                  obj.x = p.x - obj.width;
+               }
+               else
+               {
+                  obj.x = p.x;
+               }
+               if(p.y > obj.height)
+               {
+                  obj.y = p.y - obj.height;
+               }
+               else
+               {
+                  obj.y = p.y;
+               }
+               break;
+            case TOP_RIGHT:
+               if(p.x + obj.width > TaomeeManager.stage.stageWidth)
+               {
+                  obj.x = p.x - obj.width;
+               }
+               else
+               {
+                  obj.x = p.x;
+               }
+               if(p.y > obj.height)
+               {
+                  obj.y = p.y - obj.height;
+               }
+               else
+               {
+                  obj.y = p.y;
+               }
+               break;
+            case BOTTOM_LEFT:
+               if(p.x > obj.width)
+               {
+                  obj.x = p.x - obj.width;
+               }
+               else
+               {
+                  obj.x = p.x;
+               }
+               if(p.y + obj.height > TaomeeManager.stageHeight)
+               {
+                  obj.y = p.y - obj.height;
+               }
+               else
+               {
+                  obj.y = p.y;
+               }
+               break;
+            case BOTTOM_RIGHT:
+               if(p.x + obj.width > TaomeeManager.stageWidth)
+               {
+                  obj.x = p.x - obj.width;
+               }
+               else
+               {
+                  obj.x = p.x;
+               }
+               if(p.y + obj.height > TaomeeManager.stageHeight)
+               {
+                  obj.y = p.y - obj.height;
+               }
+               else
+               {
+                  obj.y = p.y;
+               }
+         }
+         container.addChild(obj);
+         container.stage.addEventListener(MouseEvent.MOUSE_DOWN,function(_arg_1:MouseEvent):void
+         {
+            if(!obj.hitTestPoint(_arg_1.stageX,_arg_1.stageY))
+            {
+               container.stage.removeEventListener(MouseEvent.MOUSE_DOWN,arguments.callee);
+               DisplayUtil.removeForParent(obj);
+            }
+         });
+      }
+   }
+}
+
