@@ -114,6 +114,13 @@ class BaseLearner:
         return True
 
     def _perform_capture_logic(self, pet_name, is_rare_check=False):
+
+        # 如果是异色且配置了击杀，且不是稀有精灵
+        if pet_name != self.config.target_pet_name and not is_rare_check and pet_name !="基摩" and pet_name !="乔乔":
+            logging.info(f"大形态异色：{pet_name},准备击杀")
+            keep_use_fly_skill()
+            return True
+        
         success = switch_boker()
         if success:
             catch_shiny(True, is_rare_check)
@@ -123,7 +130,7 @@ class BaseLearner:
         send_qq_mail(f"暗雷{pet_name}捕捉成功！", "快去背包查看吧")
         return True
 
-    def handle_learning_fight(self):
+    def handle_learning_fight(self, pet_name):
         """正常的刷学习力战斗流程"""
         if not self._wait_for_fight_start():
             return
@@ -132,7 +139,7 @@ class BaseLearner:
         # 1. 检查是否有红字（暗雷异色标志）
         if has_red_word():
             # logging.info(f"检测到红字！{self.config.target_pet_name} 可能是暗雷异色")
-            return self._perform_capture_logic(self.config.target_pet_name, is_rare_check=False)
+            return self._perform_capture_logic(pet_name, is_rare_check=False)
 
         if isNier():
             return True
@@ -180,11 +187,12 @@ class BaseLearner:
                 
                 if target_slot:
                     self.previous_slot_id =target_slot[0]
-                    logging.info(f"点击精灵")
+                    pet_name = target_slot[3]
+                    logging.info(f"点击精灵 {pet_name}")
                     # with OgreManager().fighting_context():
                     OgreManager().clear_current_slots()
                     protocol_click(target_slot[1], target_slot[2])
-                    self.handle_learning_fight()
+                    self.handle_learning_fight(pet_name)
                 else:
                     pass
                     # 这里不需要 not_found_hook 了，因为 get_random_valid_slot 已经有了保底随机点击逻辑
