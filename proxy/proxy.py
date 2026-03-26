@@ -24,49 +24,97 @@ class SeerProxy:
         
         # TCP 流缓冲区: (src_ip, src_port, dst_ip, dst_port) -> bytearray
         self.buffers = {}
-        # 连接会话元数据：key->dict(pid, hwnds, state...)
-        self.sessions = {}
+        # 连接会话元数据：key->hwnd, hwnd->set(keys)
+        self.sessions = {} 
+        self.hwnd_map = {}
 
-    #根据 PID 查找hwnd
-    def _find_hwnds_by_pid(pid):
+    def _normalize_key(self, key):
+        """将 key 标准化为 (client_ip, client_port, server_ip, server_port) 格式"""
+        if str(key[0]) in self.remote_ips:
+            # 当前是 (server_ip, server_port, client_ip, client_port)
+            return (key[2], key[3], key[0], key[1])
+        return key
+    
+    def _find_hwnd_by_pid(self,pid):
         def _by_pid(p):
-            hwnds = []
-            def cb(hwnd, _):
-                if not win32gui.IsWindowVisible(hwnd):
+            hwnds = []  # 使用列表
+            def cb(hwnd_enum, _):
+                if not win32gui.IsWindowVisible(hwnd_enum):
                     return
-                _, wpid = win32process.GetWindowThreadProcessId(hwnd)
+                _, wpid = win32process.GetWindowThreadProcessId(hwnd_enum)
                 if wpid == p:
-                    hwnds.append(hwnd)
+                    hwnds.append(hwnd_enum)  # 添加到列表
             win32gui.EnumWindows(cb, None)
-            return hwnds
-        # 2. 查一级父进程
+            return hwnds[0] if hwnds else None  # 返回第一个
+        
+        # 2. 父进程链查找（Electron 子进程 -> 主进程）
         try:
             proc = psutil.Process(pid)
-            parent = proc.parent()
-            if parent:
-                hwnds = _by_pid(parent.pid)
-                if hwnds:
-                    return hwnds
+            while proc:
+                proc = proc.parent()
+                if not proc:
+                    break
+                hwnd = _by_pid(proc.pid)
+                if hwnd:
+                    return hwnd
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             pass
+        
+        return None
 
-        return []
-    #根据会话，查找hwnd
-    def _init_session(self, key, packet):
-        meta = {"pid": None, "hwnds": [], "key": key}
+    def _bind_hwnd_key(self, hwnd, key):
+    # 一个 hwnd 可以对应多个 key（不同的连接）
+    # 一个 key 只能对应一个 hwnd
+    
+    # 检查这个 key 是否已经绑定到其他 hwnd
+        old_hwnd = self.sessions.get(key)
+        if old_hwnd and old_hwnd != hwnd:
+            # 如果这个 key 之前绑定到其他 hwnd，需要解除旧绑定
+            if old_hwnd in self.hwnd_map:
+                self.hwnd_map[old_hwnd].discard(key)  # 从旧 hwnd 的 key 集合中移除
+                if not self.hwnd_map[old_hwnd]:  # 如果旧 hwnd 没有 key 了，删除它
+                    del self.hwnd_map[old_hwnd]
+        
+        # 添加新映射
+        self.sessions[key] = hwnd
+        if hwnd not in self.hwnd_map:
+            self.hwnd_map[hwnd] = set()
+        self.hwnd_map[hwnd].add(key)
+
+    def _unbind_hwnd_key(self, key):
+        hwnd = self.sessions.pop(key, None)
+        if hwnd is not None and hwnd in self.hwnd_map:
+            self.hwnd_map[hwnd].discard(key)
+            if not self.hwnd_map[hwnd]:  # 如果没有 key 了，删除这个 hwnd 条目
+                del self.hwnd_map[hwnd]
+
+    def get_hwnd_by_key(self, key):
+        if key in self.sessions:
+            return self.sessions[key]
+
+        # 通过 net_connections 反查 PID->HWND
         for conn in psutil.net_connections(kind='tcp'):
-            if conn.laddr and conn.raddr and conn.pid:
-                if (conn.laddr.ip, conn.laddr.port, conn.raddr.ip, conn.raddr.port) == key:
-                    meta["pid"] = conn.pid
-                    meta["hwnds"] = self._find_hwnds_by_pid(conn.pid)
-                    break
-                # 反向也可能
-                if (conn.laddr.ip, conn.laddr.port, conn.raddr.ip, conn.raddr.port) == (key[2], key[3], key[0], key[1]):
-                    meta["pid"] = conn.pid
-                    meta["hwnds"] = self._find_hwnds_by_pid(conn.pid)
-                    break
-        self.sessions[key] = meta
-        return meta
+            if not (conn.laddr and conn.raddr and conn.pid):
+                continue
+            tuples = (conn.laddr.ip, conn.laddr.port, conn.raddr.ip, conn.raddr.port)
+            if tuples == key or tuples == (key[2], key[3], key[0], key[1]):
+                hwnd = self._find_hwnd_by_pid(conn.pid)
+                if hwnd:
+                    self._bind_hwnd_key(hwnd, key)
+                    return hwnd
+                return None
+        return None
+
+    def get_keys_by_hwnd(self, hwnd):
+        """获取指定窗口对应的所有连接 key"""
+        keys = self.hwnd_map.get(hwnd)
+        return list(keys) if keys else []  # 返回列表而不是单个 key
+            
+
+
+    def _cleanup_session(self, key):
+        self._unbind_hwnd_key(key)
+
     def start(self):
         # 支持单个 IP (str) 或 IP 列表 (list)
         remote_ip_config = Auth.REMOTE_IP
@@ -116,18 +164,32 @@ class SeerProxy:
         else:
             direction = Direction.SERVER_TO_CLIENT
             
-        key = (packet.ip.src_addr, packet.tcp.src_port, packet.ip.dst_addr, packet.tcp.dst_port)
-
-        # 1. 连接状态管理 (SYN/FIN/RST)
+        original_key = (packet.ip.src_addr, packet.tcp.src_port, 
+                        packet.ip.dst_addr, packet.tcp.dst_port)
+        key = self._normalize_key(original_key)
+        flags = []
+        if packet.tcp.syn: flags.append("SYN")
+        if packet.tcp.ack: flags.append("ACK")
+        if packet.tcp.fin: flags.append("FIN")
+        if packet.tcp.rst: flags.append("RST")
+        if packet.tcp.psh: flags.append("PSH")
+        print(f"[Debug] Packet: {original_key} -> {key} | Flags: {'-'.join(flags) if flags else 'DATA'} | Payload: {len(packet.tcp.payload)} bytes")
+        
+        # 🔍 调试：打印 key 标准化过程
+        if original_key != key:
+            pass
+            # print(f"[Debug] Key normalized: {original_key} -> {key}")
+        
+        # 1. 连接状态管理
         if packet.tcp.syn:
-            print(f"[Proxy] 🔄 New Connection Detected: {packet.ip.src_addr}:{packet.tcp.src_port}")
+            print(f"[Proxy] 🔄 SYN Packet: {original_key} -> {key}")
             if key in self.buffers:
+                print(f"[Debug] Removing buffer for {key} due to SYN")
                 del self.buffers[key]
-            
             if key in self.sessions:
-                del self.sessions[key]
+                print(f"[Debug] 🔥 Removing session for {key} due to SYN")
+                self._cleanup_session(key)
             
-            # 重置所有状态
             if direction == Direction.CLIENT_TO_SERVER:
                 self.seq_offset = 0
                 self.current_sequence = 0
@@ -137,17 +199,33 @@ class SeerProxy:
             return 
 
         if packet.tcp.fin or packet.tcp.rst:
+            print(f"[Proxy] 🔌 {'FIN' if packet.tcp.fin else 'RST'} Packet: {key}")
             if key in self.buffers:
+                print(f"[Debug] 🔥 FIN/RST packet removing session: {key}")
                 del self.buffers[key]
             if key in self.sessions:
-                del self.sessions[key]
+                print(f"[Debug] 🔥 Removing session for {key} due to {'FIN' if packet.tcp.fin else 'RST'}")
+                self._cleanup_session(key)
             return
 
+        # 2. Session 初始化
         if key not in self.sessions:
-            session_meta = self._init_session(key, packet)
-            print(f"[Proxy] Session init: {key} pid={session_meta['pid']} hwnds={session_meta['hwnds']}")
-
-        session_meta = self.sessions.get(key)
+            print(f"[Debug] Key not in sessions, querying: {key}")
+            hwnd = self.get_hwnd_by_key(key)
+            if hwnd:
+                self._bind_hwnd_key(hwnd, key)
+                print(f"[Proxy] ✅ Session created: {key} hwnd={hwnd}")
+            else:
+                self.sessions[key] = None
+                print(f"[Proxy] ⚠️ No window for: {key}")
+        else:
+            # 可选：打印命中缓存的次数（调试用）
+            if self.sessions[key] is None:
+                pass  # 静默处理没有窗口的连接
+            # else:
+            #     print(f"[Debug] Session hit: {key} -> {self.sessions[key]}")
+        
+        session_hwnd = self.sessions.get(key)
         # 2. TCP SEQ/ACK 修正 (全局偏移)
         if str(packet.ip.dst_addr) in self.remote_ips:
             packet.tcp.seq_num += self.seq_offset
@@ -208,7 +286,7 @@ class SeerProxy:
             
             # 执行业务逻辑
             if decoded_data:
-                self.process_game_frame(decoded_data, direction, packet, w, consumed)
+                self.process_game_frame(decoded_data, direction, packet, w, consumed, session_hwnd)
             
             # 如果不开启重组，我们只尝试处理当前数据包中的完整帧。
             # 一旦发现剩余数据不足以构成下一帧，循环就会 break。
@@ -218,7 +296,7 @@ class SeerProxy:
                 if len(buffer) < 4: 
                     break
 
-    def process_game_frame(self, data, direction, packet, w, frame_len):
+    def process_game_frame(self, data, direction, packet, w, frame_len, hwnd=None):
         if len(data) < 17: return
         if data[0] != 0 or data[1] != 0: return
 
