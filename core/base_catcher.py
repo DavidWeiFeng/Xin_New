@@ -513,12 +513,13 @@ class shinyCatcher:
         if self.config.pet_name not in REFRESH_PET_ACTIONS:
             return False
         if time.time()-self.refresh_start_time>2400 and app_config().is_checked() or force:  
-            OgreManager().clear_current_slots()          
+                      
             refresh_module.refresh_game()
             refresh_module.auto_setting()
             time.sleep(1.2)
             REFRESH_PET_ACTIONS[self.config.pet_name]()
             self.refresh_start_time=time.time()
+            OgreManager().clear_current_slots()
             return True
 
     def stop(self):

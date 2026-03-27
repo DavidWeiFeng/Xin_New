@@ -1683,6 +1683,17 @@ def has_non_white():
         find_color_in_region(606,263,650,307,"ffffff") != -1
     )
 
+@auto_fill_process_hwnd
+# 向窗口发送键盘消息
+def send_key(key, process_hwnd):
+    # 发送按下键消息 (WM_KEYDOWN)
+    win32gui.PostMessage(process_hwnd, win32con.WM_KEYDOWN, ord(key), 0)
+
+    time.sleep(0.1)  # 模拟按键持续时间
+
+    # 发送松开键消息 (WM_KEYUP)
+    win32gui.PostMessage(process_hwnd, win32con.WM_KEYUP, ord(key), 0)
+
 from core.refresh import REFRESH_PET_ACTIONS,SWITCH_PET_ACTIONS
 def switch_handle_identifying():
     if isIdentifying():

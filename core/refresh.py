@@ -1,6 +1,6 @@
 import threading
 import time
-from core.utils import CONFIRM_BUTTON, click, FindPic,SEARCH_REGION,stop_flag,is_color_at_point,activate_single_window,fast_move
+from core.utils import *
 refresh_lock = threading.Lock()
 SWITCH_PET_ACTIONS = {
     "皮皮": [
@@ -23,6 +23,7 @@ def pipi():
     click_map("克洛斯星图标")
 def huoyanbei():
     click_map("火山星图标")
+
 
 REFRESH_PET_ACTIONS = {
     "贝尔": beier,
@@ -99,7 +100,9 @@ def auto_setting():
             time.sleep(1)
             break
         else:
-            click(908,462) #nono
+            for _ in range(3):
+                click(908,462) #nono
+                time.sleep(0.1)
             time.sleep(1)
     with refresh_lock:
         # activate_single_window()
@@ -126,6 +129,7 @@ def auto_setting():
 def refresh_game():
     time.sleep(0.4)
     with refresh_lock:
+        time.sleep(0.1)
         activate_single_window()
         time.sleep(0.4)
         click(24,12,-1 ) #点击游戏
@@ -149,9 +153,19 @@ def refresh_game():
             click(576,423)   #开始
             time.sleep(0.5)
             break
+    # while not stop_flag:
+    #     res,x,y=FindPic(*SEARCH_REGION,"服务器.bmp",0.8)
+    #     if res!=-1:
+    #         time.sleep(0.5)
+    #         click(171,265)
+    #         break
     while not stop_flag:
         res,x,y=FindPic(*SEARCH_REGION,"服务器.bmp",0.8)
         if res!=-1:
             time.sleep(0.5)
-            click(171,265)
             break
+    with refresh_lock:
+        click(769,154)
+        send_key('1')
+        time.sleep(0.5)
+        click(851,146)
