@@ -1379,6 +1379,7 @@ def xianrenqiu():
         
 def isIdentifying():
     res,x,y=find_color_in_region(409,167,448,195,"0159b1")
+    logging.info("出现人机验证")
     if res!=-1:
         return True
     else:
@@ -1701,7 +1702,7 @@ def switch_handle_identifying():
         while not has_non_white():
             time.sleep(0.2)  
         random_click(313,291)
-        time.sleep(0.35)
+        time.sleep(0.4)
         if isIdentifying():
             while not has_non_white():
                 time.sleep(0.2)

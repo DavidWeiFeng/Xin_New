@@ -511,25 +511,20 @@ def cleanup_handler():
 
 if __name__=="__main__":
 
-    # 设置全局异常钩子
-    # sys.excepthook = global_exception_handler
-    # is_compiled = hasattr(sys.modules[__name__], "__compiled__")
-    # if is_compiled:
-    #     # 创建一个空设备指向
-    #     devnull = open(os.devnull, 'w')
-    #     sys.stdout = devnull
-    #     sys.stderr = devnull
-    #     # 彻底重写 print，使其在底层不执行任何操作
-    #     import builtins
-    #     def dummy_print(*args, **kwargs):
-    #         pass
-    #     builtins.print = dummy_print
-    sys._excepthook = sys.excepthook
-    def exception_hook(exctype, value, traceback):
-        print(exctype, value, traceback)
-        sys._excepthook(exctype, value, traceback)
-        sys.exit(1)
-    sys.excepthook = exception_hook
+    #设置全局异常钩子
+    sys.excepthook = global_exception_handler
+    is_compiled = hasattr(sys.modules[__name__], "__compiled__")
+    if is_compiled:
+        # 创建一个空设备指向
+        devnull = open(os.devnull, 'w')
+        sys.stdout = devnull
+        sys.stderr = devnull
+        # 彻底重写 print，使其在底层不执行任何操作
+        import builtins
+        def dummy_print(*args, **kwargs):
+            pass
+        builtins.print = dummy_print
+    
 
     app=QApplication([])
     app.aboutToQuit.connect(lambda: network_dll.cleanup())  # 注册清理函数

@@ -219,13 +219,17 @@ class shinyCatcher:
         self.rare_count = 0
         self.max_wait_time = 16  # 最大等待时间，单位：秒
         self.stop_flag = False
-        self._mixed_mode_state = None
-        
         self.refresh_start_time = time.time()
         self.map_id = SHINY_CONFIG.get(self.config.pet_name, {}).get("map_id", 0)
         self.rare_pet = SHINY_CONFIG[self.config.pet_name].get("rare_pet", None)
         self.previous_slot_id = -1
         self.capture_engine = CaptureEngine(self)
+
+        if self.config.mix:
+            from config.config import CLEAN_PLAY_CONFIG # 确保能拿到配置
+            self.mix_ctrl = refresh_module.MixModeController(CLEAN_PLAY_CONFIG)
+        else:
+            self.mix_ctrl = None
 
     def is_high_IV(self):
         if ocr is None:
@@ -465,17 +469,20 @@ class shinyCatcher:
                 # 2. 检查是否有稀有精灵
                 if self.check_protocol_rare():
                     continue
-
+                
+                if self.config.mix:
+                    self.config.afk_mode=self.mix_ctrl.should_afk()
+                    
                 # 3. 如果是原地挂机模式
                 if self.config.afk_mode:
-                    logging.info(f"第{self.count}次，遇见{self.catch}次异色精灵")
+                    logging.info(f"第{self.count}次，遇见{self.catch}只异色精灵，{self.rare_count}只稀有精灵")
                     OgreManager().clear_current_slots()
                     time.sleep(1.0)
                     self.count += 1
                     continue
                 
                 elif self.config.switch:
-                    logging.info(f"第{self.count}次,捕捉稀有精灵{self.rare_count}只")
+                    logging.info(f"第{self.count}次，遇见{self.catch}只异色精灵，{self.rare_count}只稀有精灵")
                     OgreManager().clear_current_slots()
                     self.count += 1
                     switch_map(self.config.pet_name)
@@ -489,7 +496,7 @@ class shinyCatcher:
                 if random_slot:
                     slot_id, rx, ry, pet_name = random_slot
                     self.previous_slot_id = slot_id
-                    logging.info(f"第{self.count}次，遇见{self.catch}次异色精灵")
+                    logging.info(f"第{self.count}次，遇见{self.catch}只异色精灵，{self.rare_count}只稀有精灵")
                     OgreManager().clear_current_slots()
                     # 进入战斗前：屏蔽后续包 + 清空当前包
                     # with OgreManager().fighting_context():

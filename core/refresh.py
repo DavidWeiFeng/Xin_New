@@ -169,3 +169,31 @@ def refresh_game():
         send_key('1')
         time.sleep(0.5)
         click(851,146)
+
+
+
+import random
+import time
+
+class MixModeController:
+    def __init__(self, cfg):
+        self.cfg = cfg
+        self.is_afk = False
+        self.next_threshold = random.randint(cfg["normal_loops_min"], cfg["normal_loops_max"])
+
+    def should_afk(self) -> bool:
+        """Main loop decision point. Returns whether the system should be in AFK state."""
+        now = time.time()
+
+        if not self.is_afk:
+            self.next_threshold -= 1  # Decrease the threshold
+            if self.next_threshold <= 0:
+                self.is_afk = True
+                duration = random.randint(self.cfg["afk_seconds_min"], self.cfg["afk_seconds_max"])
+                self.next_threshold = now + duration  # Reuse threshold for timestamp
+        else:
+            if now >= self.next_threshold:
+                self.is_afk = False
+                self.next_threshold = random.randint(self.cfg["normal_loops_min"], self.cfg["normal_loops_max"])
+
+        return self.is_afk
