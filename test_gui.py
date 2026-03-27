@@ -125,7 +125,6 @@ class MyWindow(QWidget,Ui_Form):
             logging.error(f"Failed to start : {e}")
 
     def setupNier(self):
-        pass
         if self.onlyHighNierCheckBox.isChecked():
             Config.ONLY_HIGH_NIER=True
         else:
@@ -324,10 +323,14 @@ class MyWindow(QWidget,Ui_Form):
             rareAndShiny=self.shinyAndRareCheckBox.isChecked()
             cactus=self.cactusCheckBox.isChecked()
             afk=self.afkButton.isChecked()
-            switch=self.switchMapButton.isChecked()
             mix=self.greenPlayerButton.isChecked()
             type_name = "异色"    # 给 log 输出使用
             pet_name=self.shinyComboBox.currentText()           # 给 CatcherThread 使用
+            switch=self.switchMapButton.isChecked()
+            if switch:
+                if pet_name not in SWITCH_PET_ACTIONS:
+                    logging.warning(f"{pet_name}不支持切图功能")
+                    switch=False
             ball_type=self.ballComboBox.currentText()
             self.setupNier()
             # 获取所有游戏窗口句柄
@@ -509,19 +512,24 @@ def cleanup_handler():
 if __name__=="__main__":
 
     # 设置全局异常钩子
-    sys.excepthook = global_exception_handler
-    is_compiled = hasattr(sys.modules[__name__], "__compiled__")
-    if is_compiled:
-        # 创建一个空设备指向
-        devnull = open(os.devnull, 'w')
-        sys.stdout = devnull
-        sys.stderr = devnull
-        # 彻底重写 print，使其在底层不执行任何操作
-        import builtins
-        def dummy_print(*args, **kwargs):
-            pass
-        builtins.print = dummy_print
-
+    # sys.excepthook = global_exception_handler
+    # is_compiled = hasattr(sys.modules[__name__], "__compiled__")
+    # if is_compiled:
+    #     # 创建一个空设备指向
+    #     devnull = open(os.devnull, 'w')
+    #     sys.stdout = devnull
+    #     sys.stderr = devnull
+    #     # 彻底重写 print，使其在底层不执行任何操作
+    #     import builtins
+    #     def dummy_print(*args, **kwargs):
+    #         pass
+    #     builtins.print = dummy_print
+    sys._excepthook = sys.excepthook
+    def exception_hook(exctype, value, traceback):
+        print(exctype, value, traceback)
+        sys._excepthook(exctype, value, traceback)
+        sys.exit(1)
+    sys.excepthook = exception_hook
 
     app=QApplication([])
     app.aboutToQuit.connect(lambda: network_dll.cleanup())  # 注册清理函数

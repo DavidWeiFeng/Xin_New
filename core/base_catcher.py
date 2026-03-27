@@ -288,7 +288,6 @@ class shinyCatcher:
         pet_name: 目标精灵名字
         is_rare_check: 是否是稀有精灵检测（如果是，会进行个体值检查）
         """
-        
         # 2. 稀有精灵的检查逻辑
         if is_rare_check:
             should_catch = False
@@ -332,7 +331,7 @@ class shinyCatcher:
             self.rare_count += 1
         else:
             self.catch += 1
-        send_qq_mail(f"{prefix} {pet_name} 捕捉成功！", "快来查看吧")
+        send_qq_mail(f"{prefix} {pet_name} 捕捉成功！", "快来查看吧",f"{prefix}{pet_name}")
         return True
 
     def check_protocol_shiny(self):
@@ -502,6 +501,7 @@ class shinyCatcher:
                     if SHINY_CONFIG.get(self.config.pet_name, {}).get("reset_pos",None):
                         click(*SHINY_CONFIG[self.config.pet_name]["reset_pos"])
             else:
+                res,x,y=FindPic(*SEARCH_REGION,"连接.bmp",0.80)
                 if res!=-1:
                     send_qq_mail("淦你的游戏又掉线了","赶快重新上号")
                     logging.info("掉线，重新连接")

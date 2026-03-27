@@ -24,7 +24,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(651, 487)
+        Form.resize(653, 487)
         Form.setStyleSheet(u"QListWidget {\n"
 "    border: none;\n"
 "    outline: none;\n"
@@ -115,7 +115,7 @@ class Ui_Form(object):
         self.settingListWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.stackedWidget = QStackedWidget(Form)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setGeometry(QRect(100, 0, 571, 321))
+        self.stackedWidget.setGeometry(QRect(80, 0, 591, 321))
         self.page = QWidget()
         self.page.setObjectName(u"page")
         self.gridLayoutWidget = QWidget(self.page)
@@ -132,12 +132,6 @@ class Ui_Form(object):
         self.horizontalLayout_5 = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.dayiwaButton = QRadioButton(self.layoutWidget)
-        self.dayiwaButton.setObjectName(u"dayiwaButton")
-        self.dayiwaButton.setAutoExclusive(False)
-
-        self.horizontalLayout_5.addWidget(self.dayiwaButton)
-
         self.dayiwaButton_2 = QRadioButton(self.layoutWidget)
         self.dayiwaButton_2.setObjectName(u"dayiwaButton_2")
         self.dayiwaButton_2.setAutoExclusive(False)
@@ -155,12 +149,6 @@ class Ui_Form(object):
         self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget1)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.dajierButton = QRadioButton(self.layoutWidget1)
-        self.dajierButton.setObjectName(u"dajierButton")
-        self.dajierButton.setAutoExclusive(False)
-
-        self.horizontalLayout_2.addWidget(self.dajierButton)
-
         self.xianrenqiuButton = QRadioButton(self.layoutWidget1)
         self.xianrenqiuButton.setObjectName(u"xianrenqiuButton")
         self.xianrenqiuButton.setAutoExclusive(False)
@@ -178,12 +166,6 @@ class Ui_Form(object):
         self.horizontalLayout = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.gangyashaButton = QRadioButton(self.layoutWidget2)
-        self.gangyashaButton.setObjectName(u"gangyashaButton")
-        self.gangyashaButton.setChecked(True)
-
-        self.horizontalLayout.addWidget(self.gangyashaButton)
-
         self.pipiButton = QRadioButton(self.layoutWidget2)
         self.pipiButton.setObjectName(u"pipiButton")
         self.pipiButton.setAutoExclusive(False)
@@ -201,12 +183,6 @@ class Ui_Form(object):
         self.horizontalLayout_3 = QHBoxLayout(self.layoutWidget3)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.daluoqiButton = QRadioButton(self.layoutWidget3)
-        self.daluoqiButton.setObjectName(u"daluoqiButton")
-        self.daluoqiButton.setAutoExclusive(False)
-
-        self.horizontalLayout_3.addWidget(self.daluoqiButton)
-
         self.maomaoButton = QRadioButton(self.layoutWidget3)
         self.maomaoButton.setObjectName(u"maomaoButton")
         self.maomaoButton.setAutoExclusive(False)
@@ -218,14 +194,18 @@ class Ui_Form(object):
 
         self.fangyuGroupBox = QGroupBox(self.gridLayoutWidget)
         self.fangyuGroupBox.setObjectName(u"fangyuGroupBox")
-        self.chaerdunButton = QRadioButton(self.fangyuGroupBox)
-        self.chaerdunButton.setObjectName(u"chaerdunButton")
-        self.chaerdunButton.setGeometry(QRect(11, 31, 59, 20))
-        self.chaerdunButton.setAutoExclusive(False)
-        self.chasiButton = QRadioButton(self.fangyuGroupBox)
+        self.widget = QWidget(self.fangyuGroupBox)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(11, 31, 114, 21))
+        self.horizontalLayout_9 = QHBoxLayout(self.widget)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.chasiButton = QRadioButton(self.widget)
         self.chasiButton.setObjectName(u"chasiButton")
-        self.chasiButton.setGeometry(QRect(76, 31, 47, 20))
         self.chasiButton.setAutoExclusive(False)
+
+        self.horizontalLayout_9.addWidget(self.chasiButton)
+
 
         self.gridLayout.addWidget(self.fangyuGroupBox, 1, 0, 1, 1)
 
@@ -298,7 +278,7 @@ class Ui_Form(object):
         self.page_2.setObjectName(u"page_2")
         self.shinyGroupBox = QGroupBox(self.page_2)
         self.shinyGroupBox.setObjectName(u"shinyGroupBox")
-        self.shinyGroupBox.setGeometry(QRect(10, 10, 171, 61))
+        self.shinyGroupBox.setGeometry(QRect(-10, 10, 171, 61))
         self.shinyLabel = QLabel(self.shinyGroupBox)
         self.shinyLabel.setObjectName(u"shinyLabel")
         self.shinyLabel.setGeometry(QRect(11, 31, 60, 16))
@@ -307,7 +287,7 @@ class Ui_Form(object):
         self.shinyComboBox.setGeometry(QRect(77, 31, 69, 21))
         self.catchSettingGroupBox = QGroupBox(self.page_2)
         self.catchSettingGroupBox.setObjectName(u"catchSettingGroupBox")
-        self.catchSettingGroupBox.setGeometry(QRect(10, 80, 581, 141))
+        self.catchSettingGroupBox.setGeometry(QRect(-10, 80, 581, 141))
         self.ballLabel = QLabel(self.catchSettingGroupBox)
         self.ballLabel.setObjectName(u"ballLabel")
         self.ballLabel.setGeometry(QRect(11, 31, 60, 16))
@@ -322,7 +302,7 @@ class Ui_Form(object):
         self.catchingTypelabel_2.setGeometry(QRect(11, 111, 60, 16))
         self.AllCheckBox = QCheckBox(self.catchSettingGroupBox)
         self.AllCheckBox.setObjectName(u"AllCheckBox")
-        self.AllCheckBox.setGeometry(QRect(471, 71, 101, 19))
+        self.AllCheckBox.setGeometry(QRect(471, 71, 111, 19))
         self.onlyHighCheckBox2 = QCheckBox(self.catchSettingGroupBox)
         self.onlyHighCheckBox2.setObjectName(u"onlyHighCheckBox2")
         self.onlyHighCheckBox2.setGeometry(QRect(269, 71, 95, 19))
@@ -335,31 +315,31 @@ class Ui_Form(object):
         self.onlyHighCheckBox = QCheckBox(self.catchSettingGroupBox)
         self.onlyHighCheckBox.setObjectName(u"onlyHighCheckBox")
         self.onlyHighCheckBox.setGeometry(QRect(370, 71, 95, 19))
-        self.widget = QWidget(self.catchSettingGroupBox)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(81, 111, 232, 21))
-        self.horizontalLayout_4 = QHBoxLayout(self.widget)
+        self.layoutWidget5 = QWidget(self.catchSettingGroupBox)
+        self.layoutWidget5.setObjectName(u"layoutWidget5")
+        self.layoutWidget5.setGeometry(QRect(81, 111, 232, 21))
+        self.horizontalLayout_4 = QHBoxLayout(self.layoutWidget5)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.defaultButton_2 = QRadioButton(self.widget)
+        self.defaultButton_2 = QRadioButton(self.layoutWidget5)
         self.defaultButton_2.setObjectName(u"defaultButton_2")
         self.defaultButton_2.setChecked(True)
 
         self.horizontalLayout_4.addWidget(self.defaultButton_2)
 
-        self.afkButton = QRadioButton(self.widget)
+        self.afkButton = QRadioButton(self.layoutWidget5)
         self.afkButton.setObjectName(u"afkButton")
         self.afkButton.setChecked(False)
 
         self.horizontalLayout_4.addWidget(self.afkButton)
 
-        self.switchMapButton = QRadioButton(self.widget)
+        self.switchMapButton = QRadioButton(self.layoutWidget5)
         self.switchMapButton.setObjectName(u"switchMapButton")
         self.switchMapButton.setChecked(False)
 
         self.horizontalLayout_4.addWidget(self.switchMapButton)
 
-        self.greenPlayerButton = QRadioButton(self.widget)
+        self.greenPlayerButton = QRadioButton(self.layoutWidget5)
         self.greenPlayerButton.setObjectName(u"greenPlayerButton")
         self.greenPlayerButton.setChecked(False)
 
@@ -433,10 +413,10 @@ class Ui_Form(object):
 "    padding: 6px;\n"
 "}\n"
 "")
-        self.layoutWidget5 = QWidget(Form)
-        self.layoutWidget5.setObjectName(u"layoutWidget5")
-        self.layoutWidget5.setGeometry(QRect(0, 0, 2, 2))
-        self.horizontalLayout_6 = QHBoxLayout(self.layoutWidget5)
+        self.layoutWidget6 = QWidget(Form)
+        self.layoutWidget6.setObjectName(u"layoutWidget6")
+        self.layoutWidget6.setGeometry(QRect(0, 0, 2, 2))
+        self.horizontalLayout_6 = QHBoxLayout(self.layoutWidget6)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.onlyHighNierCheckBox = QCheckBox(Form)
@@ -446,6 +426,12 @@ class Ui_Form(object):
         self.refreshCheckBox.setObjectName(u"refreshCheckBox")
         self.refreshCheckBox.setGeometry(QRect(3, 270, 71, 21))
         self.refreshCheckBox.setChecked(True)
+        self.widget1 = QWidget(Form)
+        self.widget1.setObjectName(u"widget1")
+        self.widget1.setGeometry(QRect(0, 0, 2, 2))
+        self.horizontalLayout_7 = QHBoxLayout(self.widget1)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
 
         self.retranslateUi(Form)
 
@@ -484,22 +470,17 @@ class Ui_Form(object):
         self.settingListWidget.setSortingEnabled(__sortingEnabled1)
 
         self.tefangGroupBox.setTitle(QCoreApplication.translate("Form", u"\u7279\u9632", None))
-        self.dayiwaButton.setText(QCoreApplication.translate("Form", u"\u5927\u4f0a\u5a03", None))
         self.dayiwaButton_2.setText(QCoreApplication.translate("Form", u"\u4f0a\u5a03", None))
         self.tegongGroupBox.setTitle(QCoreApplication.translate("Form", u"\u7279\u653b", None))
-        self.dajierButton.setText(QCoreApplication.translate("Form", u"\u5927\u5409\u5c14", None))
         self.xianrenqiuButton.setText(QCoreApplication.translate("Form", u"\u4ed9\u4eba\u7403", None))
         self.gongjiGroupBox.setTitle(QCoreApplication.translate("Form", u"\u653b\u51fb", None))
-        self.gangyashaButton.setText(QCoreApplication.translate("Form", u"BOSS\u94a2\u7259\u9ca8", None))
         self.pipiButton.setText(QCoreApplication.translate("Form", u"\u76ae\u76ae", None))
         self.suduGroupBox.setTitle(QCoreApplication.translate("Form", u"\u901f\u5ea6", None))
-        self.daluoqiButton.setText(QCoreApplication.translate("Form", u"\u5927\u7f57\u5947", None))
         self.maomaoButton.setText(QCoreApplication.translate("Form", u"\u6bdb\u6bdb", None))
         self.fangyuGroupBox.setTitle(QCoreApplication.translate("Form", u"\u9632\u5fa1", None))
-        self.chaerdunButton.setText(QCoreApplication.translate("Form", u"\u5927\u67e5\u65af", None))
         self.chasiButton.setText(QCoreApplication.translate("Form", u"\u67e5\u65af", None))
         self.tiliGroupBox.setTitle(QCoreApplication.translate("Form", u"\u4f53\u529b", None))
-        self.dadinggeButton.setText(QCoreApplication.translate("Form", u"\u5927\u4e01\u683c", None))
+        self.dadinggeButton.setText(QCoreApplication.translate("Form", u"\u4e01\u683c", None))
         self.skillSetting.setTitle(QCoreApplication.translate("Form", u"\u91ca\u653e\u6280\u80fd", None))
         self.firstskillButton.setText(QCoreApplication.translate("Form", u"\u4e00\u6280\u80fd", None))
         self.secondskillButton.setText(QCoreApplication.translate("Form", u"\u4e8c\u6280\u80fd", None))

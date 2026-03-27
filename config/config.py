@@ -12,37 +12,36 @@ SHINY_CONFIG = {
         "map_id":30
     },
     "罗奇":{
-        "rare_pet":"闪光利利",
+        "rare_pet":["闪光利利"],
         "map_id":31
     },   
-    "贝尔":{
+    "贝尔":{    
+        "rare_pet":["伊优"],
         "map_id":20
     },   
     "利牙鱼":{
-        "rare_pet":"斯比亚",
+        "rare_pet":["布鲁"],
         "map_id":21
     },  
     "小鳍鱼":{
+        "rare_pet":["布鲁"],
         "map_id":22
-    },     
-    "布鲁":{
-        "rare_pet":"闪光布鲁",
-        "map_id":737
-    },     
+    },       
     "火炎贝":{
+        "rare_pet":["小火猴"],
         "map_id":15
     },    
     "吉尔":{
-        "rare_pet":"巴多",
+        "rare_pet":["巴多"],
         "map_id":16,
     },
     "赤甲虫":{
         "reset_pos":(281,412),
-        "rare_pet":"格林",
+        "rare_pet":["格林"],
         "map_id":17,
     },
     "毛毛":{
-        "rare_pet":"莫比",
+        "rare_pet":["莫比"],
         "map_id":25,
     },
     "幽浮":{
@@ -70,18 +69,18 @@ SHINY_CONFIG = {
         "map_id":49,
     },
    "卡卡":{
-       "rare_pet":"宾克",
+       "rare_pet":["凯奴"],
         "map_id":40,
     },
    "玄冰兽":{
-       "rare_pet":"凯奴",
+       "rare_pet":["凯奴"],
         "map_id":43,
     },
    "阿兹":{
         "map_id":54,
     },
    "火晶兽":{
-       "rare_pet":"晶岩兽",
+       "rare_pet":["晶岩兽"],
         "map_id":55,
     },
    "水草蛙":{
@@ -94,26 +93,26 @@ SHINY_CONFIG = {
         "map_id":58,
     },
    "伊娃":{
-       "rare_pet":"眼球",
+       "rare_pet":["眼球"],
         "map_id":60,
     },
-   "吉娜斯":{
-       "rare_pet":"吉宝",
+   "吉宝":{
+       "rare_pet":["吉宝"],
         "map_id":61,
     },
-   "海德拉":{
-       "rare_pet":"斯内克",
+   "斯内克":{
+       "rare_pet":["斯内克"],
         "map_id":62,
     },
    "乌凯":{
         "map_id":326,
     },
    "沙顿":{
-       "rare_pet":"乌索",
+       "rare_pet":["乌索"],
         "map_id":327,
     },
    "迷你芽":{
-       "rare_pet":"里昂",
+       "rare_pet":["里昂"],
         "map_id":330,
     },
    "幼镰鸟":{
@@ -129,7 +128,7 @@ SHINY_CONFIG = {
         "map_id":404,
     },
    "嘟噜噜":{
-       "rare_pet":"嘟咕噜",
+       "rare_pet":["嘟咕噜"],
         "map_id":323,
     },
    "卢比":{
@@ -167,7 +166,7 @@ SHINY_CONFIG = {
         "map_id":-1,
     },
     "弗曼":{
-        "rare_pet":"珠儿鸟",
+        "rare_pet":["伶俐鸟"],
         "reset_pos":(376,231),
         "map_id":328,
     },
