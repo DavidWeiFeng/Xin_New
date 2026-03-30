@@ -1,5 +1,6 @@
 import time
 import logging
+from core.Identify import XinScript
 from core.utils import *
 from typing import Tuple
 from config.config import *
@@ -57,6 +58,7 @@ class BaseTower:
             res, x, y = FindPic(*SEARCH_REGION, "塔内标志.bmp", 0.8)
             if res != -1:
                 time.sleep(0.1)
+                XinScript.enable_script()
                 logging.info("点击怪物")
                 click(402,288)
                 time.sleep(0.3)
@@ -202,6 +204,7 @@ class TrialTower():
             if res != -1:
                 time.sleep(0.1)
                 logging.info("点击怪物")
+                XinScript.enable_script()
                 click(self.enemy_pos[0],self.enemy_pos[1])
                 time.sleep(0.5)
                 break

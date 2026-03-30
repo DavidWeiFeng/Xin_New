@@ -2,9 +2,6 @@ import logging
 import psutil
 import pymem
 import pymem.pattern
-import re  # <--- 新增：引入正则模块
-import sys
-import os
 from contextlib import contextmanager
 
 
@@ -30,7 +27,7 @@ def scan_game_instances():
     """
     pids = []
     for proc in psutil.process_iter(['pid', 'name']):
-        if proc.info['name'] == "sun.exe":
+        if proc.info['name'] == "SeerGame.exe":
             pid = get_largest_child_pid(proc)
             if pid:
                 pids.append(pid)
@@ -49,20 +46,27 @@ def find_aob_address(pm, pattern):
     
     return None
 
-class JiaoyangScript:
-    # 这里的 Boss_raw_pattern 是完整的特征码，用于定位
-    BOSS_RAW_PATTERN = b'\xF2\x0F\x10\x40\x50\x66\x0F\x2E\xC1'
+class XinScript:
+    # 这里的 Tower_raw_pattern 是完整的特征码，用于定位
+    TOWER_RAW_PATTERN = b'\x66\x0F\xD6\x41\x50\x8D'
     # 补丁字节：xorpd xmm0, xmm0 (4字节) + nop (1字节) = 5字节
-    PATCH_BYTES = b'\x66\x0F\x57\xC0\x90'
-    # 原始字节：用于 disable 时恢复数据
-    ORIGINAL_BYTES = b'\xF2\x0F\x10\x40\x50'
+    TOWER_PATCH_BYTES = b'\x90\x90\x90\x90\x90' # 4字节指令 + 5字节 NOP
+
+    #锁图
+    LOCK_RAW_PATTERN = b'\x89\x58\x10\x8B\x5D\xD8'
+    LOCK_PATCH_BYTES = b'\x90\x90\x90'
+
+    # BOSS训练
+    TRAINING_RAW_PATTERN = b'\xF3\x0F\x7E\x40\x30\x66\x0F\x2E'
+    TRAINING_PATCH_BYTES = b'\x66\x0F\xEF\xC0\x90'
+    
 
     # 用于管理状态的静态变量
     injected_pids = set()
     restore_info = {} # 格式: {pid: address}
 
     @staticmethod
-    def enable_script():
+    def enable_script(TRAINING=False, MAP=False):
         logger = logging.getLogger('pymem')
         logger.setLevel(logging.ERROR)
         current_pids = scan_game_instances()
@@ -71,60 +75,74 @@ class JiaoyangScript:
             return
 
         for pid in current_pids:
-            success = JiaoyangScript._inject_process(pid)
+            success = XinScript._inject_process(pid, TRAINING, MAP)
             if success:
-                JiaoyangScript.injected_pids.add(pid)
+                XinScript.injected_pids.add(pid)
                 print(f"[+] PID {pid} 修改成功。")
 
         # 清理已经关闭的进程记录
         current_pids_set = set(current_pids)
-        dead_pids = JiaoyangScript.injected_pids - current_pids_set
+        dead_pids = XinScript.injected_pids - current_pids_set
         for dead in dead_pids:
-            JiaoyangScript.injected_pids.remove(dead)
-            JiaoyangScript.restore_info.pop(dead, None)
+            XinScript.injected_pids.remove(dead)
+            XinScript.restore_info.pop(dead, None)
         return True
 
+
+# 【新增】专门用于恢复锁图的方法
     @staticmethod
-    def disable_script():
+    def disable_lock():
         """
-        关闭功能：恢复所有已修改的内存
+        恢复锁图功能：将之前记录的地址改回原始字节
         """
-        for pid, address in list(JiaoyangScript.restore_info.items()):
-            JiaoyangScript._recover_process(pid, address)
-        
-        JiaoyangScript.injected_pids.clear()
-        JiaoyangScript.restore_info.clear()
-        print("[*] 所有功能已停用并尝试恢复。")
+        if not XinScript.restore_info:
+            print("[!] 没有发现已开启的锁图记录。")
+            return
+
+        for pid, address in list(XinScript.restore_info.items()):
+            try:
+                pm = pymem.Pymem()
+                pm.open_process_from_id(pid)
+                # 直接恢复为原始特征码
+                pm.write_bytes(address, XinScript.LOCK_RAW_PATTERN, len(XinScript.LOCK_RAW_PATTERN))
+                pm.close_process()
+                print(f"[+] PID {pid}: 锁图已恢复。")
+                # 恢复后移除记录
+                XinScript.restore_info.pop(pid)
+            except Exception as e:
+                print(f"[x] PID {pid} 恢复异常 (可能进程已关闭): {e}")
+                XinScript.restore_info.pop(pid)
 
     @staticmethod
-    def _inject_process(pid):
+    def _inject_process(pid, TRAINING=False, MAP=False):
         try:
             # 使用 context manager 自动关闭 handle 会更安全
             pm = pymem.Pymem()
             pm.open_process_from_id(pid)
             # 直接使用 bytes 进行扫描
-            inject_addr = pymem.pattern.pattern_scan_all(pm.process_handle, JiaoyangScript.BOSS_RAW_PATTERN)
+            if TRAINING:
+                inject_addr= pymem.pattern.pattern_scan_all(pm.process_handle, XinScript.TRAINING_RAW_PATTERN)
+            elif MAP:
+                inject_addr = pymem.pattern.pattern_scan_all(pm.process_handle, XinScript.LOCK_RAW_PATTERN)
+            else:
+                inject_addr = pymem.pattern.pattern_scan_all(pm.process_handle, XinScript.TOWER_RAW_PATTERN)
             if not inject_addr:
                 print(f"[-] PID {pid}: 未找到，可能已修改过或版本不符。")
                 pm.close_process()
                 return False
             # 写入 Patch
-            pm.write_bytes(inject_addr, JiaoyangScript.PATCH_BYTES, len(JiaoyangScript.PATCH_BYTES))
+            if TRAINING:
+                pm.write_bytes(inject_addr, XinScript.TRAINING_PATCH_BYTES, len(XinScript.TRAINING_PATCH_BYTES))
+            elif MAP:
+                # 【修改】如果是锁图，先记录地址，再写入 Patch
+                XinScript.restore_info[pid] = inject_addr
+                pm.write_bytes(inject_addr, XinScript.LOCK_PATCH_BYTES, len(XinScript.LOCK_PATCH_BYTES))
+            else:
+                pm.write_bytes(inject_addr, XinScript.TOWER_PATCH_BYTES, len(XinScript.TOWER_PATCH_BYTES))
             # 记录地址以便恢复
-            JiaoyangScript.restore_info[pid] = inject_addr
+            XinScript.restore_info[pid] = inject_addr
             pm.close_process()
             return True
         except Exception as e:
             print(f"[x] PID {pid} 注入异常: {e}")
             return False
-
-    @staticmethod
-    def _recover_process(pid, address):
-        try:
-            pm = pymem.Pymem()
-            pm.open_process_from_id(pid)
-            pm.write_bytes(address, JiaoyangScript.ORIGINAL_BYTES, len(JiaoyangScript.ORIGINAL_BYTES))
-            print(f"[v] PID {pid} 内存已恢复。")
-            pm.close_process()
-        except:
-            pass # 进程已关闭则忽略

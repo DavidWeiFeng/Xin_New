@@ -6,7 +6,7 @@ class killBoss:
     def __init__(self,boss_name) -> None:
         self.stop_flag=False
         self.boss_name=boss_name
-        self.boss_position=KiLL_BOSS_CONFIG.get(boss_name,[-1,-1])
+        self.boss_position=.get(boss_name,[-1,-1])
 
     def stop(self):
         self.stop_flag=True

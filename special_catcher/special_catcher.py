@@ -3,7 +3,7 @@ import time
 from core.ogre_manager import OgreManager
 from core.utils import *
 from core.base_catcher import shinyCatcher, CatcherConfig
-from core.Identify import JiaoyangScript
+from core.Identify import XinScript
 class SpecialCatcher(shinyCatcher):
     def __init__(self, config: CatcherConfig):
         # 继承父类的初始化（计数器、引擎等）

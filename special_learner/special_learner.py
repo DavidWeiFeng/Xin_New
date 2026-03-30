@@ -20,7 +20,7 @@ class schoolLearner:
         
     def run(self):
         while not self.stop_flag:
-            click(473,165)
+            click(479,176)
             #等待战斗开始
             time.sleep(0.3)
             if isIdentifying():

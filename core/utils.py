@@ -195,7 +195,7 @@ def protocol_click(x,y,process_hwnd):
         time.sleep(0.02)
         mouse.release(Button.left)
     else:
-        bm.LeftClick(process_hwnd,x,y+30)
+        bm.LeftClick(process_hwnd,x,y+28)
 
 def catch_exception(func):
     def wrapper(*args, **kwargs):
@@ -1150,7 +1150,9 @@ def towerheal(heal_all=False):
         else:
             break
 def can_use_skill():
-    if is_color_at_point(479,191,"404040") and is_color_at_point(479,190,"ffffff"):
+    res,x,y=find_color_in_region(823,515,888,564,"13619e")
+    if res!=-1:
+        time.sleep(0.2)
         return True
     return False
 
@@ -1378,9 +1380,9 @@ def xianrenqiu():
         logging.info("没有人找到巨型仙人掌，请检查是否携带")
         
 def isIdentifying():
-    res,x,y=find_color_in_region(409,167,448,195,"0159b1")
-    logging.info("出现人机验证")
+    res,x,y=FindPic(*SEARCH_REGION,"请选择.bmp",0.8)
     if res!=-1:
+        logging.info("出现人机验证")
         return True
     else:
         return False

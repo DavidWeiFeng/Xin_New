@@ -57,14 +57,15 @@ def auto_setting():
         if is_color_at_point(813,556,"ff4c00"): #精灵背包
             time.sleep(1.5)
             break
-    if is_color_at_point(269,202,"02fdfd",0.1): #八倍经验
-        time.sleep(0.3)
-        click(480,375)
-        time.sleep(0.3)
     res,x,y=FindPic(*SEARCH_REGION,"电量.bmp",0.80)
     if res!=-1:
         click(CONFIRM_BUTTON[0],CONFIRM_BUTTON[1])
         time.sleep(0.4)
+    if is_color_at_point(269,202,"02fdfd",0.1): #八倍经验
+        time.sleep(0.3)
+        click(480,375)
+        time.sleep(0.3)
+   
     res,x,y=FindPic(901,523,921,543,"声音.bmp",0.85)
     if res!=-1:
         # logging.info("你为什么不把游戏静音，懒狗")

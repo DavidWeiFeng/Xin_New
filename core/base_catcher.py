@@ -353,11 +353,11 @@ class shinyCatcher:
             logging.info("与上次点击的坐标相同")
             x1, y1 = OgreManager().get_first_empty_slot_pos()
             protocol_click(x1, y1)
-            time.sleep(0.5)
+            time.sleep(0.65)
         # 连续点击以确保选中
-        for _ in range(3):
+        for _ in range(2):
             protocol_click(x, y)  # 微调Y坐标
-            time.sleep(0.4)
+            time.sleep(0.2)
         move_region("确定")
         
         OgreManager().clear_current_slots()
@@ -393,9 +393,9 @@ class shinyCatcher:
             logging.info("与上次点击的坐标相同")
             x1, y1 = OgreManager().get_first_empty_slot_pos()
             protocol_click(x1, y1)
-            time.sleep(0.5)
+            time.sleep(0.65)
 
-        for _ in range(3):
+        for _ in range(2):
             protocol_click(x, y) 
             time.sleep(0.2)
         move_region("确定")
