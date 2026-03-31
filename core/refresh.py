@@ -105,23 +105,17 @@ def auto_setting():
                 click(908,462) #nono
                 time.sleep(0.1)
             time.sleep(1)
-    with refresh_lock:
-        # activate_single_window()
-        time.sleep(0.3)
-        fast_move(502,368)
-    time.sleep(0.5)
+    time.sleep(3)
+    click(502,368)
     while not stop_flag:
-        rex,x,y=FindPic(*SEARCH_REGION,"飞行模式.bmp",0.90)
+        rex,x,y=FindPic(*SEARCH_REGION,"打开功能.bmp",0.80)
         if rex!=-1:
-            with refresh_lock:
-                time.sleep(0.5)
-                click(x,y) #飞行模式
-        else:
-            fast_move(0,0)
-            time.sleep(0.4)
-            fast_move(502,368)
-        break
-    time.sleep(0.4)
+            time.sleep(0.5)
+            click(x,y) #打开功能
+            break
+    time.sleep(1)
+    click(663,306)
+    time.sleep(1)
     click(436,359) #飞行形态
 
 

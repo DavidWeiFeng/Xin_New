@@ -67,7 +67,7 @@ class Miner:
                 time.sleep(0.3)
                 click(x,y)
                 time.sleep(1)
-            res2,x2,y2=FindPic(*SEARCH_REGION,plant_name+"一层.bmp",0.85)
+            res2,x2,y2=FindPic(*SEARCH_REGION,plant_name+"一层.bmp",0.80)
             if res2 !=-1:
                 logging.info(f"成功进入{plant_name}")
                 time.sleep(0.5)

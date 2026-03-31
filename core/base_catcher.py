@@ -263,7 +263,8 @@ class shinyCatcher:
         if hp=="":
             logging.info("读取不到血量，请使用波克尔")
             return False
-        pet_cfg = HIGH_IV_CONFIG.get(self.rare_pet)
+
+        pet_cfg = HIGH_IV_CONFIG.get(tuple(self.rare_pet))
 
         if not pet_cfg:
             logging.info(f"没有稀有精灵的高个体数据")
@@ -335,7 +336,7 @@ class shinyCatcher:
             self.rare_count += 1
         else:
             self.catch += 1
-        send_qq_mail(f"{prefix} {pet_name} 捕捉成功！", "快来查看吧",f"{prefix}{pet_name}")
+        send_qq_mail(f"{prefix} {pet_name} 捕捉成功！", "快来查看吧")
         return True
 
     def check_protocol_shiny(self):
@@ -519,7 +520,7 @@ class shinyCatcher:
     def need_refresh(self,force=False):
         if self.config.pet_name not in REFRESH_PET_ACTIONS:
             return False
-        if time.time()-self.refresh_start_time>2400 and app_config().is_checked() or force:  
+        if time.time()-self.refresh_start_time>1 and app_config().is_checked() or force:  
                       
             refresh_module.refresh_game()
             refresh_module.auto_setting()

@@ -522,4 +522,4 @@ class Auth:
     TOKEN=None
     Nonce=None
     REMOTE_IP=None
-    VERSION="3月26日更新"
+    VERSION="3月31日更新"

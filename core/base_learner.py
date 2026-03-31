@@ -59,7 +59,7 @@ class BaseLearner:
             logging.info(f"检测到异色精灵：{shiny_pet_name}！")
         
         # 2. 检查稀有 (如果没有异色)
-        elif self.config.catch_rare and not target_coords:
+        elif self.config.catch_rare and not target_coords and self.rare_pet:
             for rare in self.rare_pet:
                 pet_name = rare
                 rare_target = OgreManager().get_target_by_name(rare)

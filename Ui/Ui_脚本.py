@@ -168,6 +168,7 @@ class Ui_Form(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.pipiButton = QRadioButton(self.layoutWidget2)
         self.pipiButton.setObjectName(u"pipiButton")
+        self.pipiButton.setChecked(True)
         self.pipiButton.setAutoExclusive(False)
 
         self.horizontalLayout.addWidget(self.pipiButton)
@@ -382,6 +383,7 @@ class Ui_Form(object):
         self.wakuangButton = QRadioButton(self.page_4)
         self.wakuangButton.setObjectName(u"wakuangButton")
         self.wakuangButton.setGeometry(QRect(10, 50, 231, 19))
+        self.wakuangButton.setChecked(True)
         self.bossNamecomboBox = QComboBox(self.page_4)
         self.bossNamecomboBox.setObjectName(u"bossNamecomboBox")
         self.bossNamecomboBox.setGeometry(QRect(170, 70, 69, 22))
