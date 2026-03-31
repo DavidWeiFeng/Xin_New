@@ -167,7 +167,7 @@ SHINY_CONFIG = {
     },
    "咕咕芽":{
        "rare_pet":["嘟啦"],
-        "map_id":333,
+        "map_id":429,
     },
    "紫火虫":{
         "map_id":435,

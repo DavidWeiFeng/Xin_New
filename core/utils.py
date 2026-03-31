@@ -1067,7 +1067,6 @@ def healCactus():
             logging.info("点击返回")
             time.sleep(0.3)
             fast_move(0,0)
-        else:
             break
 
     

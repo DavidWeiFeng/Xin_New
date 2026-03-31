@@ -423,12 +423,14 @@ class shinyCatcher:
             
             if self.config.all_catch:
                 if pet_name!=self.config.pet_name:
+                    logging.info(f"点击了{pet_name}")
                     pass
                 elif self.config.use_cactus_sleep:
                     self.capture_engine.catch_with_cactus_sleep()
+                    return True
                 else:
                     self.capture_engine.catch_pokemon()
-                return True
+                    return True
             # 2. 如果配置了抓捕普通高个体
             elif self.config.only_normal_high_iv:
                 logging.info("检查普通精灵个体值...")
@@ -520,7 +522,7 @@ class shinyCatcher:
     def need_refresh(self,force=False):
         if self.config.pet_name not in REFRESH_PET_ACTIONS:
             return False
-        if time.time()-self.refresh_start_time>1 and app_config().is_checked() or force:  
+        if time.time()-self.refresh_start_time>2400 and app_config().is_checked() or force:  
                       
             refresh_module.refresh_game()
             refresh_module.auto_setting()
