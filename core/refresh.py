@@ -113,8 +113,12 @@ def auto_setting():
             time.sleep(0.5)
             click(x,y) #打开功能
             break
-    time.sleep(1)
-    click(663,306)
+    while not stop_flag:
+        rex,x,y=FindPic(*SEARCH_REGION,"飞行模式图标.bmp",0.80)
+        if rex!=-1:
+            time.sleep(0.5)
+            click(x,y) #打开功能
+            break
     time.sleep(1)
     click(436,359) #飞行形态
 

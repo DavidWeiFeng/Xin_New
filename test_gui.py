@@ -486,6 +486,7 @@ class MyWindow(QWidget,Ui_Form):
                 cleanup_handler()
                 QApplication.quit()  # 使用安全退出
                 return
+            
             for thread in self.threads:
                 thread.start()
             logging.info(f"开始{daily_name}")

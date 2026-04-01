@@ -100,7 +100,7 @@ class SpecialCatcher(shinyCatcher):
             handler = self._special_handlers.get(self.config.pet_name, self._handle_default)
             handler()
             if not inject_bit:
-                if JiaoyangScript().enable_script():
+                if XinScript().enable_script():
                     inject_bit = True
 
 

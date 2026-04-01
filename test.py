@@ -11,4 +11,4 @@ import win32con
 import time
 
 # 获取指定窗口句柄
-auto_setting()
+switch_map("火炎贝")

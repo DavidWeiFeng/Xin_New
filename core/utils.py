@@ -903,11 +903,11 @@ def handlePostFightClicks():
         random_sleep(0)
     #一直等待到白色出现
     while not stop_flag:
-        if is_color_at_point(581,343,"ffffff",1):   
+        if is_color_at_point(593,354,"ffffff",1):   
             break
     #继续循环处理
     while not stop_flag:
-        if is_color_at_point(581,343,"ffffff",1):
+        if is_color_at_point(593,354,"ffffff",1):
             click(CONFIRM_BUTTON[0],CONFIRM_BUTTON[1])
             time.sleep(0.2)
         else:
@@ -1149,7 +1149,7 @@ def towerheal(heal_all=False):
         else:
             break
 def can_use_skill():
-    res,x,y=find_color_in_region(823,515,888,564,"13619e")
+    res,x,y=find_color_in_region(750,460,887,562,"13619e")
     if res!=-1:
         time.sleep(0.2)
         return True
@@ -1476,6 +1476,21 @@ def resize_window(hwnd, width=976, height=640, x=None, y=None):
         win32con.SWP_SHOWWINDOW
     )
     # 弹出提示框
+    alert_user()
+
+def alert_user():
+    msg = "窗口大小不匹配！\n\n请点击微端顶部菜单栏：\n【设置】 -> 【放大】，连续执行 2 次。"
+    title = "操作提示"
+    
+    try:
+        logging.info(msg.replace('\n', ' '))
+        # 显式传递所有参数：句柄, 内容, 标题, 按钮类型
+        win32api.MessageBox(0, msg, title, win32con.MB_OK | win32con.MB_ICONWARNING)
+    except Exception as e:
+        # 如果 win32api 报错，回退到通用日志
+        logging.error(f"弹窗失败: {e}")
+        print(msg)
+
     
 def test_find_color_in_image(image_path, target_rgb, save_dir="./output", around=8):
     """
@@ -1674,6 +1689,10 @@ def launch_game(lnk_name="SeerGame", params="--disable-features=CalculateNativeW
     try:
         with winshell.shortcut(str(shortcut)) as link:
             subprocess.Popen([link.path] + params.split(), cwd=link.working_directory)
+        time.sleep(2.5)  # 等待游戏启动
+        hwnds = get_all_hwnds()
+        for hwnd in hwnds:
+            resize_window(hwnd)
     except Exception as e:
         ctypes.windll.user32.MessageBoxW(0, f"启动失败: {e}", "错误", 0x10)
 
@@ -1717,13 +1736,13 @@ def perform_move(pet_name,target_info):
     """执行单次地图跳转任务"""
     map_name, (target_x, target_y) = target_info
     while not stop_flag:
-        res, _, _ = FindPic(*SEARCH_REGION, f"{map_name}.bmp", 0.85)
+        res, _, _ = FindPic(*SEARCH_REGION, f"{map_name}.bmp", 0.80)
         if res != -1:
             click(target_x, target_y)
             break
     start_time = time.time()
     while not stop_flag:
-        res, _, _ = FindPic(*SEARCH_REGION, f"{map_name}.bmp", 0.85)
+        res, _, _ = FindPic(*SEARCH_REGION, f"{map_name}.bmp", 0.80)
         # res == -1 表示当前地图图样消失，切换成功
         if res == -1:
             return True 
