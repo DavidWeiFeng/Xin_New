@@ -40,6 +40,7 @@ class BaseLearner:
             if time.time() - start_wait > self.max_wait_time:
                 logging.info("等待进入战斗超时")
                 error_handle()
+                OgreManager().clear_current_slots()
                 return False
             time.sleep(0.5)
         return False

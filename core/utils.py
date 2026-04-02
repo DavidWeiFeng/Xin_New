@@ -1207,12 +1207,12 @@ def ocr_region(x1, y1, x2, y2,only_num=False):
 def ocr_hp():
     global ocr
     
-    result=ocr_region(628,36,653,58,True)   
+    result=ocr_region(628,37,653,57,True)   
     return result
 
 def ocr_level():
     global ocr
-    result=ocr_region(769,40,787,61,True)   
+    result=ocr_region(771,39,791,58,True)   
     return result
 
 def ocr_sleep_turn():

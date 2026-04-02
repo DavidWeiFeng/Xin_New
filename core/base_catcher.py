@@ -283,6 +283,7 @@ class shinyCatcher:
             if time.time() - start_wait > self.max_wait_time:
                 logging.info("等待进入战斗超时")
                 error_handle()
+                OgreManager.clear_current_slots()
                 return False
             time.sleep(0.5)
         return False
@@ -409,6 +410,7 @@ class shinyCatcher:
 
     def handle_normal_fight(self, pet_name=""):
         """处理普通精灵的战斗（为了刷新地图，同时检查暗雷异色及普通高个体）"""
+        
 
         if self._wait_for_fight_start():
             
@@ -505,6 +507,11 @@ class shinyCatcher:
                     # with OgreManager().fighting_context():
                     for _ in range(3):
                         protocol_click(rx, ry)
+                    time.sleep(1)
+                    if error_handle():
+                        OgreManager().clear_current_slots()
+                        logging.info("点到自己了，自动处理错误")
+                        continue
                     self.handle_normal_fight(pet_name)
                     self.count += 1
                     time.sleep(0.2)  # 等待地图刷新
