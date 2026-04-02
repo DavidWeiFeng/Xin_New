@@ -418,7 +418,7 @@ class shinyCatcher:
                 # logging.info(f"检测到红字！{self.config.pet_name} 可能是暗雷异色")
                 return self._perform_capture_logic(pet_name, is_rare_check=False)
             
-            if isNier():
+            if isNier(self.config.ball_type):
                 return True
             
             if self.config.all_catch:

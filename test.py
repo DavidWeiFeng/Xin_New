@@ -11,4 +11,5 @@ import win32con
 import time
 
 # 获取指定窗口句柄
-switch_map("火炎贝")
+from core.Identify import XinScript
+XinScript.enable_script()

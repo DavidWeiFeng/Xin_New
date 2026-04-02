@@ -60,7 +60,7 @@ class BaseTower:
                 time.sleep(0.1)
                 XinScript.enable_script()
                 logging.info("点击怪物")
-                click(402,288)
+                click(411,309)
                 time.sleep(0.3)
                 return True
             
