@@ -42,8 +42,8 @@ import os
 mouse = Controller()
 PIC_PATH = ""
 SEARCH_REGION=(0,0,956,590)
-CONFIRM_BUTTON=(479,376)
-BALL_REGION=(325,445,622,564)
+CONFIRM_BUTTON=(497,383)
+BALL_REGION=(338,441,658,555)
 HOME=(777,562)
 click_lock = threading.Lock()  # 定义一个全局的“遥控器锁”
 stop_flag = False
@@ -801,8 +801,8 @@ def catch_nier(ball_type="中级胶囊"):
             logging.info("点击道具")
             time.sleep(1.5)
             while not stop_flag:
-                res,x,y=FindPic(*BALL_REGION,f"{ball_type}.bmp",0.88)
-                res2,x2,y2=FindPic(*BALL_REGION,f"{ball_type}2.bmp",0.88)
+                res,x,y=FindPic(*BALL_REGION,f"{ball_type}.bmp",0.85)
+                res2,x2,y2=FindPic(*BALL_REGION,f"{ball_type}2.bmp",0.85)
                 if res!=-1 or res2!=-1:
     
                     click(x,y) if res!=-1 else click(x2,y2)
