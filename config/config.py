@@ -63,6 +63,7 @@ SHINY_CONFIG = {
         "map_id":47,
     },
    "古鲁":{
+       "rare_pet":["尼布"],
         "map_id":48,
     },
    "丁格":{
@@ -523,4 +524,4 @@ class Auth:
     TOKEN=None
     Nonce=None
     REMOTE_IP=None
-    VERSION="4月3日更新"
+    VERSION="4月7日更新"

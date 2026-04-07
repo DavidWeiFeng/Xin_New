@@ -144,7 +144,7 @@ def refresh_game():
             time.sleep(0.5)
             res1,x1,y1=FindPic(*SEARCH_REGION,"我已知晓.bmp",0.85)
             if res1==-1:
-                time.sleep(0.5)
+                time.sleep(2)
                 break
     while not stop_flag:
         if is_color_at_point(595,427,"409eff") or is_color_at_point(596,439,"d02e3b"): #蓝色登录

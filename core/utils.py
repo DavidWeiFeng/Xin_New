@@ -43,7 +43,7 @@ mouse = Controller()
 PIC_PATH = ""
 SEARCH_REGION=(0,0,956,590)
 CONFIRM_BUTTON=(497,383)
-BALL_REGION=(338,441,658,555)
+BALL_REGION=(335,466,667,579)
 HOME=(777,562)
 click_lock = threading.Lock()  # 定义一个全局的“遥控器锁”
 stop_flag = False
@@ -1717,18 +1717,17 @@ def send_key(key, process_hwnd):
 
 from core.refresh import REFRESH_PET_ACTIONS,SWITCH_PET_ACTIONS
 def switch_handle_identifying():
-    if isIdentifying():
-        # 等待精灵加载完成
+    detected=False
+    while isIdentifying():
+        detected=True
         while not has_non_white():
-            time.sleep(0.2)  
-        random_click(313,291)
-        time.sleep(0.4)
-        if isIdentifying():
-            while not has_non_white():
-                time.sleep(0.2)
-            random_click(313,291)
+            time.sleep(0.2)
+        click(313,291)
+        time.sleep(0.3)
+    if detected:
         time.sleep(3)
         if is_color_at_point(899,248,"777777"):
+            logging.info("没有回到传送室")
             return False
     return True
 
@@ -1745,10 +1744,12 @@ def perform_move(pet_name,target_info):
         res, _, _ = FindPic(*SEARCH_REGION, f"{map_name}.bmp", 0.80)
         # res == -1 表示当前地图图样消失，切换成功
         if res == -1:
+            logging.info(f"{map_name}消失")
             return True 
         # 超时处理逻辑
         if time.time() - start_time > 10:
             # 重试点击并重置计时
+            logging.info("switch_handle_identifying检测：")
             if not switch_handle_identifying():
                 REFRESH_PET_ACTIONS[pet_name]()
             click(target_x, target_y)
