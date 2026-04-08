@@ -26,7 +26,7 @@ class killBoss:
                 send_qq_mail("赛维尔人机验证","1")
                 while not stop_flag:
                     if not isIdentifying():
-                        click(637,213)
+                        click(327,288)
                         break
             if is_color_at_point(614,350,"ffffff"):
                 click(CONFIRM_BUTTON[0],CONFIRM_BUTTON[1])

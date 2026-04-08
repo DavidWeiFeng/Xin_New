@@ -1722,7 +1722,7 @@ def switch_handle_identifying():
         detected=True
         while not has_non_white():
             time.sleep(0.2)
-        click(313,291)
+        click(327,288)
         time.sleep(0.3)
     if detected:
         time.sleep(3)

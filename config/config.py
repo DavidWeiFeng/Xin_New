@@ -524,4 +524,4 @@ class Auth:
     TOKEN=None
     Nonce=None
     REMOTE_IP=None
-    VERSION="4月7日更新"
+    VERSION="4月8日更新"

@@ -214,7 +214,7 @@ class TrialTower():
                 break
             else:
                 time.sleep(2.5)
-                random_click(313,291)
+                random_click(327,288)
         time.sleep(0.3)
         click(self.enemy_pos[0],self.enemy_pos[1])
 
