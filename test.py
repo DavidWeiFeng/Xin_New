@@ -10,6 +10,4 @@ import win32gui
 import win32con
 import time
 
-# 获取指定窗口句柄
-from core.Identify import XinScript
-XinScript.enable_script()
+ocr_sleep_turn()

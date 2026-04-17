@@ -180,6 +180,10 @@ SHINY_CONFIG = {
    "泰达":{
         "map_id":481,
     },
+   "拉利":{
+       "rare_pet":["尼尔"],
+        "map_id":484,
+    },
 }
 # 高个体配置
 HIGH_IV_CONFIG = {
@@ -262,9 +266,6 @@ LEARNING_CONFIG = {
         "rare_pet":["晶岩兽"],
         "map_id":55,
     },
-    "萨帕克": {
-        "map_id":338,
-    }, 
     "毛毛": {
         "rare_pet":["莫比"],
         "map_id":25,
@@ -291,19 +292,26 @@ LEARNING_CONFIG = {
         "rare_pet":["凯奴"],
         "map_id":43,
     },   
-    "克洛洛特": {
-        "rare_pet":["卡拉"],
-        "map_id":404,
-    }, 
     "比比鼠":{
         "rare_pet":["西塔"],
         "map_id":30
     },
-    "幽浮":{
-        "map_id":26,
+    "贝尔":{    
+        "rare_pet":["伊优"],
+        "map_id":20
+    },
+   "莱尼":{
+        "map_id":47,
+    },   
+    "火炎贝":{
+        "rare_pet":["小火猴"],
+        "map_id":15
+    },  
+   "阿兹":{
+        "map_id":54,
     },
 }
-OTHERS_CONFIG=["克洛洛特","火晶兽","玄冰兽","水草蛙","吉尔","萨帕克","利牙鱼","比比鼠","幽浮"]
+OTHERS_CONFIG=["火晶兽","玄冰兽","水草蛙","吉尔","利牙鱼","比比鼠","贝尔","莱尼","火炎贝","阿兹"]
 
 TOWER_CONFIG={
 "特攻性格橙毛": {
@@ -524,4 +532,4 @@ class Auth:
     TOKEN=None
     Nonce=None
     REMOTE_IP=None
-    VERSION="4月8日更新"
+    VERSION="4月17日更新"

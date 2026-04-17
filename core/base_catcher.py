@@ -485,7 +485,21 @@ class shinyCatcher:
                     time.sleep(1.0)
                     self.count += 1
                     continue
-                
+                elif self.config.lock_scene:
+                    click(767,558)
+                    logging.info(f"第{self.count}次，遇见{self.catch}只异色精灵，{self.rare_count}只稀有精灵")
+                    OgreManager().clear_current_slots()
+                    self.count += 1
+                    time.sleep(1.5)
+                    if isIdentifying():
+                        while not self.stop_flag:
+                            if not isIdentifying():
+                                break
+                            else:
+                                while not has_non_white():
+                                    time.sleep(0.2)
+                                click(327,288)
+                    
                 elif self.config.switch:
                     logging.info(f"第{self.count}次，遇见{self.catch}只异色精灵，{self.rare_count}只稀有精灵")
                     OgreManager().clear_current_slots()

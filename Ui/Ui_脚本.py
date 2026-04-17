@@ -197,7 +197,7 @@ class Ui_Form(object):
         self.fangyuGroupBox.setObjectName(u"fangyuGroupBox")
         self.layoutWidget4 = QWidget(self.fangyuGroupBox)
         self.layoutWidget4.setObjectName(u"layoutWidget4")
-        self.layoutWidget4.setGeometry(QRect(11, 31, 114, 21))
+        self.layoutWidget4.setGeometry(QRect(11, 31, 114, 22))
         self.horizontalLayout_9 = QHBoxLayout(self.layoutWidget4)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -318,7 +318,7 @@ class Ui_Form(object):
         self.onlyHighCheckBox.setGeometry(QRect(370, 71, 95, 19))
         self.layoutWidget6 = QWidget(self.catchSettingGroupBox)
         self.layoutWidget6.setObjectName(u"layoutWidget6")
-        self.layoutWidget6.setGeometry(QRect(81, 111, 232, 21))
+        self.layoutWidget6.setGeometry(QRect(82, 110, 377, 22))
         self.horizontalLayout_4 = QHBoxLayout(self.layoutWidget6)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -345,6 +345,12 @@ class Ui_Form(object):
         self.greenPlayerButton.setChecked(False)
 
         self.horizontalLayout_4.addWidget(self.greenPlayerButton)
+
+        self.lockButton = QRadioButton(self.layoutWidget6)
+        self.lockButton.setObjectName(u"lockButton")
+        self.lockButton.setChecked(False)
+
+        self.horizontalLayout_4.addWidget(self.lockButton)
 
         self.startCatch = QPushButton(self.page_2)
         self.startCatch.setObjectName(u"startCatch")
@@ -425,7 +431,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Form)
@@ -497,6 +503,7 @@ class Ui_Form(object):
         self.afkButton.setText(QCoreApplication.translate("Form", u"\u539f\u5730\u6302\u673a", None))
         self.switchMapButton.setText(QCoreApplication.translate("Form", u"\u5207\u56fe", None))
         self.greenPlayerButton.setText(QCoreApplication.translate("Form", u"\u7eff\u73a9", None))
+        self.lockButton.setText(QCoreApplication.translate("Form", u"\u9501\u56fe(\u9700\u8d2d\u4e70\u9501\u56fe\u5de5\u5177)", None))
         self.startCatch.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb\u8fd0\u884c", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"F1\u5feb\u901f\u8fd0\u884c/\u505c\u6b62", None))
         self.towerPokemonlabel.setText(QCoreApplication.translate("Form", u"\u722c\u5854\u7cbe\u7075:", None))

@@ -327,6 +327,7 @@ class MyWindow(QWidget,Ui_Form):
             type_name = "异色"    # 给 log 输出使用
             pet_name=self.shinyComboBox.currentText()           # 给 CatcherThread 使用
             switch=self.switchMapButton.isChecked()
+            lock=self.lockButton.isChecked()
             if switch:
                 if pet_name not in SWITCH_PET_ACTIONS:
                     logging.warning(f"{pet_name}不支持切图功能")
@@ -356,6 +357,7 @@ class MyWindow(QWidget,Ui_Form):
                         all_catch=all_catch,
                         switch=switch,
                         mix=mix,
+                        lock_scene=lock
                     )
                     for i, hwnd in enumerate(hwnds):
                         

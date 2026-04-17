@@ -5,7 +5,7 @@ import logging
 from core.utils import *
 from typing import Tuple
 from config.config import *
-
+from core.Identify import XinScript
 class singleTypeLearner(BaseLearner):
     def __init__(self, config: LearnerConfig):
         super().__init__(config)
@@ -35,6 +35,7 @@ class schoolLearner:
                         random_click(313,291)
             while not self.stop_flag:
                 if isFightStart():
+                    XinScript.enable_script(TRAINING=True)
                     break
             while not self.stop_flag:
                     if can_use_skill():

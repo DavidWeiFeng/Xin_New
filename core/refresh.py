@@ -1,6 +1,7 @@
 import threading
 import time
 from core.utils import *
+import socket
 refresh_lock = threading.Lock()
 SWITCH_PET_ACTIONS = {
     "皮皮": [
@@ -46,6 +47,8 @@ def click_map(name):
             click(x,y)
             time.sleep(0.5)
             break
+    send_cmd("refresh")
+    send_cmd("lock")
 
 
 
@@ -126,6 +129,7 @@ def auto_setting():
 
 
 def refresh_game():
+    send_cmd("unlock")
     time.sleep(0.4)
     with refresh_lock:
         time.sleep(0.1)
@@ -170,6 +174,23 @@ def refresh_game():
         click(851,146)
 
 
+def send_cmd(cmd):
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(1.0)  # 设置 1 秒超时，不让它死等
+        s.connect(("127.0.0.1", 56789))
+        s.send(cmd.encode())
+        print("返回:", s.recv(1024)) # 可选：接收返回
+    except (ConnectionRefusedError, socket.timeout, Exception) as e:
+        # 捕获“积极拒绝”或其他网络错误，但不抛出
+        print(f"IPC命令 '{cmd}' 发送跳过 (服务器未就绪): {e}")
+    finally:
+        try:
+            s.close()
+        except:
+            pass
+
+
 
 import random
 import time
@@ -196,3 +217,4 @@ class MixModeController:
                 self.next_threshold = random.randint(self.cfg["normal_loops_min"], self.cfg["normal_loops_max"])
 
         return self.is_afk
+    
