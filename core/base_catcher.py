@@ -521,7 +521,7 @@ class shinyCatcher:
                     # with OgreManager().fighting_context():
                     for _ in range(3):
                         protocol_click(rx, ry)
-                    time.sleep(1)
+                    time.sleep(0.5)
                     if error_handle():
                         OgreManager().clear_current_slots()
                         logging.info("点到自己了，自动处理错误")
