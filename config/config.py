@@ -1,6 +1,6 @@
 SHINY_CONFIG = {
     "皮皮":{
-        "rare_pet":["闪光皮皮","布布种子"],
+        "rare_pet":["闪光皮皮"],
         "map_id":10
     },
     "仙人球":{
@@ -534,4 +534,4 @@ class Auth:
     TOKEN=None
     Nonce=None
     REMOTE_IP=None
-    VERSION="4月20日更新"
+    VERSION="4月25日更新"
