@@ -421,7 +421,6 @@ class Ui_Form(object):
         self.refreshCheckBox = QCheckBox(Form)
         self.refreshCheckBox.setObjectName(u"refreshCheckBox")
         self.refreshCheckBox.setGeometry(QRect(3, 270, 71, 21))
-        self.refreshCheckBox.setChecked(True)
         self.layoutWidget8 = QWidget(Form)
         self.layoutWidget8.setObjectName(u"layoutWidget8")
         self.layoutWidget8.setGeometry(QRect(0, 0, 2, 2))

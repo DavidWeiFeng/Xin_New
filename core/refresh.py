@@ -151,9 +151,9 @@ def refresh_game():
                 time.sleep(2)
                 break
     while not stop_flag:
-        if is_color_at_point(595,427,"409eff") or is_color_at_point(596,439,"d02e3b"): #蓝色登录
+        if is_color_at_point(738,453,"5dcdf1") or is_color_at_point(596,439,"d02e3b"): #蓝色登录
             time.sleep(1)
-            click(576,423)   #开始
+            click(622,452)   #开始
             time.sleep(0.5)
             break
     # while not stop_flag:

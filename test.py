@@ -10,4 +10,4 @@ import win32gui
 import win32con
 import time
 
-ocr_sleep_turn()
+refresh_game()
