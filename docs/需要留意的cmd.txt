@@ -1,0 +1,4 @@
+2503_NOTE_READY_TO_FIGHT：在另一个游戏版本中会传递Shiny参数，目前这个游戏的版本不会
+CMD_2301_GetPetInfo：传递Shiny参数
+
+CMD_2004_MapOgreList：传递Shiny参数

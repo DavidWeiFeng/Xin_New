@@ -1,4 +1,5 @@
-SHINY_CONFIG = {
+REMOTE_PET_CONFIG_URL = "http://101.43.13.55/seer-config/xin.json"
+LOCAL_PET_CONFIG = {
     "皮皮":{
         "rare_pet":["闪光皮皮"],
         "map_id":10
@@ -248,7 +249,7 @@ HIGH_IV_CONFIG = {
     "阿兹": {"16": "46", "17": "49"},
     "晶岩兽": {"11": "37", "12": "40"},
     "泰达": {"12": "38", "13": "41"},
-    "尼尔": {"16": "46", "17": "46"},
+    "尼尔": {"16": "46", "17": "47"},
 }
 
 LEARNING_CONFIG = {
@@ -535,3 +536,51 @@ class Auth:
     Nonce=None
     REMOTE_IP=None
     VERSION="4月26日更新"
+
+import json
+import requests
+
+def _extract_remote_pet_config(raw_text: str) -> dict:
+    """! @brief 从线上 JSON 中提取 PET_CONFIG。"""
+    text = raw_text.strip().lstrip("\ufeff")
+    if not text:
+        raise ValueError("empty remote pet config")
+
+    data = json.loads(text)
+    if isinstance(data, dict):
+        if "PET_CONFIG" in data:
+            return data["PET_CONFIG"]
+        return data
+
+    raise ValueError("remote pet config must be a JSON object")
+
+
+def _validate_pet_config(config):
+    """! @brief 校验 PET_CONFIG 基本结构。"""
+    if not isinstance(config, dict) or not config:
+        raise ValueError("PET_CONFIG must be a non-empty dict")
+
+    for pet_name, rule in config.items():
+        if not isinstance(pet_name, str):
+            raise ValueError("PET_CONFIG pet name must be str")
+        if not isinstance(rule, dict):
+            raise ValueError(f"PET_CONFIG rule must be dict: {pet_name}")
+        if "map_id" in rule and not isinstance(rule["map_id"], int):
+            raise ValueError(f"PET_CONFIG map_id must be int: {pet_name}")
+
+    return config
+
+
+def _load_remote_pet_config():
+    """! @brief 优先加载线上 PET_CONFIG，失败时抛出异常交给调用方兜底。"""
+    response = requests.get(REMOTE_PET_CONFIG_URL, timeout=10)
+    response.raise_for_status()
+    raw = response.text
+    return _validate_pet_config(_extract_remote_pet_config(raw))
+
+
+try:
+    SHINY_CONFIG = _load_remote_pet_config()
+except Exception as e:
+    print(f"Error loading remote pet config: {e}")
+    SHINY_CONFIG = LOCAL_PET_CONFIG
