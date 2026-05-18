@@ -535,7 +535,7 @@ class Auth:
     TOKEN=None
     Nonce=None
     REMOTE_IP=None
-    VERSION="4月26日更新"
+    VERSION="5月19日更新"
 
 import json
 import requests
